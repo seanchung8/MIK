@@ -1,7 +1,7 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
 import CatagoryStore from '../stores/CatagoryStore';
-
+import  * as PagesActions from "../actions/PagesActions";
 
 
 
@@ -13,8 +13,8 @@ export default class Catagory extends React.Component {
     //Headline: When used this will be bolded text above the description.
     //Description: When used this will be the discription used on the page. If not used the default state will be used.
     //Title: When used this will be the discription used on the page. If not used the default state will be used.
-    //Pic: When used this will override the default image used for the background
-    //ViewState: Used to determine a change in the view possible string values {Landing,Events,Classes,Booking}
+    //Pic: When used this will override the default image used for the backgroundd
+    //ViewState: Used to determine a change in the view possible string values {Landing,Events,Classes,Catagories,Booking}
     
     constructor(props){
         super(props);
@@ -45,10 +45,6 @@ export default class Catagory extends React.Component {
 
         })
 
-        CatagoryStore.on("change", ()=>{
-
-
-        })
     }
 
     ServiceTypeInit(){
@@ -74,7 +70,8 @@ export default class Catagory extends React.Component {
 
 
     setPage(){
-
+      PagesActions.UpdateDisplayed("Catagories");
+        //PagesActions.SelectCatagory(this.state.Title);
     }
 
 
@@ -100,14 +97,13 @@ export default class Catagory extends React.Component {
           landing =true;
       }
 
-      console.log(this.props.viewing);
       var classNames = require('classnames');
       var btnClass = classNames(
-          'm-tile anim-tile-in',
           {
               'm-service': landing,
               'm-service2': notLanding,
-              'mod-details': this.state.showDiscription
+              'mod-details': this.state.showDiscription,
+              'm-tile anim-tile-in': true
           });
 
     return (
@@ -118,9 +114,8 @@ export default class Catagory extends React.Component {
                 <div class="m-button shadow-active-3 m-button-more-info"
                      onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
                 <div class="m-service-description-text" ><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
-                <p/>
-                <div class="m-button shadow-active-3 m-button-classes"
-                     onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>See Classes</div>
+                
+                <div class="m-button shadow-active-3 m-button-classes" onClick={ ()=> this.setPage()}>See Classes</div>
             </div>
       </div>
     );

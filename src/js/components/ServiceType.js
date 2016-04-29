@@ -44,7 +44,7 @@ export default class ServiceType extends React.Component {
 
     ChangeDisplayScreen(){
         console.log("Changing Display to classes");
-        ServiceTypeActions.ChangeDisplayed(this.state.View);
+        //ServiceTypeActions.ChangeDisplayed(this.state.View);
         PagesActions.UpdateDisplayed(this.state.View);
     }
 

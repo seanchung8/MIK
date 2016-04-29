@@ -30,13 +30,15 @@ export default class Locator extends React.Component {
             value: 1,
             open:false,
             isPressed:false,
-            locKey:0
+            locKey:0,
+            country: this.props.country
         };
     }
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.search();
+        console.log(this.state.country);
     }
 
     componentDidMount(){
@@ -69,7 +71,7 @@ export default class Locator extends React.Component {
                     "<country>" + this.props.country + "</country> " +
                     "</geoloc> " +
                     "</geolocs> " +
-                    "<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "10") +"</searchradius> " +
+                    "<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "25") +"</searchradius> " +
                     "</formdata> " +
                     "</request>"
                 );
@@ -99,6 +101,10 @@ export default class Locator extends React.Component {
             locKey:key
         });
     }
+//Slider code for range Moved so it could be commented.
+// <div class="m-slider-circle"></div>
+// <div class="m-slider-line"></div>
+
 
     render(){
         var value = 10;
@@ -133,7 +139,7 @@ export default class Locator extends React.Component {
             var tempHolder =
 
 
-                    (this.state.showDiscription && locKey == this.state.locKey) ?
+                   // (this.state.showDiscription && locKey == this.state.locKey) ?
                         <div key={locKey} onClick={ ()=> this.clickedLocation.bind(false,locKey)} class="'m-editable-list-location'">
                             <div>{location.name}</div>
                             {console.log(locKey)}
@@ -143,16 +149,16 @@ export default class Locator extends React.Component {
                             <div>{location.phone}</div>
                             <p/>
                         </div>
-                    :
-                        <div key={locKey} onClick={ ()=> this.clickedLocation.bind(true,locKey)} class='m-editable-list-location mod-active'>
-                            <div>{location.name}</div>
-                            {console.log(locKey)}
-                            <div>{location.address1}</div>
-                            <div>{location.city}, {location.state}</div>
-                            <div>{location.postalcode}</div>
-                            <div>{location.phone}</div>
-                            <p/>
-                        </div>;
+                    // :
+                    //     <div key={locKey} onClick={ ()=> this.clickedLocation.bind(true,locKey)} class='m-editable-list-location mod-active'>
+                    //         <div>{location.name}</div>
+                    //         {console.log(locKey)}
+                    //         <div>{location.address1}</div>
+                    //         <div>{location.city}, {location.state}</div>
+                    //         <div>{location.postalcode}</div>
+                    //         <div>{location.phone}</div>
+                    //         <p/>
+                    //     </div>;
 
 
                 return tempHolder;
@@ -167,9 +173,9 @@ export default class Locator extends React.Component {
             <label class="m-input-label">Address</label>
         </div>
         <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Travel Distance <span>10 Miles</span></div>
-            <div class="m-slider-circle"></div>
-            <div class="m-slider-line"></div>
+            <div class="m-slider-label">Max Travel Distance </div>
+            <div>10 Miles</div>
+
             <input ref="query2" onChange={ (e) => { this.updateSearch(); } } type="text" />
         </div>
         {condition?
@@ -189,15 +195,7 @@ export default class Locator extends React.Component {
 
             </div>
         }
-        <div class="m-tag shadow-2">
-            <div class="m-tag-header">Category</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Painting</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Drawing</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Jewelry Making</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Sculpture</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Social</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Paper Craft</div>
-        </div>
+
         <div class="m-tag shadow-2">
             <div class="m-tag-header">Age Group</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Child</div>
@@ -210,17 +208,7 @@ export default class Locator extends React.Component {
             <div class="m-slider-circle"></div>
             <div class="m-slider-line"></div>
         </div>
-        <div class="m-slider shadow-2">
-            <div class="m-slider-label">Open Seats <span>1 Seat</span></div>
-            <div class="m-slider-circle"></div>
-            <div class="m-slider-line"></div>
-        </div>
-        <div class="m-tag shadow-2">
-            <div class="m-tag-header">Skill Level</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Novice</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Intermediate</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Master</div>
-        </div>
+
         <div class="m-editable-list mod-appointments shadow-2 mod-closed">
             <div class="m-button">Show Appointments</div>
             <div class="m-appointments-appointment">

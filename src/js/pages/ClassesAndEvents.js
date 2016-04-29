@@ -13,7 +13,7 @@ import _ from 'lodash';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ServiceTypeActions from "../actions/ServiceTypeActions"
-import PagesActions from "../actions/PagesActions"
+import  * as PagesActions from "../actions/PagesActions";
 
 export default class ClassesAndEvents extends React.Component {
 
@@ -27,7 +27,8 @@ export default class ClassesAndEvents extends React.Component {
             selected: "Select Language",
             open: true,
             isBooking: false,
-            page: null
+            page: null,
+            selectedCatagory: PagesStore.getSelectedCatagory()
         }
         this._onSelect = this._onSelect.bind(this)
     }
@@ -42,7 +43,8 @@ export default class ClassesAndEvents extends React.Component {
         PagesStore.on("change", ()=>{
 
             this.state = {
-                viewing: PagesStore.getViewing()
+                viewing: PagesStore.getViewing(),
+                selectedCatagory: PagesStore.getSelectedCatagory()
             }
             console.log("ChangingPage to: " + this.state.viewing)
             this.UpdateScreen();
@@ -146,9 +148,12 @@ export default class ClassesAndEvents extends React.Component {
 
     ChangeDisplayScreen(){
         console.log("Changing Display to classes");
-        ServiceTypeActions.ChangeDisplayed(this.state.View);
+        //ServiceTypeActions.ChangeDisplayed(this.state.View);
         PagesActions.UpdateDisplayed(this.state.View);
     }
+
+
+
 
     DrawEvents(){
         console.log("drawing events");
@@ -188,7 +193,39 @@ export default class ClassesAndEvents extends React.Component {
 
     DrawCatagories(){
 
+        var SelectedCatagory = this.state.selectedCatagory;
 
+        var catStyle = {
+            marginLeft: 350,
+            marginTop: 0,
+        };
+
+
+        var elementStyle = {
+
+        };
+
+        return (
+
+            <div style={catStyle}>
+                <Header/>
+                <div class="m-title m-tile shadow-2" >
+                    <div class="m-title-image"></div>
+                    <div class="m-title-description">
+                        <div class="m-title-header">Catagory Page</div>
+                        <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
+                            Try knitting and crochet, painting, drawing, jewelry, paper crafting,
+                            cake decorating and more.</div>
+                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Switch To Classes</div>
+                    </div>
+                </div>
+            </div>
+
+        );
+    }
+
+    SwitchToCatagories(){
+        //PagesActions.UpdateDisplayed();
     }
 
 
@@ -214,8 +251,10 @@ export default class ClassesAndEvents extends React.Component {
                 <div class="m-title-image"></div>
                 <div class="m-title-description">
                     <div class="m-title-header">MICHAEL'S CLASSES</div>
-                    <div class="m-title-text"></div>
-                    <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Switch To Classes</div>
+                    <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
+                        Try knitting and crochet, painting, drawing, jewelry, paper crafting,
+                        cake decorating and more.</div>
+                    <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={this.SwitchToCatagories()}>Switch To Classes</div>
                 </div>
             </div>
 
@@ -284,7 +323,7 @@ export default class ClassesAndEvents extends React.Component {
     <Footer/>
 
 </div>
-            <div><Locator/></div>
+            <div><Locator country={this.props.params.country}/></div>
 
         </div>);
     }
@@ -305,6 +344,9 @@ export default class ClassesAndEvents extends React.Component {
                 this.setState({page: ClassDraw});
                 break;
             case "Events":
+                this.setState({page: EventDraw});
+                break;
+            case "Catagories":
                 this.setState({page: EventDraw});
                 break;
             //case "Booking":    this.setState({page: BookingDraws});
