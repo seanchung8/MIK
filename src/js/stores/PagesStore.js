@@ -12,7 +12,7 @@ class PagesStore extends EventEmitter{
         super(props)
         this.viewing = "Landing",
         this.selectedCatagory = ""
-        this.country = "";
+
 
 
     }
@@ -48,9 +48,6 @@ class PagesStore extends EventEmitter{
                 break;
             case "SELECT_CATAGORY":
                 this.selectedCatagory = action.text;
-                break;
-            case "SET_COUNTRY":
-                this.country = action.text;
                 break;
         }
 

@@ -22,10 +22,3 @@ export function SelectCatagory(catagory){
     });
 }
 
-//Action to set the country being used across the site
-export function SetCountry(country) {
-    dispatcher.dispatch({
-        type: "SET_COUNTRY",
-        text: country
-    });
-}

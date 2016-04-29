@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from 'react-dropdown'
 import Locator from '../components/Locator'
-
+const options = ['English', 'French']
 import ServiceType from '../components/ServiceType'
 import Catagory from '../components/Catagory'
 import Service from '../components/Service'
