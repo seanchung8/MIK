@@ -99,12 +99,10 @@ export default class Catagory extends React.Component {
 
       var classNames = require('classnames');
       var btnClass = classNames(
-          {
-              'm-service': landing,
-              'm-service2': notLanding,
-              'mod-details': this.state.showDiscription,
-              'm-tile anim-tile-in': true
-          });
+          'm-service m-tile anim-tile-in',
+      {
+          'mod-details': this.state.showDiscription
+      });
 
     return (
 

@@ -100,9 +100,9 @@ a {
 
 .m-title {
   display : block;
-
+  width: calc(100% - 10px *2);
   height : 300px;
-  padding-left : 400px;
+  margin-left : 10px;
 }
 
 .appointment-image,
@@ -127,14 +127,13 @@ a {
 
 .m-title-description {
   font-size : 14px;
-
   padding : 12px 20px 20px;
 }
 
 .m-title-text {
   font-size : 14px;
   line-height : 16px;
-
+  margin-left: 400px;
   margin-top : 10px;
 
   white-space : pre-wrap;
@@ -248,7 +247,7 @@ a {
   overflow : hidden;
   margin: 10px;
 
-  width : 446px;
+  width : calc(100%/3 - 10px * 2);
   height : 300px;
 
   transition : 0.25s ease all 0.25s, 0.25s ease width, 0.25s ease height;
