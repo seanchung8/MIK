@@ -173,11 +173,11 @@ export default class ClassesAndEvents extends React.Component {
 
             <div style={catStyle}>
                 <Header/>
-                <div class="m-title m-tile shadow-2" >
+                <div class="m-title m-tile" >
                     <div class="m-title-image"></div>
                     <div class="m-title-description">
                         <div class="m-title-header">MICHAEL'S EVENTS</div>
-                        <div class="m-title-text">Choose from lots of fun, kid-friendly party themes, or design your own custom celebration.</div>
+                        <div class="m-title-text">Choose from LOTS of fun, kid-friendly party themes, or design your own custom celebration.</div>
                         <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" >Switch To Classes</div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@ export default class ClassesAndEvents extends React.Component {
 
             <div style={catStyle}>
                 <Header/>
-                <div class="m-title m-tile shadow-2" >
+                <div class="m-title m-tile" >
                     <div class="m-title-image"></div>
                     <div class="m-title-description">
                         <div class="m-title-header">Catagory Page</div>
@@ -247,7 +247,7 @@ export default class ClassesAndEvents extends React.Component {
 
 <div style={catStyle}>
     <Header/>
-            <div class="m-title m-tile shadow-2" >
+            <div class="m-title m-tile" >
                 <div class="m-title-image"></div>
                 <div class="m-title-description">
                     <div class="m-title-header">MICHAEL'S CLASSES</div>
