@@ -22,9 +22,43 @@ class ServiceTypeStore extends EventEmitter{
         return this.serviceType;
     }
 
+    getLocation(){
+
+    }
+
+    getServices(){
+
+    }
+
+    getEvents(){
+
+    }
+
+    MakeLocationCall(address,Country){
+
+    }
+
+    MakeServiceCall(serviceName,location=null){
+
+    }
+
+    MakeEventCall(event,location){
+
+    }
+
 
     handleActions(action){
         console.log("ServiceTypeStore received an action",action);
+
+        switch(action.type){
+
+            case 'GET_LOCATIONS':
+            break;
+            case 'GET_SERVICES':
+            break;
+            case 'GET_EVENTS'
+
+        }
 
     }
 

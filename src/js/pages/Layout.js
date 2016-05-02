@@ -23,10 +23,10 @@ export default class Layout extends React.Component {
           
           
 
-        /*  <ButtonToolbar>
-            <Link to="classesandevents/US"><Button className="btn btn-lg btn-success">Go to Michaels USA</Button></Link>
-            <Link to="classesandevents/CA"><Button>Go to Michaels Canada</Button></Link>
-          </ButtonToolbar>*/
+       
+            <Link to="classesandevents/US"><button className="btn btn-lg btn-success">Go to Michaels USA</button></Link>
+            <Link to="classesandevents/CA"><button>Go to Michaels Canada</button></Link>
+          
 
       </div>
     );

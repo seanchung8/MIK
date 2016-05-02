@@ -4,7 +4,23 @@
 import dispatcher from "../dispatcher";
 
 
-export function UpdateDisplayed(view) {
+export function fetchLocations(view) {
+    dispatcher.dispatch({
+        type: "CHANGE_DISPLAY",
+        text: view
+
+    })
+}
+
+export function fetchServices(view) {
+    dispatcher.dispatch({
+        type: "CHANGE_DISPLAY",
+        text: view
+
+    })
+}
+
+export function fetchEvents(view) {
     dispatcher.dispatch({
         type: "CHANGE_DISPLAY",
         text: view
