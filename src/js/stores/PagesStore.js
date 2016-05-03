@@ -49,6 +49,9 @@ class PagesStore extends EventEmitter{
                 break;
             case "SELECT_CATAGORY":
                 this.selectedCatagory = action.text;
+                // testing
+                console.log("Sending change to page for SELECT_CATAGORY " + action.text);
+                this.emit("change");
                 break;
         }
 

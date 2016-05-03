@@ -339,7 +339,8 @@ export default class ClassesAndEvents extends React.Component {
     }
 
     UpdateScreen(){
-
+        console.log("*** in UpdateScreen ***");
+        
         var Landing = this.DrawLanding();
         var ClassDraw = this.DrawClasses();
         var EventDraw = this.DrawEvents();
@@ -426,7 +427,7 @@ return(
       const {params} = this.props;
 
 
-      console.log(this.state)
+      console.log(">>>In ClassesAndEvent.render(). state:" + this.state);
 
       const defaultOption = this.state.selected
       const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected
