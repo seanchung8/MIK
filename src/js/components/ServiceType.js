@@ -71,6 +71,7 @@ export default class ServiceType extends React.Component {
         if(this.props.View != null || this.props.Vview != " "){
             this.setState({View: this.props.View});
         }
+        console.log("*** in ServiceTypeInit() ***");
         console.log(this.props);
     }
 

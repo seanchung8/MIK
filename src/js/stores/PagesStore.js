@@ -20,6 +20,7 @@ class PagesStore extends EventEmitter{
 
 
     changePage(text){
+        console.log("*** in PagesStore(" + text + ")");
         this.viewing = text;
         console.log("Sending change to page " + text);
         this.emit("change");

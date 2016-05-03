@@ -40,20 +40,24 @@ export default class ClassesAndEvents extends React.Component {
 
 
     componentWillMount(){
+        console.log("***in componentWillMount ***");
         PagesStore.on("change", ()=>{
 
             this.state = {
                 viewing: PagesStore.getViewing(),
                 selectedCatagory: PagesStore.getSelectedCatagory()
             }
-            console.log("ChangingPage to: " + this.state.viewing)
+            console.log("***ChangingPage to: " + this.state.viewing)
+            console.log("***this.state.selectedCatagory:" + this.state.selectedCatagory);
             this.UpdateScreen();
         })
+
+        // call twice ???
         this.UpdateScreen();
     }
 
     DrawLanding(){
-
+        console.log("*** in DrawLanding ***");
         return(
             <div>
                 <Header/>
@@ -148,6 +152,7 @@ export default class ClassesAndEvents extends React.Component {
 
     ChangeDisplayScreen(){
         console.log("Changing Display to classes");
+        console.log("*** props:" + this.props.Title);
         //ServiceTypeActions.ChangeDisplayed(this.state.View);
         PagesActions.UpdateDisplayed(this.state.View);
     }
@@ -193,6 +198,9 @@ export default class ClassesAndEvents extends React.Component {
 
     DrawCatagories(){
 
+        console.log("*** in DrawCatagories.***");
+        
+        //console.log("*** in DrawCatagories. SelectedCategory: " + this.state.selectedCatagory);
         var SelectedCatagory = this.state.selectedCatagory;
 
         var catStyle = {
@@ -225,6 +233,8 @@ export default class ClassesAndEvents extends React.Component {
     }
 
     SwitchToCatagories(){
+        // ???
+        console.log("*** in SwitchToCatagories. Do nothing ***");
         //PagesActions.UpdateDisplayed();
     }
 
@@ -335,7 +345,9 @@ export default class ClassesAndEvents extends React.Component {
         var EventDraw = this.DrawEvents();
         //var BookingDraw= this.DrawBooking();
 
-        console.log("Updating screen")
+        console.log("Updating screen. state.viewing:" + this.state.viewing);
+        //console.log("Headline:" + this.state.Headline);
+
         switch (this.state.viewing) {
             case "Landing":
                 this.setState({page: Landing});
