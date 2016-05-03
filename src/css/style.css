@@ -116,10 +116,21 @@ a {
   width : 400px;
   height : 100%;
 
-  background-image : url(../assets/SeviceTypes/instoreclass.jpg);
+  background-image : url(../assets/SeviceTypes/instoreclass.jpg); 
   background-size : cover;
 }
 
+.m-title-image-event {
+  position : absolute;
+  top : 0;
+  left : 0;
+
+  width : 400px;
+  height : 100%;
+
+  background-image : url(../assets/SeviceTypes/partyevent.jpg); 
+  background-size : cover;
+}
 .m-title-header {
   font-size : 30px;
   font-weight : bold;
@@ -157,7 +168,7 @@ a {
   margin: 10px;
   transform : translateZ(0);
 
-  /*background-image : url(../assets/instoreclass.jpg);*/
+  background-image : url(../assets/instoreclass.jpg);
   background-size : cover;
 }
 
@@ -257,6 +268,8 @@ a {
 
   /*background-image : url(../assets/instoreclass.jpg);*/
   background-size : cover;
+  /* attempt to stop shrinking width */
+  min-width: 242px;
 }
 
 .m-service.mod-times {

@@ -13,7 +13,8 @@ import _ from 'lodash';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ServiceTypeActions from "../actions/ServiceTypeActions"
-import  * as PagesActions from "../actions/PagesActions";
+import  * as PagesActions from "../actions/PagesActions"
+import Banner from "../components/Banner"
 
 export default class ClassesAndEvents extends React.Component {
 
@@ -40,19 +41,16 @@ export default class ClassesAndEvents extends React.Component {
 
 
     componentWillMount(){
-        console.log("***in componentWillMount ***");
         PagesStore.on("change", ()=>{
 
             this.state = {
                 viewing: PagesStore.getViewing(),
                 selectedCatagory: PagesStore.getSelectedCatagory()
             }
-            console.log("***ChangingPage to: " + this.state.viewing)
+            console.log("***ChangingPage to: " + this.state.viewing);
             console.log("***this.state.selectedCatagory:" + this.state.selectedCatagory);
             this.UpdateScreen();
         })
-
-        // call twice ???
         this.UpdateScreen();
     }
 
@@ -161,13 +159,14 @@ export default class ClassesAndEvents extends React.Component {
 
 
     DrawEvents(){
-        console.log("drawing events");
+        console.log("*** drawing events");
 
         var catStyle = {
             marginLeft: 350,
             marginTop: 0,
         };
 
+        console.log("This is the events page");
 
         var elementStyle = {
 
@@ -175,62 +174,63 @@ export default class ClassesAndEvents extends React.Component {
 
         return (<div>
 
+<div style={catStyle}>
 
-            <div style={catStyle}>
-                <Header/>
-                <div class="m-title m-tile" >
-                    <div class="m-title-image"></div>
-                    <div class="m-title-description">
-                        <div class="m-title-header">MICHAEL'S EVENTS</div>
-                        <div class="m-title-text">Choose from lots of fun, kid-friendly party themes, or design your own custom celebration.</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" >Switch To Classes</div>
-                    </div>
-                </div>
+    <Header/>
+        <Banner 
+            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
+            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
+            Title={"IN-STORE EVENTS"}
+            View={"Events"}
+            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+            NavElenment={"Classes"}            />
 
+        <Footer/>
 
-                <Footer/>
-
-            </div>
-            <div><Locator/></div>
+        </div>
+        <div><Locator/></div>
 
         </div>);
     }
 
     DrawCatagories(){
 
-        console.log("*** in DrawCatagories.***");
-        
-        //console.log("*** in DrawCatagories. SelectedCategory: " + this.state.selectedCatagory);
-        var SelectedCatagory = this.state.selectedCatagory;
 
-        var catStyle = {
+        console.log("*** in DrawCategories ***");
+
+        var varStyle = {
             marginLeft: 350,
             marginTop: 0,
         };
 
+        console.log("This is the categories page");
 
         var elementStyle = {
 
         };
 
-        return (
+        return (<div>
 
-            <div style={catStyle}>
-                <Header/>
-                <div class="m-title m-tile" >
-                    <div class="m-title-image"></div>
-                    <div class="m-title-description">
-                        <div class="m-title-header">Catagory Page</div>
-                        <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
-                            Try knitting and crochet, painting, drawing, jewelry, paper crafting,
-                            cake decorating and more.</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Switch To Classes</div>
-                    </div>
-                </div>
-            </div>
+            <div style={varStyle}>
 
-        );
+            <Header/>
+            <Banner 
+            Headline={"This is the headline"}
+            Description={"This is the Catagory discription"}
+            Title={"This is the catagory"}
+            View={"Catagory"}
+            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+            NavElenment={"Classes"}            />
+
+        <Footer/>
+
+        </div>
+        <div><Locator/></div>
+
+        </div>);
     }
+
+
 
     SwitchToCatagories(){
         // ???
@@ -255,18 +255,18 @@ export default class ClassesAndEvents extends React.Component {
         return (<div>
 
 
-<div style={catStyle}>
-    <Header/>
-            <div class="m-title m-tile" >
-                <div class="m-title-image"></div>
-                <div class="m-title-description">
-                    <div class="m-title-header">MICHAEL'S CLASSES</div>
-                    <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
-                        Try knitting and crochet, painting, drawing, jewelry, paper crafting,
-                        cake decorating and more.</div>
-                    <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={this.SwitchToCatagories()}>Switch To Classes</div>
-                </div>
-            </div>
+        <div style={catStyle}>
+            <Header/>
+
+                <Banner 
+                    Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
+                    Description={"With our exciting array of classes, there's always something new to learn and do! " +
+                        "Try knitting and crochet, painting, drawing, jewelry, paper crafting, " +
+                        "cake decorating and more."}
+                    Title={"IN-STORE CLASSES"}
+                    Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
+                    View={"Classes"}            
+                    NavElenment={"Classes"} />
 
             <div>
                 <Catagory
@@ -338,18 +338,129 @@ export default class ClassesAndEvents extends React.Component {
         </div>);
     }
 
+    DrawCategoryClasses(){
+        console.log("*** in DrawCategoryClasses ***");
+        var catTitle = this.state.selectedCatagory;
+        // just get the first word
+        // in the category to make up
+        // class names
+        var stmp = catTitle.split(" ");
+        var tmpTitle =stmp[0];
+        console.log("tmpTitle:" + tmpTitle);
+
+        var catStyle = {
+            marginLeft: 350,
+            marginTop: 0,
+        };
+
+
+        return(
+            <div style={catStyle}>
+        
+            <div>
+                <Header/>
+
+                <Banner 
+                    Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
+                    Description={"With our exciting array of classes, there's always something new to learn and do! " +
+                        "Try knitting and crochet, painting, drawing, jewelry, paper crafting, " +
+                        "cake decorating and more."}
+                    Title={"IN-STORE CLASSES"}
+                    Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
+                    View={"Classes"}            
+                    NavElenment={"Classes"} />
+
+                <div>
+                    <Catagory
+                        Headline={"Class 1"}
+                        Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
+                         "Choose from our Courses that build skills in four in-depth sessions, or try the Michaels " +
+                          "EXCLUSIVE technique classes that focus on specific cake decorating techniques in a single session."}
+                        Title={tmpTitle + " 1" }
+                        Pic={"url(../assets/Catagories/box_wilton.jpg)"}/>
+                    <Catagory
+                        Headline={"Class 2"}
+                        Description={"Learn basic acrylic painting techniques and create your own art piece featuring landscapes, " +
+                         "florals, seascapes, still-life paintings and portraits. " +
+                          "No painting experience required!"}
+                        Title={tmpTitle + " 2"}
+                        Pic={"url(../assets/Catagories/ArtPaintingAndDrawing.jpg)"}/>
+                    <Catagory
+                        Headline={"Class 3"}
+                        Description={"Complete a unique jewelry piece with the guidance of our qualified instructors. " +
+                         "You'll learn the latest trends, tricks and techniques for using the right tools, " +
+                          "beads and findings that will bring your inspiration to life."}
+                        Title={tmpTitle + " 3"}
+                        Pic={"url(../assets/Catagories/jewelry.jpg)"}/>
+                </div>
+
+                <div>
+                    <Catagory
+                        Headline={"Class 4"}
+                        Description={"Join the movement to take memories off your pages and into your life. " +
+                         "Sharpen your paper crafting skills, play with ink or test your favorite tools. " +
+                          "No matter what you love to paper-craft, you’ll find your class in our paper crafting classes. "}
+                        Title={tmpTitle + " 4"}
+                        Pic={"url(../assets/Catagories/paperCrafting.jpg)"}/>
+                    <Catagory
+                        Headline={"Class 5"}
+                        Description={"Whether you want to learn how to knit or crochet or already know the basics, " +
+                         "Craft Yarn Council's Discover Knit and Crochet class series offers something for everyone. " +
+                          "Learn new skills by completing a fun and fashionable project with the guidance of our certified instructors."}
+                        Title={tmpTitle + " 5"}
+                        Pic={"url(../assets/Catagories/knitAndCrochet.jpg)"}/>
+                    <Catagory
+                        Headline={"Class 6"}
+                        Description={"Discover the educational and developmental benefits of crafting in our Kids' Classes. \n" +
+                         "\nWith Kids' Club® let your kids explore their creativity while you shop! Just $2 per child ages 3 and up. All supplies included."}
+                        Title={tmpTitle + " 6"}
+                        Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}/>
+                </div>
+
+                <div>
+                    <Catagory
+                        Headline={"Class 7"}
+                        Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
+                         "Enroll now!"}
+                        Title={tmpTitle + " 7"}
+                        Pic={"url(../assets/Catagories/TrendClasses.jpg)"}/>
+                    <Catagory
+                        Headline={"Class 8"}
+                        Description={"Birthday Parties at Michaels are now bigger and better. Choose from lots of fun, kid friendly party themes, " +
+                         "or design your own custom celebration. See your local store associate to learn more and book your party."}
+                        Title={tmpTitle + " 8"}
+                        Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
+                </div>
+                <Footer/>
+            </div>
+            <div><Locator country={this.props.params.country}/></div>
+
+        </div>
+        );
+
+
+    }
+
     UpdateScreen(){
+
         console.log("*** in UpdateScreen ***");
 
         var Landing = this.DrawLanding();
         var ClassDraw = this.DrawClasses();
         var EventDraw = this.DrawEvents();
+        var CatagoryDraw = this.DrawCatagories();
+        var CategoryClassesDraw = this.DrawCategoryClasses();
+
         //var BookingDraw= this.DrawBooking();
 
         console.log("Updating screen. state.viewing:" + this.state.viewing);
-        //console.log("Headline:" + this.state.Headline);
-
-        if (this.state.selectedCatagory !)
+        
+        if (this.state.selectedCatagory !== "") {
+            //alert("Selected category:" + this.state.selectedCatagory);
+            this.setState({page: CategoryClassesDraw});
+            return;
+        }
+        
         switch (this.state.viewing) {
             case "Landing":
                 this.setState({page: Landing});
@@ -361,7 +472,7 @@ export default class ClassesAndEvents extends React.Component {
                 this.setState({page: EventDraw});
                 break;
             case "Catagories":
-                this.setState({page: EventDraw});
+                this.setState({page: CatagoryDraw});
                 break;
             //case "Booking":    this.setState({page: BookingDraws});
             //break;
@@ -428,6 +539,7 @@ return(
       const {params} = this.props;
 
 
+      //console.log(this.state)
       console.log(">>>In ClassesAndEvent.render(). state:" + this.state);
 
       const defaultOption = this.state.selected
