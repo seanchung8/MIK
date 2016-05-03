@@ -102,8 +102,8 @@ export default class Locator extends React.Component {
         });
     }
 //Slider code for range Moved so it could be commented.
-// <div class="m-slider-circle"></div>
-// <div class="m-slider-line"></div>
+// <div class=></div>
+// <div class=""></div>
 
 
     render(){
@@ -174,7 +174,10 @@ export default class Locator extends React.Component {
         </div>
         <div class="m-slider shadow-2">
             <div class="m-slider-label">Max Travel Distance </div>
-            <div>10 Miles</div>
+            <div>10 Miles
+                <input className="m-slider-line m-slider-circle" type="range" max={this.state.max} min={this.state.min} defaultValue="25"/>
+            </div>
+
 
             <input ref="query2" onChange={ (e) => { this.updateSearch(); } } type="text" />
         </div>

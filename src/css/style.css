@@ -257,23 +257,6 @@ a {
   background-size : cover;
 }
 
-
-.m-service2 {
-  display : inline-block;
-  overflow : hidden;
-  margin: 10px;
-
-  width : 330px;
-  height : 300px;
-
-  transition : 0.25s ease all 0.25s, 0.25s ease width, 0.25s ease height;
-  transform : translateZ(0);
-
-  /*background-image : url(../assets/instoreclass.jpg);*/
-  background-size : cover;
-}
-
-
 .m-service.mod-times {
   display : block;
 
@@ -348,7 +331,6 @@ a {
 .m-service-description {
   font-size : 24px;
   line-height : 43px;
-
   position : absolute;
   bottom : 0;
   left : 0;
@@ -378,7 +360,7 @@ a {
   left : 0;
 
   display : block;
-  overflow : hidden;
+  overflow : pre-wrap;
 
   width : calc(100% - 40px);
   height : 145px;
