@@ -13,7 +13,8 @@ import _ from 'lodash';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ServiceTypeActions from "../actions/ServiceTypeActions"
-import  * as PagesActions from "../actions/PagesActions";
+import  * as PagesActions from "../actions/PagesActions"
+import Banner from "../components/Banner"
 
 export default class ClassesAndEvents extends React.Component {
 
@@ -163,6 +164,7 @@ export default class ClassesAndEvents extends React.Component {
             marginTop: 0,
         };
 
+console.log("This is the events page");
 
         var elementStyle = {
 
@@ -170,59 +172,64 @@ export default class ClassesAndEvents extends React.Component {
 
         return (<div>
 
+<div style={catStyle}>
 
-            <div style={catStyle}>
-                <Header/>
-                <div class="m-title m-tile shadow-2" >
-                    <div class="m-title-image"></div>
-                    <div class="m-title-description">
-                        <div class="m-title-header">MICHAEL'S EVENTS</div>
-                        <div class="m-title-text">Choose from lots of fun, kid-friendly party themes, or design your own custom celebration.</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" >Switch To Classes</div>
-                    </div>
-                </div>
+    <Header/>
+        <Banner 
+            Headline={"test"}
+            Description={"test"}
+            Title={"test"}
+            View={"test"}
+            Pic={"test"}
+            NavElenment={"test"}            
+        />
 
+        <Footer/>
 
-                <Footer/>
-
-            </div>
-            <div><Locator/></div>
+        </div>
+        <div><Locator/></div>
 
         </div>);
     }
 
     DrawCatagories(){
 
-        var SelectedCatagory = this.state.selectedCatagory;
 
-        var catStyle = {
+        console.log("drawing Catagories");
+
+        var varStyle = {
             marginLeft: 350,
             marginTop: 0,
         };
 
+console.log("This is the events page");
 
         var elementStyle = {
 
         };
 
-        return (
+        return (<div>
 
-            <div style={catStyle}>
-                <Header/>
-                <div class="m-title m-tile shadow-2" >
-                    <div class="m-title-image"></div>
-                    <div class="m-title-description">
-                        <div class="m-title-header">Catagory Page</div>
-                        <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
-                            Try knitting and crochet, painting, drawing, jewelry, paper crafting,
-                            cake decorating and more.</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Switch To Classes</div>
-                    </div>
-                </div>
-            </div>
+            <div style={varStyle}>
 
-        );
+            <Header/>
+            <Banner 
+            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
+            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
+            Title={"IN-STORE EVENTS"}
+            View={"Events"}
+            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+            NavElenment={"Classes"}            />
+
+        <Footer/>
+
+        </div>
+        <div><Locator/></div>
+
+        </div>);
     }
+
+
 
     SwitchToCatagories(){
         //PagesActions.UpdateDisplayed();
@@ -247,16 +254,14 @@ export default class ClassesAndEvents extends React.Component {
 
 <div style={catStyle}>
     <Header/>
-            <div class="m-title m-tile shadow-2" >
-                <div class="m-title-image"></div>
-                <div class="m-title-description">
-                    <div class="m-title-header">MICHAEL'S CLASSES</div>
-                    <div class="m-title-text">With our exciting array of classes, there's always something new to learn and do!
-                        Try knitting and crochet, painting, drawing, jewelry, paper crafting,
-                        cake decorating and more.</div>
-                    <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={this.SwitchToCatagories()}>Switch To Classes</div>
-                </div>
-            </div>
+
+            <Banner 
+            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
+            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
+            Title={"IN-STORE EVENTS"}
+            View={"Events"}
+            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+            NavElenment={"Classes"}            />
 
             <div>
                 <Catagory
