@@ -340,7 +340,7 @@ export default class ClassesAndEvents extends React.Component {
 
     UpdateScreen(){
         console.log("*** in UpdateScreen ***");
-        
+
         var Landing = this.DrawLanding();
         var ClassDraw = this.DrawClasses();
         var EventDraw = this.DrawEvents();
@@ -349,6 +349,7 @@ export default class ClassesAndEvents extends React.Component {
         console.log("Updating screen. state.viewing:" + this.state.viewing);
         //console.log("Headline:" + this.state.Headline);
 
+        if (this.state.selectedCatagory !)
         switch (this.state.viewing) {
             case "Landing":
                 this.setState({page: Landing});
