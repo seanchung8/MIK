@@ -176,13 +176,12 @@ console.log("This is the events page");
 
     <Header/>
         <Banner 
-            Headline={"test"}
-            Description={"test"}
-            Title={"test"}
-            View={"test"}
-            Pic={"test"}
-            NavElenment={"test"}            
-        />
+            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
+            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
+            Title={"IN-STORE EVENTS"}
+            View={"Events"}
+            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+            NavElenment={"Classes"}            />
 
         <Footer/>
 
@@ -214,10 +213,10 @@ console.log("This is the events page");
 
             <Header/>
             <Banner 
-            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
-            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
-            Title={"IN-STORE EVENTS"}
-            View={"Events"}
+            Headline={"This is the headline"}
+            Description={"This is the Catagory discription"}
+            Title={"This is the catagory"}
+            View={"Catagory"}
             Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
             NavElenment={"Classes"}            />
 
@@ -252,16 +251,19 @@ console.log("This is the events page");
         return (<div>
 
 
-<div style={catStyle}>
-    <Header/>
+        <div style={catStyle}>
+            <Header/>
 
-            <Banner 
-            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
-            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
-            Title={"IN-STORE EVENTS"}
-            View={"Events"}
-            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
-            NavElenment={"Classes"}            />
+                <Banner 
+                    Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
+                    Description={"With our exciting array of classes, there's always something new to learn and do! " +
+                        "Try knitting and crochet, painting, drawing, jewelry, paper crafting, " +
+                        "cake decorating and more."}
+                    Title={"IN-STORE CLASSES"}
+                    Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
+                    View={"Classes"}            
+                    NavElenment={"Classes"}            
+                />
 
             <div>
                 <Catagory
@@ -338,6 +340,7 @@ console.log("This is the events page");
         var Landing = this.DrawLanding();
         var ClassDraw = this.DrawClasses();
         var EventDraw = this.DrawEvents();
+        var CatagoryDraw = this.DrawCatagories();
         //var BookingDraw= this.DrawBooking();
 
         console.log("Updating screen")
@@ -352,7 +355,7 @@ console.log("This is the events page");
                 this.setState({page: EventDraw});
                 break;
             case "Catagories":
-                this.setState({page: EventDraw});
+                this.setState({page: CatagoryDraw});
                 break;
             //case "Booking":    this.setState({page: BookingDraws});
             //break;
