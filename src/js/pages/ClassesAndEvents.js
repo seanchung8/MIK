@@ -386,24 +386,21 @@ export default class ClassesAndEvents extends React.Component {
                     NavElenment={"Classes"} />
 
                 <div class="m-service-row" >
-
-
-                    <Service/>
-                    <Catagory
+                    <Service
                         Headline={"Class 1"}
                         Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
                          "Choose from our Courses that build skills in four in-depth sessions, or try the Michaels " +
                           "EXCLUSIVE technique classes that focus on specific cake decorating techniques in a single session."}
                         Title={tmpTitle + " 1" }
                         Pic={"url(../assets/Catagories/box_wilton.jpg)"}/>
-                    <Catagory
+                    <Service
                         Headline={"Class 2"}
                         Description={"Learn basic acrylic painting techniques and create your own art piece featuring landscapes, " +
                          "florals, seascapes, still-life paintings and portraits. " +
                           "No painting experience required!"}
                         Title={tmpTitle + " 2"}
                         Pic={"url(../assets/Catagories/ArtPaintingAndDrawing.jpg)"}/>
-                    <Catagory
+                    <Service
                         Headline={"Class 3"}
                         Description={"Complete a unique jewelry piece with the guidance of our qualified instructors. " +
                          "You'll learn the latest trends, tricks and techniques for using the right tools, " +
@@ -413,21 +410,21 @@ export default class ClassesAndEvents extends React.Component {
                 </div>
 
                 <div class="m-service-row" >
-                    <Catagory
+                    <Service
                         Headline={"Class 4"}
                         Description={"Join the movement to take memories off your pages and into your life. " +
                          "Sharpen your paper crafting skills, play with ink or test your favorite tools. " +
                           "No matter what you love to paper-craft, you’ll find your class in our paper crafting classes. "}
                         Title={tmpTitle + " 4"}
                         Pic={"url(../assets/Catagories/paperCrafting.jpg)"}/>
-                    <Catagory
+                    <Service
                         Headline={"Class 5"}
                         Description={"Whether you want to learn how to knit or crochet or already know the basics, " +
                          "Craft Yarn Council's Discover Knit and Crochet class series offers something for everyone. " +
                           "Learn new skills by completing a fun and fashionable project with the guidance of our certified instructors."}
                         Title={tmpTitle + " 5"}
                         Pic={"url(../assets/Catagories/knitAndCrochet.jpg)"}/>
-                    <Catagory
+                    <Service
                         Headline={"Class 6"}
                         Description={"Discover the educational and developmental benefits of crafting in our Kids' Classes. \n" +
                          "\nWith Kids' Club® let your kids explore their creativity while you shop! Just $2 per child ages 3 and up. All supplies included."}
@@ -448,7 +445,7 @@ export default class ClassesAndEvents extends React.Component {
                          "or design your own custom celebration. See your local store associate to learn more and book your party."}
                         Title={tmpTitle + " 8"}
                         Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
-                </div>
+                </div> 
                 <Footer/>
             </div>
             <div><Locator country={this.props.params.country}/></div>
