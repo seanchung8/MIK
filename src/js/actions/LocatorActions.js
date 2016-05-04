@@ -4,8 +4,10 @@
 import dispatcher from "../dispatcher";
 
 
-export function ChangeDisplayed() {
+export function SelectLocation(location,selected) {
     dispatcher.dispatch({
-        type: "CHANGE_DISPLAY"
+        type: "SELECT_LOCATION",
+        text: location,
+        isSelected: selected
     })
 }

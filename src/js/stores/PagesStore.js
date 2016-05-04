@@ -12,14 +12,12 @@ class PagesStore extends EventEmitter{
         super(props)
         this.viewing = "Landing",
         this.selectedCatagory = ""
-
-
-
     }
 
 
 
     changePage(text){
+        console.log("*** in PagesStore.changePage(" + text + ")");
         this.viewing = text;
         console.log("Sending change to page " + text);
         this.emit("change");
@@ -41,13 +39,15 @@ class PagesStore extends EventEmitter{
     handleActions(action){
         console.log("PagesStore received an action",action);
 
-
         switch (action.type){
             case "CHANGE_DISPLAY":
                 this.changePage(action.text);
+                this.selectedCatagory="";
                 break;
             case "SELECT_CATAGORY":
                 this.selectedCatagory = action.text;
+                //console.log("Sending change to page for SELECT_CATAGORY " + action.text);
+                this.changePage('CategoryClasses');
                 break;
         }
 
@@ -57,6 +57,5 @@ class PagesStore extends EventEmitter{
 
 const pagesStore = new PagesStore();
 dispatcher.register(pagesStore.handleActions.bind(pagesStore));
-window.PagesStore = pagesStore;
-window.dispatcher = dispatcher;
+
 export default pagesStore;
