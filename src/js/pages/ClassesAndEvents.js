@@ -386,6 +386,9 @@ export default class ClassesAndEvents extends React.Component {
                     NavElenment={"Classes"} />
 
                 <div class="m-service-row" >
+
+
+                    <Service/>
                     <Catagory
                         Headline={"Class 1"}
                         Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
