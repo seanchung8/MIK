@@ -32,20 +32,20 @@ export default class Banner extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        this.bannerInit();
 
-        PagesStore.on("change", ()=>{
+        // PagesStore.on("change", ()=>{
 
-            this.state = {
-                viewing: PagesStore.getViewing()
-            }
-            console.log("ChangingPage to: " + this.state.viewing)
+        //     this.state = {
+        //         viewing: PagesStore.getViewing()
+        //     }
+        //     console.log("Banner.ChangingPage to: " + this.state.viewing)
 
-        })
+        // })
 
     }
 
-        ServiceTypeInit(){
+    bannerInit(){
 
 
 
@@ -69,7 +69,6 @@ export default class Banner extends React.Component {
             this.setState({NavElenment: this.props.NavElenment});
         //}
 
-
     }
 
 
@@ -79,18 +78,37 @@ export default class Banner extends React.Component {
     }
 
 
-  render() {
-console.log(this.state);
+    render() {
+        var tmpStr = this.state.Pic;
+        if (tmpStr === undefined) {
+            //alert('tmpStr is undefined');
+            console.log("this.state.Pic:" + this.state.Pic);
+            
+            tmpStr = "";
+        } else {
+            console.log(">>>tmpStr:" + tmpStr);
+        }
+        if (tmpStr.indexOf('event') >= 0) {
+            return (
+                <div class="m-title m-tile" >
+                            <div class="m-title-image-event"></div>
+                            <div class="m-title-description">
+                                <div class="m-title-header">{this.state.Title}</div>
+                                <div class="m-title-text"><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
+                                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.state.NavElenment}</div>
+                            </div>
+                </div> );
+        } else {
+            return (
+                <div class="m-title m-tile" >
+                        <div class="m-title-image"></div>
+                        <div class="m-title-description">
+                            <div class="m-title-header">{this.state.Title}</div>
+                            <div class="m-title-text"><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
+                            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.state.NavElenment}</div>
+                        </div>
+                </div>);
+        }
+    }
 
-    return (
-        <div class="m-title m-tile shadow-2" >
-                    <div class="m-title-image"></div>
-                    <div class="m-title-description">
-                        <div class="m-title-header">{this.state.Title}</div>
-                        <div class="m-title-text"><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.state.NavElenment}</div>
-                    </div>
-        </div>
-    );
-  }
 }
