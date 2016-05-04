@@ -57,6 +57,5 @@ class PagesStore extends EventEmitter{
 
 const pagesStore = new PagesStore();
 dispatcher.register(pagesStore.handleActions.bind(pagesStore));
-window.PagesStore = pagesStore;
-window.dispatcher = dispatcher;
+
 export default pagesStore;

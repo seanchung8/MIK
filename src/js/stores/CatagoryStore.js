@@ -32,6 +32,4 @@ class ServiceTypeStore extends EventEmitter{
 
 const serviceTypeStore = new ServiceTypeStore;
 dispatcher.register(serviceTypeStore.handleActions.bind(serviceTypeStore));
-window.ServiceTypeStore = serviceTypeStore;
-window.dispatcher = dispatcher;
 export default serviceTypeStore;

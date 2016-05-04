@@ -31,7 +31,7 @@ export default class ClassesAndEvents extends React.Component {
             page: null,
             selectedCatagory: PagesStore.getSelectedCatagory()
         }
-        this._onSelect = this._onSelect.bind(this)
+        //this._onSelect = this._onSelect.bind(this)
     }
 
     _onSelect (option) {
@@ -175,6 +175,7 @@ console.log("This is the events page");
 <div style={catStyle}>
 
     <Header/>
+    <div>
         <Banner 
             Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
             Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
@@ -182,7 +183,7 @@ console.log("This is the events page");
             View={"Events"}
             Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
             NavElenment={"Classes"}            />
-
+</div>
         <Footer/>
 
         </div>
@@ -254,6 +255,7 @@ console.log("This is the events page");
         <div style={catStyle}>
             <Header/>
 
+<div>
                 <Banner 
                     Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
                     Description={"With our exciting array of classes, there's always something new to learn and do! " +
@@ -262,9 +264,9 @@ console.log("This is the events page");
                     Title={"IN-STORE CLASSES"}
                     Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
                     View={"Classes"}            
-                    NavElenment={"Classes"}            
+                    NavElenment={"Events"}            
                 />
-
+</div>
             <div>
                 <Catagory
                     Headline={"Wilton® Cake Decorating"}
@@ -337,28 +339,22 @@ console.log("This is the events page");
 
     UpdateScreen(){
 
-        var Landing = this.DrawLanding();
-        var ClassDraw = this.DrawClasses();
-        var EventDraw = this.DrawEvents();
-        var CatagoryDraw = this.DrawCatagories();
-        //var BookingDraw= this.DrawBooking();
 
         console.log("Updating screen")
         switch (this.state.viewing) {
             case "Landing":
-                this.setState({page: Landing});
+                this.setState({page: this.DrawLanding()});
                 break;
             case "Classes":
-                this.setState({page: ClassDraw});
+                this.setState({page: this.DrawClasses()});
                 break;
             case "Events":
-                this.setState({page: EventDraw});
+                this.setState({page: this.DrawEvents()});
                 break;
             case "Catagories":
-                this.setState({page: CatagoryDraw});
+                this.setState({page: this.DrawCatagories()});
                 break;
-            //case "Booking":    this.setState({page: BookingDraws});
-            //break;
+
         }
 
 

@@ -4,6 +4,7 @@ import xml2js from 'xml2js';
 import { Panel,Grid,Col,Row,PanelGroup,ListGroup,ListGroupItem,Well,ButtonToolbar,Button} from 'react-bootstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import ReactSliderNativeBootstrap from 'react-bootstrap-native-slider';
+import LocationItem from './LocationItem';
 
 
 
@@ -117,19 +118,13 @@ export default class Locator extends React.Component {
             condition = false;
         }
 
-        var classNames = require('classnames');
 
 
 
         var Clicked =false;
 
 
-        var btnClass = classNames(
-            'm-editable-list-location',
-            {
 
-            'mod-active': this.state.showDiscription
-        });
 
 
         var locKey = 0;
@@ -140,13 +135,11 @@ export default class Locator extends React.Component {
 
 
                    // (this.state.showDiscription && locKey == this.state.locKey) ?
-                        <div key={locKey} onClick={ ()=> this.clickedLocation.bind(false,locKey)} class="'m-editable-list-location'">
-                            <div>{location.name}</div>
-                            {console.log(locKey)}
-                            <div>{location.address1}</div>
-                            <div>{location.city}, {location.state}</div>
-                            <div>{location.postalcode}</div>
-                            <div>{location.phone}</div>
+                        <div key={locKey} >
+                            <LocationItem
+                                location={location}
+
+                            />
                             <p/>
                         </div>
                     // :
