@@ -36,6 +36,7 @@ export default class ServiceType extends React.Component {
                 serviceTypeStore: ServiceTypeStore.getAll()
             })
         })
+        //todoStore.addChangeListener(this._onChange);
 
 
 

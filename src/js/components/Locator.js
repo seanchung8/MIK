@@ -174,7 +174,8 @@ export default class Locator extends React.Component {
         </div>
         <div class="m-slider shadow-2">
             <div class="m-slider-label">Max Travel Distance </div>
-            <div>10 Miles
+            <span class="m-slider-label">10 Miles</span>
+            <div>
                 <input className="m-slider-line m-slider-circle" type="range" max={this.state.max} min={this.state.min} defaultValue="25"/>
             </div>
 
@@ -233,7 +234,7 @@ export default class Locator extends React.Component {
                     New York, NY 10011</div>
             </div>
         </div>
-        <div class="m-button shadow-2 shadow-hover-3 shadow-active-4 m-button-checkout"><a href="/booking.html">Checkout</a></div>
+        <div class="m-button-checkout"><a href="/booking.html">Checkout</a></div>
     </div>
 
 

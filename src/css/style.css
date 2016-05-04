@@ -22,7 +22,7 @@ body {
   color : #5d5d5d;
 
   box-sizing: border-box;
-  min-width: 820px;
+  min-width: 860px;
 }
 
 body * {
@@ -54,6 +54,7 @@ a {
 /* MICHEALS BUTTON */
 
 .m-button {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 43px;
@@ -104,7 +105,7 @@ a {
   width: calc(100% - 10px *2);
   height : 300px;
   margin-left : 10px;
-  min-width: 820px;
+  min-width: 860px;
 }
 
 .appointment-image,
@@ -255,6 +256,10 @@ a {
 
 /* MICHEALS SERVICE */
 
+.m-service-row {
+  height : 300px;
+  min-width: 900px;
+}
 .m-service {
   display : inline-block;
   overflow : hidden;
@@ -269,7 +274,7 @@ a {
   /*background-image : url(../assets/instoreclass.jpg);*/
   background-size : cover;
   /* attempt to stop shrinking width */
-  min-width: 242px;
+  min-width: 244px;
 }
 
 .m-service.mod-times {
@@ -502,6 +507,7 @@ a {
 }
 
 .m-input-label {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 38px;
@@ -585,7 +591,8 @@ a {
 .m-slider-line {
   width : calc( 100% - 40px );
   height : 2px;
-  margin : 0 20px;
+  /* margin : 0 20px; */
+  margin : 20 0px;
 
   background-color : #5d5d5d;
 }
@@ -719,7 +726,9 @@ a {
 }
 
 .m-button-checkout {
+  font-family : Montserrat;
   font-size : 18px;
+  font-weight : lighter;
   line-height : 62px;
 
   display : block;
@@ -727,7 +736,13 @@ a {
   width : 100%;
   height : 63px;
 
+  cursor : pointer;
+  transform : translateZ(0);
+  text-transform : uppercase;
+
   text-align : center;
+  color: blue;
+  background : #e21836;
 }
 
 .m-button-checkout::after {

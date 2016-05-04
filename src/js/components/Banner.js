@@ -34,14 +34,14 @@ export default class Banner extends React.Component {
         // Called the first time the component is loaded right before the component is added to the page
         this.bannerInit();
 
-        PagesStore.on("change", ()=>{
+        // PagesStore.on("change", ()=>{
 
-            this.state = {
-                viewing: PagesStore.getViewing()
-            }
-            console.log("ChangingPage to: " + this.state.viewing)
+        //     this.state = {
+        //         viewing: PagesStore.getViewing()
+        //     }
+        //     console.log("Banner.ChangingPage to: " + this.state.viewing)
 
-        })
+        // })
 
     }
 
@@ -80,6 +80,14 @@ export default class Banner extends React.Component {
 
     render() {
         var tmpStr = this.state.Pic;
+        if (tmpStr === undefined) {
+            //alert('tmpStr is undefined');
+            console.log("this.state.Pic:" + this.state.Pic);
+            
+            tmpStr = "";
+        } else {
+            console.log(">>>tmpStr:" + tmpStr);
+        }
         if (tmpStr.indexOf('event') >= 0) {
             return (
                 <div class="m-title m-tile" >

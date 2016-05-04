@@ -49,9 +49,16 @@ export default class ClassesAndEvents extends React.Component {
             }
             console.log("***ChangingPage to: " + this.state.viewing);
             console.log("***this.state.selectedCatagory:" + this.state.selectedCatagory);
+            if (this.state.selectedCatagory.length > 0) {
+                this.state.viewing = 'CategoryClasses';
+            }
             this.UpdateScreen();
         })
         this.UpdateScreen();
+    }
+
+    componentWillUnmount() {
+        console.log("=== in ClassesAndEvents.componentWillUnmount() ===");    
     }
 
     DrawLanding(){
@@ -232,15 +239,15 @@ export default class ClassesAndEvents extends React.Component {
 
 
 
-    SwitchToCatagories(){
-        // ???
-        console.log("*** in SwitchToCatagories. Do nothing ***");
-        //PagesActions.UpdateDisplayed();
-    }
+    // SwitchToCatagories(){
+    //     // ???
+    //     console.log("*** in SwitchToCatagories. Do nothing ***");
+    //     //PagesActions.UpdateDisplayed();
+    // }
 
 
     DrawClasses(){
-        console.log("drawing classes");
+        console.log("*** in DrawClasses()");
 
         var catStyle = {
             marginLeft: 350,
@@ -339,11 +346,15 @@ export default class ClassesAndEvents extends React.Component {
     }
 
     DrawCategoryClasses(){
-        console.log("*** in DrawCategoryClasses ***");
+        console.log("*** in DrawCategoryClasses() ***");
         var catTitle = this.state.selectedCatagory;
         // just get the first word
         // in the category to make up
         // class names
+        if (catTitle === null) {
+            alert('Service category is not selected');
+            return;
+        }
         var stmp = catTitle.split(" ");
         var tmpTitle =stmp[0];
         console.log("tmpTitle:" + tmpTitle);
@@ -370,7 +381,7 @@ export default class ClassesAndEvents extends React.Component {
                     View={"Classes"}            
                     NavElenment={"Classes"} />
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Class 1"}
                         Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
@@ -394,7 +405,7 @@ export default class ClassesAndEvents extends React.Component {
                         Pic={"url(../assets/Catagories/jewelry.jpg)"}/>
                 </div>
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Class 4"}
                         Description={"Join the movement to take memories off your pages and into your life. " +
@@ -417,7 +428,7 @@ export default class ClassesAndEvents extends React.Component {
                         Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}/>
                 </div>
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Class 7"}
                         Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
@@ -443,37 +454,36 @@ export default class ClassesAndEvents extends React.Component {
 
     UpdateScreen(){
 
-        console.log("*** in UpdateScreen ***");
+        console.log("*** in UpdateScreen - this.state.viewing: " + this.state.viewing);
 
-        var Landing = this.DrawLanding();
-        var ClassDraw = this.DrawClasses();
-        var EventDraw = this.DrawEvents();
-        var CatagoryDraw = this.DrawCatagories();
-        var CategoryClassesDraw = this.DrawCategoryClasses();
+        //var Landing = this.DrawLanding();
+        //var ClassDraw = this.DrawClasses();
+        //var EventDraw = this.DrawEvents();
+        //var CatagoryDraw = this.DrawCatagories();
+        //var CategoryClassesDraw = this.DrawCategoryClasses();
 
         //var BookingDraw= this.DrawBooking();
 
-        console.log("Updating screen. state.viewing:" + this.state.viewing);
-        
-        if (this.state.selectedCatagory !== "") {
-            //alert("Selected category:" + this.state.selectedCatagory);
-            this.setState({page: CategoryClassesDraw});
-            return;
-        }
+        //console.log("Updating screen. state.viewing:" + this.state.viewing);
         
         switch (this.state.viewing) {
             case "Landing":
-                this.setState({page: Landing});
+                this.setState({page: this.DrawLanding()});
                 break;
             case "Classes":
-                this.setState({page: ClassDraw});
+                this.setState({page: this.DrawClasses()});
                 break;
             case "Events":
-                this.setState({page: EventDraw});
+                this.setState({page: this.DrawEvents()});
                 break;
             case "Catagories":
-                this.setState({page: CatagoryDraw});
+                this.setState({page: this.CatagoryDraw()});
                 break;
+            case "CategoryClasses":
+                this.setState({page: this.DrawCategoryClasses()});
+                break;
+            default:
+                alert("viewing: " + this.state.viewing + " is not handled");
             //case "Booking":    this.setState({page: BookingDraws});
             //break;
         }

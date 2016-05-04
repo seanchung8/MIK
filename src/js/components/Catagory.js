@@ -1,6 +1,6 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
-import CatagoryStore from '../stores/CatagoryStore';
+//import CatagoryStore from '../stores/CatagoryStore';
 import  * as PagesActions from "../actions/PagesActions";
 
 
@@ -46,6 +46,10 @@ export default class Catagory extends React.Component {
 
         })
 
+    }
+
+    componentWillUnmount() {
+        console.log("=== in Category.componentWillUnmount() ===");    
     }
 
     //ServiceTypeInit(){
