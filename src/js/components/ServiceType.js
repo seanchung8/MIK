@@ -36,6 +36,7 @@ export default class ServiceType extends React.Component {
                 serviceTypeStore: ServiceTypeStore.getAll()
             })
         })
+        //todoStore.addChangeListener(this._onChange);
 
 
 
@@ -43,7 +44,7 @@ export default class ServiceType extends React.Component {
 
 
     ChangeDisplayScreen(){
-        console.log("Changing Display to classes");
+        console.log("in ServiceType Changing Display to classes");
         //ServiceTypeActions.ChangeDisplayed(this.state.View);
         PagesActions.UpdateDisplayed(this.state.View);
     }
@@ -71,6 +72,7 @@ export default class ServiceType extends React.Component {
         if(this.props.View != null || this.props.Vview != " "){
             this.setState({View: this.props.View});
         }
+        console.log("*** in ServiceType.ServiceTypeInit() ***");
         console.log(this.props);
     }
 

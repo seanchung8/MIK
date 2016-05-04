@@ -48,7 +48,7 @@ class ServiceTypeStore extends EventEmitter{
 
 
     handleActions(action){
-        console.log("ServiceTypeStore received an action",action);
+        console.log("*** In APIStore::handleActions received an action",action);
 
         switch(action.type){
 

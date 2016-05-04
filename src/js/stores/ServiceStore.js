@@ -26,7 +26,7 @@ class ServiceStore extends EventEmitter{
 
 
     handleActions(action){
-        console.log("ServiceTypeStore received an action",action);
+        console.log("ServiceStore received an action",action);
 
     }
 
