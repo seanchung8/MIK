@@ -35,7 +35,12 @@ export default class Service extends React.Component {
         // Called the first time the component is loaded right before the component is added to the page
         this.ServiceTypeInit();
         var locs = LocatorStore.getAll();
-        console.log("Selected locations:" + locs);
+        console.log(">>>Selected locations:" + locs);
+
+        for(var i =0;i < locs.length; i++){
+            console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
+        
+        }
     }
 
     ServiceTypeInit(){

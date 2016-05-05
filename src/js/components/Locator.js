@@ -61,7 +61,8 @@ export default class Locator extends React.Component {
     updateSearch(){
         //console.log("update search got hit and this.refs.query val = " + this.refs.query.valueOf());
 
-
+        // slider not working yet. 
+        // hard coded the max distance
 
           var address = "http://api.slippymap.com/rest?&xml_request=" + encodeURIComponent("<request> " +
                     "<appkey>7D3183D8-683E-11E3-A044-AF8B407E493E</appkey> " +
@@ -72,7 +73,8 @@ export default class Locator extends React.Component {
                     "<country>" + this.props.country + "</country> " +
                     "</geoloc> " +
                     "</geolocs> " +
-                    "<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "25") +"</searchradius> " +
+                    //"<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "25") +"</searchradius> " +
+                    "<searchradius>" + "25" + "</searchradius> " +
                     "</formdata> " +
                     "</request>"
                 );
