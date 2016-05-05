@@ -28,7 +28,7 @@ export default class Service extends React.Component {
     //     this.serviceInit();
     // }
 
-<<<<<<< HEAD
+
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.ServiceTypeInit();
