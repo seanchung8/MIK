@@ -34,7 +34,7 @@ export default class Banner extends React.Component {
         // Called the first time the component is loaded right before the component is added to the page
         this.bannerInit();
 
-        PagesStore.on("change", ()=>{
+        // PagesStore.on("change", ()=>{
 
             // this.state = {
             // viewing: PagesStore.getAll(),
@@ -44,15 +44,15 @@ export default class Banner extends React.Component {
             // Pic: this.props.Pic,
             // NavElenment: this.props.NavElenment
             // }
-            console.log("Banner.ChangingPage to: " + this.state.viewing)
-            this.bannerInit();
-        })
+            // console.log("Banner.ChangingPage to: " + this.state.viewing)
+
+            // this will cause a warning about setting the state
+            //this.bannerInit();
+        // })
 
     }
 
     bannerInit(){
-
-
 
         //if(this.props.Description != null || this.props.Description != " ") {
             this.setState({Description: this.props.Description});
@@ -79,53 +79,25 @@ export default class Banner extends React.Component {
 
     setPage(){
       PagesActions.UpdateDisplayed(this.props.NavElenment);
-        //PagesActions.SelectCatagory(this.state.Title);
     }
 
 
     render() {
-/*        var tmpStr = this.state.Pic;
-        if (tmpStr === undefined) {
-            //alert('tmpStr is undefined');
-            console.log("this.state.Pic:" + this.state.Pic);
-            
-            tmpStr = "";
-        } else {
-            console.log(">>>tmpStr:" + tmpStr);
+              
+        var BackImg = {
+            backgroundImage: this.props.Pic,
         }
-        if (tmpStr.indexOf('event') >= 0) {*/
 
-
-              var pic = this.props.Pic;
-
-      var BackImg = {
-
-          backgroundImage: pic,
-          
-      }
-
-
-
-            return (
+        return (
                 <div class="m-title m-tile" >
-                            <div class="m-title-image-event" style={BackImg}></div>
-                            <div class="m-title-description">
-                                <div class="m-title-header">{this.props.Title}</div>
-                                <div class="m-title-text"><p><b>{this.props.Headline}</b></p><p>{this.props.Description}</p></div>
-                                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.props.NavElenment}</div>
-                            </div>
-                </div> );
-        // } else {
-        //     return (
-        //         <div class="m-title m-tile" >
-        //                 <div class="m-title-image"></div>
-        //                 <div class="m-title-description">
-        //                     <div class="m-title-header">{this.props.Title}</div>
-        //                     <div class="m-title-text"><p><b>{this.props.Headline}</b></p><p>{this.props.Description}</p></div>
-        //                     <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.props.NavElenment}</div>
-        //                 </div>
-        //         </div>);
-        // }
+                    <div class="m-title-image-event" style={BackImg}></div>
+                    <div class="m-title-description">
+                        <div class="m-title-header">{this.props.Title}</div>
+                        <div class="m-title-text"><p><b>{this.props.Headline}</b></p><p>{this.props.Description}</p></div>
+                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.props.NavElenment}</div>
+                    </div>
+                </div> 
+            );
     }
 
 }
