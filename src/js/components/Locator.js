@@ -119,13 +119,7 @@ export default class Locator extends React.Component {
         }
 
 
-
-
         var Clicked =false;
-
-
-
-
 
         var locKey = 0;
 
@@ -172,8 +166,6 @@ export default class Locator extends React.Component {
                 <input className="m-slider-line m-slider-circle" type="range" max={this.state.max} min={this.state.min} defaultValue="25"/>
             </div>
 
-
-            <input ref="query2" onChange={ (e) => { this.updateSearch(); } } type="text" />
         </div>
         {condition?
             <div class={"m-editable-list mod-locations shadow-2"}>
@@ -181,14 +173,10 @@ export default class Locator extends React.Component {
 
                     <ul >{locations}</ul>
 
-
             </div>
             :
             <div class={"m-editable-list mod-locations shadow-2 mod-closed"}>
                 <div onClick={ ()=> this.setState({ open: !this.state.open })} class="m-button">Show Location List</div>
-
-
-
 
             </div>
         }
@@ -202,8 +190,7 @@ export default class Locator extends React.Component {
         </div>
         <div class="m-slider shadow-2">
             <div class="m-slider-label">Max Cost <span>$30</span></div>
-            <div class="m-slider-circle"></div>
-            <div class="m-slider-line"></div>
+            <input className="m-slider-line m-slider-circle m-slider-label" type="range" max={this.state.max1} min={this.state.min1} defaultValue="25"/>
         </div>
 
         <div class="m-editable-list mod-appointments shadow-2 mod-closed">
@@ -227,7 +214,7 @@ export default class Locator extends React.Component {
                     New York, NY 10011</div>
             </div>
         </div>
-        <div class="m-button-checkout"><a href="/booking.html">Checkout</a></div>
+        <div class="m-button-checkout">Checkout</div>
     </div>
 
 

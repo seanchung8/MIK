@@ -575,7 +575,7 @@ a {
 }
 
 .m-slider-circle {
-  position : absolute;
+  position : relative;
   z-index : 10;
   right : 55px;
   bottom : 16px;
@@ -589,12 +589,14 @@ a {
 }
 
 .m-slider-line {
-  width : calc( 100% - 40px );
+  position: relative;
+  width : calc( 100% - 60px );
   height : 2px;
-  /* margin : 0 20px; */
-  margin : 20 0px;
+  left: 20px;
+  /* margin : 20 0px; */
 
   background-color : #5d5d5d;
+  display: block;
 }
 
 .m-editable-list {
@@ -741,8 +743,9 @@ a {
   text-transform : uppercase;
 
   text-align : center;
-  color: blue;
+  color: white;
   background : #e21836;
+  border-radius : 7px;
 }
 
 .m-button-checkout::after {

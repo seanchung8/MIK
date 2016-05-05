@@ -2,6 +2,8 @@ import React from "react";
 import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
 
 import * as PagesActions from "../actions/PagesActions"
+import LocatorStore from "../stores/LocatorStore";
+
 
 
 
@@ -32,6 +34,8 @@ export default class Service extends React.Component {
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.ServiceTypeInit();
+        var locs = LocatorStore.getAll();
+        console.log("Selected locations:" + locs);
     }
 
     ServiceTypeInit(){

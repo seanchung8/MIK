@@ -1,8 +1,8 @@
 import React from "react";
 import BookingStore from "../stores/BookingStore";
 import BookingActions from "../actions/BookingActions";
-import Header from "../Components/MIKHeader";
-import Footer from "../Components/MIKFooter";
+//import Header from "../Components/MIKHeader";
+//import Footer from "../Components/MIKFooter";
 import Appointment from "../Components/Appointment";
 import Checkout from "../Components/Checkout";
 
