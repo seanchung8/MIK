@@ -14,19 +14,20 @@ export default class LocationItem extends React.Component {
       LocPostCode: "94949",
       LocPhone:"40493984",
       SelectedLoc: false,
-      location: null
+      location: null,
+      key: 2384
     };
   }
 
   componentWillMount(){
     LocatorStore.on("change", ()=>{
-      this.setState({
-          SelectedLoc: LocatorStore.IsLocationActive(this.state.location),
-      });
-      this.ServiceTypeInit();
+      // this.setState({
+      //     SelectedLoc: LocatorStore.IsLocationActive(this.state.location),
+      // });
+      //this.ServiceTypeInit();
 
     })
-      this.ServiceTypeInit();
+      //this.ServiceTypeInit();
   }
 
   ServiceTypeInit(){
@@ -37,7 +38,9 @@ export default class LocationItem extends React.Component {
             this.setState({LocState: this.props.location.state});
             this.setState({LocPostCode: this.props.location.postalcode});
             this.setState({LocPhone: this.props.location.phone});
+             this.setState({key: this.props.location.clientkey});
             this.setState({location: this.props.location});
+           
             //this.setState({SelectedLoc: this.props.SelectedLoc});
             
   }
@@ -45,15 +48,16 @@ export default class LocationItem extends React.Component {
 
   SelectLoc(){
       
-      LocatorActions.SelectLocation(this.state.location,!this.state.SelectedLoc);
+      LocatorActions.SelectLocation(this.props.location,!this.state.SelectedLoc,this.props.location.clientkey);
       this.setState({SelectedLoc: !this.state.SelectedLoc});
   }
 
   render() {
 
+        console.log("Location is active " + LocatorStore.IsLocationActive(this.props.location.clientkey));
         var classNames = require('classnames');
 
-console.log(this.state);
+
 
 
         var btnClass = classNames(
@@ -69,11 +73,11 @@ console.log(this.state);
 
         <div class={btnClass} onClick={ ()=> this.SelectLoc()}>
 
-          <div>{this.state.LocName}</div>
-          <div>{this.state.LocAddress}</div>
-          <div>{this.state.LocCity}, {this.state.LocState}</div>
-          <div>{this.state.LocPostCode}</div>
-          <div>{this.state.LocPhone}</div>
+          <div>{this.props.location.name}</div>
+          <div>{this.props.location.address1}</div>
+          <div>{this.props.location.city}, {this.props.location.state}</div>
+          <div>{this.props.location.postalcode}</div>
+          <div>{this.props.location.phone}</div>
 
 
         </div>

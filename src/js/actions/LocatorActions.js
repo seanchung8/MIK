@@ -4,10 +4,11 @@
 import dispatcher from "../dispatcher";
 
 
-export function SelectLocation(location,selected) {
+export function SelectLocation(location,selected,id) {
     dispatcher.dispatch({
         type: "SELECT_LOCATION",
         text: location,
-        isSelected: selected
+        isSelected: selected,
+        id: id
     })
 }

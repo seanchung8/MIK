@@ -9,18 +9,7 @@ class LocatorStore extends EventEmitter{
     constructor(props){
 
         super(props)
-        this.locations = [
-                {
-                    id: 39393,
-                    location: null,
-                    selected: false
-                },
-                {
-                    id: 40923,
-                    location: null,
-                    selected: false
-                },
-            ];
+        this.locations = [ ];
     }
 
 
@@ -31,32 +20,61 @@ class LocatorStore extends EventEmitter{
     }
 
 
-    SelectLocation(location,isSelected){
+    SelectLocation(location,isSelected,id){
 
-        
+        var location = null;
+        var x =0
+    for(var i =0;i < this.locations.length;i++){
 
+        if(this.locations[i].id == id){
+            location = this.locations[i];
+            x=i;
+            break;
+        }
+    }
+
+    if(location == null){
         this.locations.push({
-            id: location.clientKey,
+            id: id,
             location: location,
             selected: isSelected
         })
+    }
+    else {
+        
+        this.locations[x].selected = false;
+        console.log(location);
+    }
 
+        
         this.emit("change");
     }
 
 
-   IsLocationActive(loc){
+   IsLocationActive(id){
 
+    var location = null;
 
-        var id = loc.clientKey;
+    for(var i =0;i < this.locations.length;i++){
+        console.log(this.locations[i].id + " " + id);
+        if(this.locations[i].id == id){
+            console.log("found");
+            location = this.locations[i];
+        }
 
-        var locs= this.locations.map((location) => {
+    }
 
-          
+    console.log(location);
+
+        if(location != null && location.selected == true ){
+            //console.log(this.locations);
+        return true;
+        }
+        else{
+            return false;
+        }
+return true;
         
-        });
-        locs = eval(locs);
-console.log("locations list: "+locs);
 
    }
 
@@ -65,7 +83,7 @@ console.log("locations list: "+locs);
 
         switch(action.type){
             case "SELECT_LOCATION":
-                this.SelectLocation(action.text,action.isSelected);
+                this.SelectLocation(action.text,action.isSelected,action.id);
             break;
         }
     }
