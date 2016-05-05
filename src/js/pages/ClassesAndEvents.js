@@ -6,7 +6,8 @@ import ServiceType from '../components/ServiceType'
 import Catagory from '../components/Catagory'
 import Service from '../components/Service'
 import Booking from '../components/Booking'
-//import BookingNavBar from '../components/BookingNavBar'
+import Appointment from '../components/Appointment'
+import Checkout from '../components/Checkout'
 import PagesStore from "../stores/PagesStore"
 import _ from 'lodash';
 import MIKHeader from '../components/MIKHeader'
