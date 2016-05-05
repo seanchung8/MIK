@@ -6,15 +6,15 @@ import ServiceType from '../components/ServiceType'
 import Catagory from '../components/Catagory'
 import Service from '../components/Service'
 import Booking from '../components/Booking'
-import BookedService from '../components/BookedService'
-import BookingNavBar from '../components/BookingNavBar'
+//import BookingNavBar from '../components/BookingNavBar'
 import PagesStore from "../stores/PagesStore"
 import _ from 'lodash';
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import MIKHeader from '../components/MIKHeader'
+import MIKFooter from '../components/MIKFooter'
 import ServiceTypeActions from "../actions/ServiceTypeActions"
 import  * as PagesActions from "../actions/PagesActions"
 import Banner from "../components/Banner"
+//import Service from "../components/Service"
 
 export default class ClassesAndEvents extends React.Component {
 
@@ -65,7 +65,7 @@ export default class ClassesAndEvents extends React.Component {
         console.log("*** in DrawLanding ***");
         return(
             <div>
-                <Header/>
+                <MIKHeader/>
                 <div>
 
                     <ServiceType
@@ -146,7 +146,7 @@ export default class ClassesAndEvents extends React.Component {
                         Title={"BIRTHDAY PARTIES"}
                         Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
                 </div>
-                <Footer/>
+                <MIKFooter/>
             </div>
 
         );
@@ -183,7 +183,7 @@ export default class ClassesAndEvents extends React.Component {
 
 <div style={catStyle}>
 
-    <Header/>
+    <MIKHeader/>
     <div>
         <Banner 
             Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
@@ -193,7 +193,7 @@ export default class ClassesAndEvents extends React.Component {
             Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
             NavElenment={"Classes"}            />
 </div>
-        <Footer/>
+        <MIKFooter/>
 
         </div>
         <div><Locator/></div>
@@ -221,7 +221,7 @@ export default class ClassesAndEvents extends React.Component {
 
             <div style={varStyle}>
 
-            <Header/>
+            <MIKHeader/>
             <Banner 
             Headline={"This is the headline"}
             Description={"This is the Catagory discription"}
@@ -230,7 +230,7 @@ export default class ClassesAndEvents extends React.Component {
             Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
             NavElenment={"Classes"}            />
 
-        <Footer/>
+        <MIKFooter/>
 
         </div>
         <div><Locator/></div>
@@ -264,7 +264,7 @@ export default class ClassesAndEvents extends React.Component {
 
 
         <div style={catStyle}>
-            <Header/>
+            <MIKHeader/>
 
 <div>
                 <Banner 
@@ -341,7 +341,7 @@ export default class ClassesAndEvents extends React.Component {
                     Title={"BIRTHDAY PARTIES"}
                     Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
             </div>
-    <Footer/>
+    <MIKFooter/>
 
 </div>
             <div><Locator country={this.props.params.country}/></div>
@@ -373,7 +373,7 @@ export default class ClassesAndEvents extends React.Component {
             <div style={catStyle}>
         
             <div>
-                <Header/>
+                <MIKHeader/>
 
                 <Banner 
                     Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
@@ -449,13 +449,28 @@ export default class ClassesAndEvents extends React.Component {
                         Title={tmpTitle + " 8"}
                         Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
                 </div>
-                <Footer/>
+                <MIKFooter/>
             </div>
             <div><Locator country={this.props.params.country}/></div>
 
         </div>
         );
 
+
+    }
+
+
+    DrawBooking(){
+
+
+return(
+    <div>
+        <div><MIKHeader/></div>
+        <div><Booking/></div>
+        <div><MIKFooter/></div>
+    </div>
+
+);
 
     }
 
@@ -492,10 +507,11 @@ export default class ClassesAndEvents extends React.Component {
             case "CategoryClasses":
                 this.setState({page: this.DrawCategoryClasses()});
                 break;
+            case "Booking":    
+                this.setState({page: this.DrawBooking()});
+                break;
             default:
                 alert("viewing: " + this.state.viewing + " is not handled");
-            //case "Booking":    this.setState({page: BookingDraws});
-            //break;
 
         }
 

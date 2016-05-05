@@ -1,6 +1,6 @@
 import React from "react";
 import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
-
+import * as PagesActions from "../actions/PagesActions"
 
 
 
@@ -41,6 +41,11 @@ export default class Service extends React.Component {
 
     }
 
+    setPage(){
+
+        PagesActions.UpdateDisplayed("Booking");
+
+    }
 
 
   render() {
@@ -166,7 +171,7 @@ export default class Service extends React.Component {
                             New York, New York 10007</div>
                         <div class="dateTime">December 14th at 2:30pm</div>
                         <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book"><a href="/booking.html">Book Now</a></div>
+                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
                 <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>

@@ -1196,14 +1196,14 @@ a {
 }
 
 .m-appointments-title-bar {
-  position : fixed;
-  z-index : 20;
-  top : 0;
+  
+  z-index : 0;
+  top : 50;
   left : 0;
 
   width : 100%;
-  margin : 0;
-  padding : 10px 20px;
+  margin-top: 0px;
+  padding : 20px 20px;
 
   transform : translateZ(0) translateY(-100%);
 
@@ -1236,10 +1236,10 @@ a {
   position : relative;
 
   width : 100%;
-  margin-top : 0;
+  margin-top : 200;
 }
 
-.mod-no-checkout .m-appointments {
+.ds .m-appointments {
   margin-top : 85px;
 }
 
@@ -1362,7 +1362,7 @@ a {
 
 .m-checkout {
   position : fixed;
-  top : 0;
+  top : 200px;
   right : 0;
 
   overflow-x : hidden;
