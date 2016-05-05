@@ -85,7 +85,7 @@ export default class ClassesAndEvents extends React.Component {
                         View={"Events"}/>
                 </div>
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Wilton® Cake Decorating"}
                         Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
@@ -109,7 +109,7 @@ export default class ClassesAndEvents extends React.Component {
                         Pic={"url(../assets/Catagories/jewelry.jpg)"}/>
                 </div>
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Paper Crafting and Mixed Media"}
                         Description={"Join the movement to take memories off your pages and into your life. " +
@@ -132,7 +132,7 @@ export default class ClassesAndEvents extends React.Component {
                         Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}/>
                 </div>
 
-                <div>
+                <div class="m-service-row" >
                     <Catagory
                         Headline={"Trend Classes"}
                         Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
@@ -279,8 +279,8 @@ export default class ClassesAndEvents extends React.Component {
                 />
 </div>
 
-            <div>
-                <Catagory
+            <div class="m-service-row" >
+                    <Catagory
                     Headline={"Wilton® Cake Decorating"}
                     Description={"Wilton can help you master beginner baking and buttercream basics to advanced cake decorating. " +
                          "Choose from our Courses that build skills in four in-depth sessions, or try the Michaels " +
@@ -304,8 +304,8 @@ export default class ClassesAndEvents extends React.Component {
                     Pic={"url(../assets/Catagories/jewelry.jpg)"}/>
             </div>
 
-            <div>
-                <Catagory
+            <div class="m-service-row" >
+                    <Catagory
                     Headline={"Paper Crafting and Mixed Media"}
                     Description={"Join the movement to take memories off your pages and into your life. " +
                          "Sharpen your paper crafting skills, play with ink or test your favorite tools. " +
@@ -327,8 +327,8 @@ export default class ClassesAndEvents extends React.Component {
                     Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}/>
             </div>
 
-            <div>
-                <Catagory
+            <div class="m-service-row" >
+                    <Catagory
                     Headline={"Trend Classes"}
                     Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
                          "Enroll now!"}
