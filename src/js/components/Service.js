@@ -20,15 +20,6 @@ export default class Service extends React.Component {
         };
     }
 
-    // @Damion: I did not see any reasons why we need to 
-    // initialize the state
-     
-    // componentWillMount(){
-    //     // Called the first time the component is loaded right before the component is added to the page
-    //     this.serviceInit();
-    // }
-
-
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.ServiceTypeInit();
