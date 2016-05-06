@@ -24,7 +24,7 @@ export default class Appointment extends React.Component {
     return (
 
 
-        <div class="m-tile m-appointment anim-tile-in shadow-2">
+        <div class="m-tile m-appointment anim-tile-in">
           <div class="appointment-image"></div>
           <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 mod-clear-appointment">X</div>
           <div class="appointment-name">Finger Painting</div>

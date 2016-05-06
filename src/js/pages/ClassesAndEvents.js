@@ -465,9 +465,8 @@ export default class ClassesAndEvents extends React.Component {
 
 return(
     <div>
-        <div><MIKHeader/></div>
+        
         <div><Booking/></div>
-        <div><MIKFooter/></div>
     </div>
 
 );

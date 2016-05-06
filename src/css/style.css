@@ -1201,12 +1201,12 @@ a {
 .m-appointments-title-bar {
   
   z-index : 0;
-  top : 50;
+  top : 0;
   left : 0;
 
-  width : 0%;
+  width : 0px;
   
-  padding : 20px 20px;
+  /*padding : 20px 20px;*/
   transform : translateZ(0) translateY(-100%);
 
   background-color : rgba(255,255,255,0.95);
@@ -1214,7 +1214,7 @@ a {
 
 .mod-no-checkout .m-appointments-title-bar {
   transform : translateZ(0);
-  margin-top: 100px;
+  margin-top: 0px;
   width: 100%;
 }
 
@@ -1239,13 +1239,19 @@ a {
 .m-appointments {
   position : relative;
 
-  width : 70%;
+  width : 100%;
   margin-top : 100px;
 }
 
-.mod-no-checkout .m-appointments{
-  width: 100%
-  margin-top : 150;
+.m-appointments-shrink {
+  position : relative;
+  max-width: calc(100% - 400px);
+  width : 70%;
+  margin-top : 0px;
+}
+
+ .m-appointments .m-shrinking{
+  width: 70%
 }
 
 .ds .m-appointments {
