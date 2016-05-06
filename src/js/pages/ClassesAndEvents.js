@@ -15,6 +15,7 @@ import MIKFooter from '../components/MIKFooter'
 import ServiceTypeActions from "../actions/ServiceTypeActions"
 import  * as PagesActions from "../actions/PagesActions"
 import Banner from "../components/Banner"
+import Party from "../components/Party"
 //import Service from "../components/Service"
 
 export default class ClassesAndEvents extends React.Component {
@@ -174,32 +175,51 @@ export default class ClassesAndEvents extends React.Component {
             marginTop: 0,
         };
 
-        console.log("This is the events page");
-
         var elementStyle = {
 
         };
 
         return (<div>
 
-<div style={catStyle}>
+            <div style={catStyle}>
+                <MIKHeader/>
+                    <div>
+                        <Banner 
+                            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
+                            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
+                            Title={"IN-STORE EVENTS"}
+                            View={"Events"}
+                            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+                            NavElenment={"Classes"}            />
+                    </div>
+                    <div class="m-party-row" >
+                        <Party
+                            Headline={"PIRATE ADVENTURE"}
+                            Description={"Crafts for this seaworthy bash include a treasure map frame, " + 
+                                "an eye patch and bandana, a mustache-on-a-stick prop, and a treasure chest."}
+                            Title={"PIRATE ADVENTURE"}
+                            Pic={"url(../assets/Parties/pirate_adventure.jpg)"}/>
 
-    <MIKHeader/>
-    <div>
-        <Banner 
-            Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
-            Description={"Choose from lots of fun, kid-friendly party themes, or design your own custom celebration."}
-            Title={"IN-STORE EVENTS"}
-            View={"Events"}
-            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
-            NavElenment={"Classes"}            />
-</div>
-        <MIKFooter/>
+                        <Party
+                            Headline={"PRETTY PRINCESSES"}
+                            Description={"Royal guests will create an embellished crown, " + 
+                                "a royal scroll and a princess photo frame."}
+                            Title={"PRETTY PRINCESSES"}
+                            Pic={"url(../assets/Parties/pretty_princess.jpg)"}/>
+                        <Party
+                            Headline={"SUPERHERO SQUAD"}
+                            Description={"Suit up for a superhero party! Heroes will craft a mask to conceal " + 
+                                "their true identities, a colorful cape and cuffs, and a photo frame."}
+                            Title={"SUPERHERO SQUAD"}
+                            Pic={"url(../assets/Parties/super_hero_squad.jpg)"}/>
+                    </div>
 
-        </div>
-        <div><Locator/></div>
+                <MIKFooter/>
+            </div>
+            <div><Locator/></div>
 
-        </div>);
+            </div>
+        );
     }
 
     DrawCatagories(){

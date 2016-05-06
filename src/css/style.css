@@ -254,6 +254,87 @@ a {
   display : none;
 }
 
+/* MICHEALS PARTY */
+.m-party-row {
+  height : 520px;
+  min-width: 900px;
+}
+
+.m-party {
+  display : inline-block;
+  overflow : hidden;
+  margin: 10px;
+
+  width : calc(100%/3 - 10px * 2);
+  height : 520px;
+
+  transition : 0.25s ease all 0.25s, 0.25s ease width, 0.25s ease height;
+  transform : translateZ(0);
+
+  background-size : cover;
+  /* attempt to stop shrinking width */
+  min-width: 260px;
+}
+
+.m-party-image-event {
+  position : absolute;
+  top : 0;
+  left : 0;
+
+  width : 300px;
+  height : 320px;
+
+  /* background-size : cover; */
+}
+
+.m-party-description {
+  font-size : 24px;
+  line-height : 43px;
+  position : absolute;
+  bottom : 0;
+  left : 0;
+
+  width : 100%;
+  height : 100%;
+  padding : 20px;
+
+  transform : translateZ(0) translateY(216px);
+
+  background-color : rgba(255,255,255,0.95);
+  min-width: 250px;
+}
+
+.m-party-description .m-party-description-header {
+  font-size : 18px;
+  font-weight : bold;
+  overflow: pre-wrap;
+  display : inline-block;
+  width: calc(100% - 40%);
+  line-height: 100%;
+  
+}
+
+.m-party-description .m-party-description-text {
+  font-size : 14px;
+  line-height : 16px;
+
+  position : absolute;
+  top : 112px;
+  left : 0;
+
+  display : block;
+  overflow : pre-wrap;
+
+  width : calc(100% - 40px);
+  height : 145px;
+  margin : 0 20px;
+
+  transform : translate3d(0,0,0);
+  white-space : pre-wrap;
+  letter-spacing : 0.1em;
+
+  opacity : 1;
+}
 /* MICHEALS SERVICE */
 
 .m-service-row {
