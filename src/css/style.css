@@ -1200,13 +1200,13 @@ a {
 
 .m-appointments-title-bar {
   
-  z-index : 0;
+  z-index : 20px;
   top : 0;
   left : 0;
-
+  height: 0;
   width : 0px;
   
-  /*padding : 20px 20px;*/
+  padding : 0px 0px;
   transform : translateZ(0) translateY(-100%);
 
   background-color : rgba(255,255,255,0.95);
@@ -1215,7 +1215,10 @@ a {
 .mod-no-checkout .m-appointments-title-bar {
   transform : translateZ(0);
   margin-top: 0px;
+  padding : 20px 20px;
   width: 100%;
+  height: auto;
+
 }
 
 .m-appointments-title-bar .m-button {
@@ -1238,21 +1241,16 @@ a {
 
 .m-appointments {
   position : relative;
-
   width : 100%;
-  margin-top : 100px;
+  margin-top : 0px;
 }
 
 .m-appointments-shrink {
   position : relative;
-  max-width: calc(100% - 400px);
   width : 70%;
   margin-top : 0px;
 }
 
- .m-appointments .m-shrinking{
-  width: 70%
-}
 
 .ds .m-appointments {
   margin-top : 85px;
@@ -1377,7 +1375,7 @@ a {
 
 .m-checkout {
   position : fixed;
-  top : 100px;
+  top : 0;
   right : 0;
 
   overflow-x : hidden;

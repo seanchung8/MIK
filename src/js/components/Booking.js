@@ -5,6 +5,8 @@ import MIKHeader from "../Components/MIKHeader";
 import MIKFooter from "../Components/MIKFooter";
 import Appointment from "../Components/Appointment";
 import Checkout from "../Components/Checkout";
+import  * as PagesActions from "../actions/PagesActions";
+import PagesStore from "../stores/PagesStore"
 
 export default class Booking extends React.Component {
 
@@ -12,7 +14,8 @@ export default class Booking extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showCheckout:true
+      showCheckout:true,
+      View:'Landing'
     };
   }
 
@@ -23,22 +26,12 @@ export default class Booking extends React.Component {
     console.log(this.state);
   }
 
+  goBackToLanding(){
+    PagesActions.UpdateDisplayed(this.state.View);
+  }
 
   render() {
 
-    var catStyle = {
-            marginRight: 350,
-            marginTop: 0,
-        };
-
-
-    var BlankStyle = {
-      marginRight:15,
-      marginTop:100
-    }
-
-
-    var usedStyle = [this.state.showCheckout?catStyle:BlankStyle];
 
     var classNames = require('classnames');
 
@@ -49,7 +42,7 @@ export default class Booking extends React.Component {
         });
         var btnApt = classNames(
         {
-          '.m-appointments-shrink': !this.state.showCheckout,
+          'm-appointments-shrink': !this.state.showCheckout,
           'm-appointments': this.state.showCheckout
         });
 
@@ -58,17 +51,15 @@ export default class Booking extends React.Component {
       <div class={btnClass}>
           
           <div>
+          <div class={btnApt}>
               <div><MIKHeader/></div>
               <div class="m-appointments-title-bar m-tile shadow-1">
-                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3"><a href="/">View More Classes</a></div>
-                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={()=> this.startCheckout()}>Checkout</div>
+                  <div class="m-button shadow-hover-2 shadow-active-3" onClick={()=> this.goBackToLanding()}>View More Classes</div>
+                  <div class="m-button shadow-hover-2 shadow-active-3" onClick={()=> this.startCheckout()}>Checkout</div>
               </div>
-              
-              <div class={btnApt}>
-
               <div><Appointment/></div>
               <div><MIKFooter/></div>
-              </div>
+          </div>
               <Checkout/>
 
           </div>
