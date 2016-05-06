@@ -1245,13 +1245,8 @@ a {
 
 .m-appointments-shrink {
   position : relative;
-  max-width: calc(100% - 400px);
   width : 70%;
   margin-top : 0px;
-}
-
- .m-appointments .m-shrinking{
-  width: 70%
 }
 
 .ds .m-appointments {

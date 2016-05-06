@@ -47,9 +47,10 @@ export default class Booking extends React.Component {
           'mod-no-checkout': this.state.showCheckout,
           'mod-hide': true
         });
-        var btnApt = classNames(
+
+    var btnApt = classNames(
         {
-          '.m-appointments-shrink': !this.state.showCheckout,
+          'm-appointments-shrink': !this.state.showCheckout,
           'm-appointments': this.state.showCheckout
         });
 
@@ -60,8 +61,13 @@ export default class Booking extends React.Component {
           <div>
               <div><MIKHeader/></div>
               <div class="m-appointments-title-bar m-tile shadow-1">
-                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3"><a href="/">View More Classes</a></div>
-                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={()=> this.startCheckout()}>Checkout</div>
+                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">
+                    <a href="/">View More Classes</a>
+                  </div>
+                  <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" 
+                    onClick={()=> this.startCheckout()}>
+                    Checkout
+                  </div>
               </div>
               
               <div class={btnApt}>
