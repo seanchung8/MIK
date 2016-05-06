@@ -434,13 +434,13 @@ export default class ClassesAndEvents extends React.Component {
                 </div>
 
                 <div class="m-service-row" >
-                    <Catagory
+                    <Service
                         Headline={"Class 7"}
                         Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
                          "Enroll now!"}
                         Title={tmpTitle + " 7"}
                         Pic={"url(../assets/Catagories/TrendClasses.jpg)"}/>
-                    <Catagory
+                    <Service
                         Headline={"Class 8"}
                         Description={"Birthday Parties at Michaels are now bigger and better. Choose from lots of fun, kid friendly party themes, " +
                          "or design your own custom celebration. See your local store associate to learn more and book your party."}

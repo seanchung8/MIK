@@ -38,7 +38,7 @@ export default class LocationItem extends React.Component {
             this.setState({LocState: this.props.location.state});
             this.setState({LocPostCode: this.props.location.postalcode});
             this.setState({LocPhone: this.props.location.phone});
-             this.setState({key: this.props.location.clientkey});
+            this.setState({key: this.props.location.clientkey});
             this.setState({location: this.props.location});
            
             //this.setState({SelectedLoc: this.props.SelectedLoc});
@@ -54,7 +54,7 @@ export default class LocationItem extends React.Component {
 
   render() {
 
-        console.log("Location is active " + LocatorStore.IsLocationActive(this.props.location.clientkey));
+        //console.log("Location is active " + LocatorStore.IsLocationActive(this.props.location.clientkey));
         var classNames = require('classnames');
 
 

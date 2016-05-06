@@ -2,7 +2,7 @@ import React from "react";
 import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
 
 import * as PagesActions from "../actions/PagesActions"
-import LocatorStore from "../stores/LocatorStore";
+import StoresContainer from "./StoresContainer"
 
 
 
@@ -25,13 +25,13 @@ export default class Service extends React.Component {
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.ServiceTypeInit();
-        var locs = LocatorStore.getAll();
-        console.log(">>>Selected locations:" + locs);
+        // var locs = LocatorStore.getAll();
+        // console.log(">>>Selected locations:" + locs);
 
-        for(var i =0;i < locs.length; i++){
-            console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
+        // for(var i =0;i < locs.length; i++){
+        //     console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
         
-        }
+        // }
     }
 
     ServiceTypeInit(){
@@ -83,14 +83,8 @@ export default class Service extends React.Component {
                 <div class="m-service-time">
                     <div class="m-tag">
                         <div class="m-tag-header">Select A Location</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">22-20 23rd</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">280 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
+                        <StoresContainer />
+                        
                     </div>
                     <div class="calendar">
                         <div class="calendar-header">

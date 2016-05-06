@@ -5,6 +5,7 @@ import dispatcher from "../dispatcher";
 
 
 export function SelectLocation(location,selected,id) {
+	console.log(">> in LocationActions.SelectLocation:" + location);
     dispatcher.dispatch({
         type: "SELECT_LOCATION",
         text: location,
