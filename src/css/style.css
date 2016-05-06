@@ -22,7 +22,7 @@ body {
   color : #5d5d5d;
 
   box-sizing: border-box;
-  min-width: 860px;
+  min-width: 900px;
 }
 
 body * {
@@ -257,9 +257,10 @@ a {
 /* MICHEALS SERVICE */
 
 .m-service-row {
-  height : 300px;
+  height : 320px;
   min-width: 900px;
 }
+
 .m-service {
   display : inline-block;
   overflow : hidden;
@@ -274,7 +275,7 @@ a {
   /*background-image : url(../assets/instoreclass.jpg);*/
   background-size : cover;
   /* attempt to stop shrinking width */
-  min-width: 244px;
+  min-width: 260px;
 }
 
 .m-service.mod-times {
@@ -568,12 +569,13 @@ a {
   padding : 0 20px;
 }
 
+/*
 .m-slider-label span {
   font-weight : bold;
 
   float : right;
 }
-
+*/
 .m-slider-circle {
   position : relative;
   z-index : 10;
@@ -590,13 +592,11 @@ a {
 
 .m-slider-line {
   position: relative;
-  width : calc( 100% - 60px );
   height : 2px;
-  left: 20px;
-  /* margin : 20 0px; */
-
+  left: 20px; 
   background-color : #5d5d5d;
   display: block;
+  max-width: calc(100% - 40px);
 }
 
 .m-editable-list {

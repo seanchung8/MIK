@@ -6,11 +6,6 @@ import ReactBootstrapSlider from 'react-bootstrap-slider';
 import ReactSliderNativeBootstrap from 'react-bootstrap-native-slider';
 import LocationItem from './LocationItem';
 
-
-
-
-
-
 export default class Locator extends React.Component {
     //Class Constructor 
     //Required Props: 
@@ -32,7 +27,9 @@ export default class Locator extends React.Component {
             open:false,
             isPressed:false,
             locKey:0,
-            country: this.props.country
+            country: this.props.country,
+            travelRadius: 10,
+            maxCost:25
         };
     }
 
@@ -60,9 +57,7 @@ export default class Locator extends React.Component {
 
     updateSearch(){
         //console.log("update search got hit and this.refs.query val = " + this.refs.query.valueOf());
-
-        // slider not working yet. 
-        // hard coded the max distance
+        this.state.travelRadius = this.refs.travelDistanceInput.value;
 
           var address = "http://api.slippymap.com/rest?&xml_request=" + encodeURIComponent("<request> " +
                     "<appkey>7D3183D8-683E-11E3-A044-AF8B407E493E</appkey> " +
@@ -73,14 +68,21 @@ export default class Locator extends React.Component {
                     "<country>" + this.props.country + "</country> " +
                     "</geoloc> " +
                     "</geolocs> " +
-                    //"<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "25") +"</searchradius> " +
-                    "<searchradius>" + "25" + "</searchradius> " +
+                    "<searchradius>" + this.state.travelRadius + "</searchradius> " +
                     "</formdata> " +
                     "</request>"
                 );
 
 
             this.search(address);
+    }
+
+    updateMaxCost() {
+        console.log(">>>in updateMaxCost");
+        //this.state.maxCost = this.refs.maxCostInput.value;
+        this.setState({maxCost: this.refs.maxCostInput.value});
+        console.log(">>>this.state.maxCost:" + this.state.maxCost);
+
     }
 
     changeValue(value) {
@@ -95,9 +97,8 @@ export default class Locator extends React.Component {
             OpenLoc: open
         });
     }
+
     clickedLocation(isClicked,key){
-
-
 
         this.setState({
             isPressed: isClicked,
@@ -162,10 +163,12 @@ export default class Locator extends React.Component {
             <label class="m-input-label">Address</label>
         </div>
         <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Travel Distance </div>
-            <span class="m-slider-label">10 Miles</span>
+            <div class="m-slider-label">Max Travel Distance <span><b>{this.state.travelRadius}</b></span> Miles</div>
             <div>
-                <input className="m-slider-line m-slider-circle" type="range" max={this.state.max} min={this.state.min} defaultValue="25"/>
+                <input className="m-slider-line" ref="travelDistanceInput" 
+                onInput={ (e) => { this.updateSearch();}}
+                type="range" max={this.state.max} min={this.state.min} 
+                defaultValue={this.state.travelRadius}/>
             </div>
 
         </div>
@@ -191,8 +194,12 @@ export default class Locator extends React.Component {
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Adult</div>
         </div>
         <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Cost <span>$30</span></div>
-            <input className="m-slider-line m-slider-circle m-slider-label" type="range" max={this.state.max1} min={this.state.min1} defaultValue="25"/>
+            <div class="m-slider-label">Max Cost <span><b>${this.state.maxCost}</b></span></div>
+            <input className="m-slider-line" 
+                type="range" 
+                ref="maxCostInput" 
+                onInput={ (e) => {this.updateMaxCost();} }
+                max={this.state.max1} min={this.state.min1} defaultValue={this.state.maxCost} />
         </div>
 
         <div class="m-editable-list mod-appointments shadow-2 mod-closed">

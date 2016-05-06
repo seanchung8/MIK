@@ -12,9 +12,6 @@ class LocatorStore extends EventEmitter{
         this.locations = [ ];
     }
 
-
-
-
     getAll(){
         return this.locations;
     }
@@ -22,29 +19,33 @@ class LocatorStore extends EventEmitter{
 
     SelectLocation(location,isSelected,id){
 
-        var location = null;
-        var x =0
-    for(var i =0;i < this.locations.length;i++){
+        console.log(">>>in LocatorStore.selectLocation - location:" + location['name']);
 
-        if(this.locations[i].id == id){
-            location = this.locations[i];
-            x=i;
-            break;
+        //var location = null;
+        var x = -1;
+        for(var i =0;i < this.locations.length;i++){
+
+            if(this.locations[i].id == id){
+                //location = this.locations[i];
+                x=i;
+                break;
+            }
         }
-    }
 
-    if(location == null){
-        this.locations.push({
-            id: id,
-            location: location,
-            selected: isSelected
-        })
-    }
-    else {
-        
-        this.locations[x].selected = false;
-        console.log(location);
-    }
+        if ( x < 0) {
+            console.log("ADDING: " + id + " - " + location['name'] + ":" + isSelected + " to locatorStoreList");
+            this.locations.push({
+                id: id,
+                location: location,
+                selected: isSelected
+            })
+        }
+        else {
+            
+            console.log("UPDATING: " + this.locations[x].id + " - " + this.locations[x].location['name'] + ":" + this.locations[x].selected + " to => " + isSelected);
+            this.locations[x].selected = isSelected;
+            
+        }
 
         
         this.emit("change");
@@ -53,27 +54,38 @@ class LocatorStore extends EventEmitter{
 
    IsLocationActive(id){
 
-    var location = null;
+    var isActive = false;
 
     for(var i =0;i < this.locations.length;i++){
-        console.log(this.locations[i].id + " " + id);
+        //console.log(this.locations[i].id + " " + id);
         if(this.locations[i].id == id){
             console.log("found");
-            location = this.locations[i];
+            // location = this.locations[i];
+            return this.locations[i].selected;
         }
-
     }
 
-    console.log(location);
+    // for (location in this.locations) {
+    //     if (location.id == id) {
+    //         console.log('Location found, returning:' + locations.selected);
+    //         return location.selected;
+    //         break;
+    //     }
+    // }
 
-        if(location != null && location.selected == true ){
-            //console.log(this.locations);
-        return true;
-        }
-        else{
-            return false;
-        }
-return true;
+    console.log('Location NOT found, returning: false');
+    return isActive;
+
+    // console.log(location);
+
+    //     if(location != null && location.selected == true ){
+    //         //console.log(this.locations);
+    //     return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // return true;
         
 
    }
