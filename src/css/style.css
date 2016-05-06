@@ -22,6 +22,7 @@ body {
   color : #5d5d5d;
 
   box-sizing: border-box;
+  min-width: 900px;
 }
 
 body * {
@@ -53,6 +54,7 @@ a {
 /* MICHEALS BUTTON */
 
 .m-button {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 43px;
@@ -62,7 +64,7 @@ a {
 
   box-sizing : border-box;
   height : 43px;
-  padding : 0 25px;
+  padding : 0 15px;
 
   cursor : pointer;
   transform : translateZ(0);
@@ -103,6 +105,7 @@ a {
   width: calc(100% - 10px *2);
   height : 300px;
   margin-left : 10px;
+  min-width: 860px;
 }
 
 .appointment-image,
@@ -114,10 +117,21 @@ a {
   width : 400px;
   height : 100%;
 
-  background-image : url(../assets/SeviceTypes/instoreclass.jpg);
+  background-image : url(../assets/SeviceTypes/instoreclass.jpg); 
   background-size : cover;
 }
 
+.m-title-image-event {
+  position : absolute;
+  top : 0;
+  left : 0;
+
+  width : 400px;
+  height : 100%;
+
+  background-image : url(../assets/SeviceTypes/partyevent.jpg); 
+  background-size : cover;
+}
 .m-title-header {
   font-size : 30px;
   font-weight : bold;
@@ -155,7 +169,7 @@ a {
   margin: 10px;
   transform : translateZ(0);
 
-  /*background-image : url(../assets/instoreclass.jpg);*/
+  background-image : url(../assets/instoreclass.jpg);
   background-size : cover;
 }
 
@@ -242,6 +256,11 @@ a {
 
 /* MICHEALS SERVICE */
 
+.m-service-row {
+  height : 320px;
+  min-width: 900px;
+}
+
 .m-service {
   display : inline-block;
   overflow : hidden;
@@ -255,6 +274,8 @@ a {
 
   /*background-image : url(../assets/instoreclass.jpg);*/
   background-size : cover;
+  /* attempt to stop shrinking width */
+  min-width: 260px;
 }
 
 .m-service.mod-times {
@@ -342,13 +363,17 @@ a {
   transform : translateZ(0) translateY(216px);
 
   background-color : rgba(255,255,255,0.95);
+  min-width: 250px;
 }
 
 .m-service-description .m-service-description-header {
   font-size : 18px;
   font-weight : bold;
-
+  overflow: pre-wrap;
   display : inline-block;
+  width: calc(100% - 40%);
+  line-height: 100%;
+  
 }
 
 .m-service-description .m-service-description-text {
@@ -483,6 +508,7 @@ a {
 }
 
 .m-input-label {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 38px;
@@ -543,14 +569,15 @@ a {
   padding : 0 20px;
 }
 
+/*
 .m-slider-label span {
   font-weight : bold;
 
   float : right;
 }
-
+*/
 .m-slider-circle {
-  position : absolute;
+  position : relative;
   z-index : 10;
   right : 55px;
   bottom : 16px;
@@ -564,11 +591,12 @@ a {
 }
 
 .m-slider-line {
-  width : calc( 100% - 40px );
+  position: relative;
   height : 2px;
-  margin : 0 20px;
-
+  left: 20px; 
   background-color : #5d5d5d;
+  display: block;
+  max-width: calc(100% - 40px);
 }
 
 .m-editable-list {
@@ -700,7 +728,9 @@ a {
 }
 
 .m-button-checkout {
+  font-family : Montserrat;
   font-size : 18px;
+  font-weight : lighter;
   line-height : 62px;
 
   display : block;
@@ -708,7 +738,14 @@ a {
   width : 100%;
   height : 63px;
 
+  cursor : pointer;
+  transform : translateZ(0);
+  text-transform : uppercase;
+
   text-align : center;
+  color: white;
+  background : #e21836;
+  border-radius : 7px;
 }
 
 .m-button-checkout::after {
@@ -1162,15 +1199,14 @@ a {
 }
 
 .m-appointments-title-bar {
-  position : fixed;
-  z-index : 20;
-  top : 0;
+  
+  z-index : 0;
+  top : 50;
   left : 0;
 
-  width : 100%;
-  margin : 0;
-  padding : 10px 20px;
-
+  width : 0%;
+  
+  padding : 20px 20px;
   transform : translateZ(0) translateY(-100%);
 
   background-color : rgba(255,255,255,0.95);
@@ -1178,6 +1214,8 @@ a {
 
 .mod-no-checkout .m-appointments-title-bar {
   transform : translateZ(0);
+  margin-top: 100px;
+  width: 100%;
 }
 
 .m-appointments-title-bar .m-button {
@@ -1201,11 +1239,16 @@ a {
 .m-appointments {
   position : relative;
 
-  width : 100%;
-  margin-top : 0;
+  width : 70%;
+  margin-top : 100px;
 }
 
-.mod-no-checkout .m-appointments {
+.mod-no-checkout .m-appointments{
+  width: 100%
+  margin-top : 150;
+}
+
+.ds .m-appointments {
   margin-top : 85px;
 }
 
@@ -1328,7 +1371,7 @@ a {
 
 .m-checkout {
   position : fixed;
-  top : 0;
+  top : 100px;
   right : 0;
 
   overflow-x : hidden;

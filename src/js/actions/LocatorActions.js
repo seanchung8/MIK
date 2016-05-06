@@ -4,8 +4,12 @@
 import dispatcher from "../dispatcher";
 
 
-export function ChangeDisplayed() {
+export function SelectLocation(location,selected,id) {
+	console.log(">> in LocationActions.SelectLocation:" + location);
     dispatcher.dispatch({
-        type: "CHANGE_DISPLAY"
+        type: "SELECT_LOCATION",
+        text: location,
+        isSelected: selected,
+        id: id
     })
 }

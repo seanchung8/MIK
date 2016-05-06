@@ -4,11 +4,7 @@ import xml2js from 'xml2js';
 import { Panel,Grid,Col,Row,PanelGroup,ListGroup,ListGroupItem,Well,ButtonToolbar,Button} from 'react-bootstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import ReactSliderNativeBootstrap from 'react-bootstrap-native-slider';
-
-
-
-
-
+import LocationItem from './LocationItem';
 
 export default class Locator extends React.Component {
     //Class Constructor 
@@ -31,7 +27,9 @@ export default class Locator extends React.Component {
             open:false,
             isPressed:false,
             locKey:0,
-            country: this.props.country
+            country: this.props.country,
+            travelRadius: 10,
+            maxCost:25
         };
     }
 
@@ -59,8 +57,7 @@ export default class Locator extends React.Component {
 
     updateSearch(){
         //console.log("update search got hit and this.refs.query val = " + this.refs.query.valueOf());
-
-
+        this.state.travelRadius = this.refs.travelDistanceInput.value;
 
           var address = "http://api.slippymap.com/rest?&xml_request=" + encodeURIComponent("<request> " +
                     "<appkey>7D3183D8-683E-11E3-A044-AF8B407E493E</appkey> " +
@@ -71,13 +68,21 @@ export default class Locator extends React.Component {
                     "<country>" + this.props.country + "</country> " +
                     "</geoloc> " +
                     "</geolocs> " +
-                    "<searchradius>"+ (this.refs.query2.value != "" ? this.refs.query2.value : "25") +"</searchradius> " +
+                    "<searchradius>" + this.state.travelRadius + "</searchradius> " +
                     "</formdata> " +
                     "</request>"
                 );
 
 
             this.search(address);
+    }
+
+    updateMaxCost() {
+        console.log(">>>in updateMaxCost");
+        //this.state.maxCost = this.refs.maxCostInput.value;
+        this.setState({maxCost: this.refs.maxCostInput.value});
+        console.log(">>>this.state.maxCost:" + this.state.maxCost);
+
     }
 
     changeValue(value) {
@@ -92,9 +97,8 @@ export default class Locator extends React.Component {
             OpenLoc: open
         });
     }
+
     clickedLocation(isClicked,key){
-
-
 
         this.setState({
             isPressed: isClicked,
@@ -117,20 +121,8 @@ export default class Locator extends React.Component {
             condition = false;
         }
 
-        var classNames = require('classnames');
-
-
 
         var Clicked =false;
-
-
-        var btnClass = classNames(
-            'm-editable-list-location',
-            {
-
-            'mod-active': this.state.showDiscription
-        });
-
 
         var locKey = 0;
 
@@ -140,13 +132,11 @@ export default class Locator extends React.Component {
 
 
                    // (this.state.showDiscription && locKey == this.state.locKey) ?
-                        <div key={locKey} onClick={ ()=> this.clickedLocation.bind(false,locKey)} class="'m-editable-list-location'">
-                            <div>{location.name}</div>
-                            {console.log(locKey)}
-                            <div>{location.address1}</div>
-                            <div>{location.city}, {location.state}</div>
-                            <div>{location.postalcode}</div>
-                            <div>{location.phone}</div>
+                        <div key={locKey} >
+                            <LocationItem
+                                location={location}
+
+                            />
                             <p/>
                         </div>
                     // :
@@ -173,13 +163,14 @@ export default class Locator extends React.Component {
             <label class="m-input-label">Address</label>
         </div>
         <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Travel Distance </div>
-            <div>10 Miles
-                <input className="m-slider-line m-slider-circle" type="range" max={this.state.max} min={this.state.min} defaultValue="25"/>
+            <div class="m-slider-label">Max Travel Distance <span><b>{this.state.travelRadius}</b></span> Miles</div>
+            <div>
+                <input className="m-slider-line" ref="travelDistanceInput" 
+                onInput={ (e) => { this.updateSearch();}}
+                type="range" max={this.state.max} min={this.state.min} 
+                defaultValue={this.state.travelRadius}/>
             </div>
 
-
-            <input ref="query2" onChange={ (e) => { this.updateSearch(); } } type="text" />
         </div>
         {condition?
             <div class={"m-editable-list mod-locations shadow-2"}>
@@ -187,14 +178,10 @@ export default class Locator extends React.Component {
 
                     <ul >{locations}</ul>
 
-
             </div>
             :
             <div class={"m-editable-list mod-locations shadow-2 mod-closed"}>
                 <div onClick={ ()=> this.setState({ open: !this.state.open })} class="m-button">Show Location List</div>
-
-
-
 
             </div>
         }
@@ -207,9 +194,12 @@ export default class Locator extends React.Component {
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Adult</div>
         </div>
         <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Cost <span>$30</span></div>
-            <div class="m-slider-circle"></div>
-            <div class="m-slider-line"></div>
+            <div class="m-slider-label">Max Cost <span><b>${this.state.maxCost}</b></span></div>
+            <input className="m-slider-line" 
+                type="range" 
+                ref="maxCostInput" 
+                onInput={ (e) => {this.updateMaxCost();} }
+                max={this.state.max1} min={this.state.min1} defaultValue={this.state.maxCost} />
         </div>
 
         <div class="m-editable-list mod-appointments shadow-2 mod-closed">
@@ -233,7 +223,7 @@ export default class Locator extends React.Component {
                     New York, NY 10011</div>
             </div>
         </div>
-        <div class="m-button shadow-2 shadow-hover-3 shadow-active-4 m-button-checkout"><a href="/booking.html">Checkout</a></div>
+        <div class="m-button-checkout">Checkout</div>
     </div>
 
 
