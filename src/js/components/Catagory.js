@@ -1,6 +1,5 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
-//import CatagoryStore from '../stores/CatagoryStore';
 import  * as PagesActions from "../actions/PagesActions";
 
 
