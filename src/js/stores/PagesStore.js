@@ -14,8 +14,6 @@ class PagesStore extends EventEmitter{
         this.selectedCatagory = ""
     }
 
-
-
     changePage(text){
         console.log("*** in PagesStore.changePage(" + text + ")");
         this.viewing = text;
@@ -41,12 +39,11 @@ class PagesStore extends EventEmitter{
 
         switch (action.type){
             case "CHANGE_DISPLAY":
-                this.changePage(action.text);
                 this.selectedCatagory="";
+                this.changePage(action.text);
                 break;
             case "SELECT_CATAGORY":
                 this.selectedCatagory = action.text;
-                //console.log("Sending change to page for SELECT_CATAGORY " + action.text);
                 this.changePage('CategoryClasses');
                 break;
         }

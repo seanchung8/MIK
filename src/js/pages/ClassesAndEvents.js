@@ -237,35 +237,27 @@ export default class ClassesAndEvents extends React.Component {
 
         };
 
-        return (<div>
+        return (
+            <div>
+                <div style={varStyle}>
 
-            <div style={varStyle}>
+                    <MIKHeader/>
+                    <Banner 
+                        Headline={"This is the headline"}
+                        Description={"This is the Catagory discription"}
+                        Title={"This is the catagory"}
+                        View={"Catagory"}
+                        Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
+                        NavElenment={"Classes"}/>
 
-            <MIKHeader/>
-            <Banner 
-            Headline={"This is the headline"}
-            Description={"This is the Catagory discription"}
-            Title={"This is the catagory"}
-            View={"Catagory"}
-            Pic={"url(../assets/SeviceTypes/partyevent.jpg)"}
-            NavElenment={"Classes"}            />
-
-        <MIKFooter/>
-
-        </div>
-        <div><Locator country={this.props.params.country} viewing={this.state.viewing}/></div>
-
-        </div>);
+                    <MIKFooter/>
+                </div>
+                <div>
+                    <Locator country={this.props.params.country} viewing={this.state.viewing}/>
+                </div>
+            </div>
+        );
     }
-
-
-
-    // SwitchToCatagories(){
-    //     // ???
-    //     console.log("*** in SwitchToCatagories. Do nothing ***");
-    //     //PagesActions.UpdateDisplayed();
-    // }
-
 
     DrawClasses(){
         console.log("*** in DrawClasses()");
@@ -286,7 +278,7 @@ export default class ClassesAndEvents extends React.Component {
         <div style={catStyle}>
             <MIKHeader/>
 
-<div>
+        <div>
                 <Banner 
                     Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
                     Description={"With our exciting array of classes, there's always something new to learn and do! " +
@@ -295,9 +287,8 @@ export default class ClassesAndEvents extends React.Component {
                     Title={"IN-STORE CLASSES"}
                     Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
                     View={"Classes"}            
-                    NavElenment={"Events"}            
-                />
-</div>
+                    NavElenment={"Events"} />
+        </div>
 
             <div class="m-service-row" >
                     <Catagory
@@ -479,36 +470,21 @@ export default class ClassesAndEvents extends React.Component {
     }
 
 
-    DrawBooking(){
+    DrawBooking() {
+        console.log("In DrawBooking. Doing nothing");
+        return(
+            <div>
+                
+                <div><Booking/></div>
+            </div>
 
-
-return(
-    <div>
-        
-        <div><Booking/></div>
-    </div>
-
-);
-
+        );
     }
 
     UpdateScreen(){
 
-
-
         console.log("*** in UpdateScreen - this.state.viewing: " + this.state.viewing);
 
-        //var Landing = this.DrawLanding();
-        //var ClassDraw = this.DrawClasses();
-        //var EventDraw = this.DrawEvents();
-        //var CatagoryDraw = this.DrawCatagories();
-        //var CategoryClassesDraw = this.DrawCategoryClasses();
-
-        //var BookingDraw= this.DrawBooking();
-
-
-        //console.log("Updating screen. state.viewing:" + this.state.viewing);
-        
         switch (this.state.viewing) {
             case "Landing":
                 this.setState({page: this.DrawLanding()});
@@ -535,59 +511,6 @@ return(
 
 
     }
-
-
-    /*DrawBooking(){
-return(
-        <Row >
-
-            <Col sm={3} md={3} lg={3}>
-  /!*              <Panel>
-                    <Row>
-                        {condition ?
-                            <div>
-                                <Dropdown options={options} onChange={this._onSelect} value={defaultOption}
-                                          placeholder={placeHolderValue}/>
-                                <p/><p/>
-                                {selctedLanguage ?
-                                    <h3>This website is in english</h3>
-                                    :
-                                    <h3>Ce site est en français</h3>
-                                }
-                            </div>
-                            : <div><h1>This is the US Site in english</h1></div>
-                        }
-                    </Row>
-                    <Row>
-
-                        <Locator country={params.country}/>
-
-                    </Row>
-                </Panel>
-            </Col>
-
-            <Col sm={6} md={6} lg={6}>*!/
-
-
-
-            </Col>
-        </Row>
-
-
-    );
-
-    }*/
-
-
-
-
-
-
-
-
-
-
-
 
   render() {
 

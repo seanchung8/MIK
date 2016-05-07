@@ -1515,7 +1515,12 @@ a {
 }
 
 .thank-you {
+  top: 60px;
   padding : 20px;
+  height: 400px;
+  overflow-y : auto;
+  margin:10px;
+
 }
 
 .thank-title {
@@ -1526,8 +1531,7 @@ a {
 
 .m-checkout.mod-booked .personal-info,
 .m-checkout.mod-booked .purchase-info,
-.m-checkout.mod-booked .mod-book,
-.thank-you {
+.m-checkout.mod-booked .mod-book {
   display : none;
 
   opacity : 0;
@@ -1536,10 +1540,11 @@ a {
 .m-checkout .personal-info,
 .m-checkout .purchase-info,
 .m-checkout .mod-book,
-.m-checkout.mod-booked .thank-you {
+.m-checkout .mod-booked .thank-you {
   display : block;
 
   transition : 0.2s ease all, 0.2s ease opacity 0.3s;
 
   opacity : 1;
+
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import BookingStore from "../stores/BookingStore";
-import BookingActions from "../actions/BookingActions";
+//import BookingStore from "../stores/BookingStore";
+//import BookingActions from "../actions/BookingActions";
 import MIKHeader from "../components/MIKHeader";
 import MIKFooter from "../components/MIKFooter";
 import Appointment from "../components/Appointment";
@@ -15,7 +15,7 @@ export default class Booking extends React.Component {
     super(props);
     this.state = {
       showCheckout:true,
-      View:'Landing'
+      View:'Booking'
     };
   }
 
@@ -37,8 +37,8 @@ export default class Booking extends React.Component {
 
     var btnClass = classNames(
         {
-          'mod-no-checkout': this.state.showCheckout,
-          'mod-hide': true
+          'mod-no-checkout': this.state.showCheckout
+          //'mod-hide': !this.state.showCheckout
         });
 
     var btnApt = classNames(
@@ -55,8 +55,14 @@ export default class Booking extends React.Component {
           <div class={btnApt}>
               <div><MIKHeader/></div>
               <div class="m-appointments-title-bar m-tile shadow-1">
-                  <div class="m-button shadow-hover-2 shadow-active-3" onClick={()=> this.goBackToLanding()}>View More Classes</div>
-                  <div class="m-button shadow-hover-2 shadow-active-3" onClick={()=> this.startCheckout()}>Checkout</div>
+                  <div class="m-button shadow-hover-2 shadow-active-3" 
+                    onClick={()=> this.goBackToLanding()}>
+                    View More Classes
+                  </div>
+                  <div class="m-button shadow-hover-2 shadow-active-3" 
+                    onClick={()=> this.startCheckout()}>
+                    Checkout
+                  </div>
               </div>
               <div><Appointment/></div>
               <div><Appointment/></div>
