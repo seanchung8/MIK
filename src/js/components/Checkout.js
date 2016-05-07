@@ -13,7 +13,7 @@ export default class Checkout extends React.Component {
 
   completeOrder(){
     console.log("Completing order");
-    setState({showCheckout:!this.state.showCheckout})
+    this.setState({showCheckout:!this.state.showCheckout});
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class Checkout extends React.Component {
       
         {
           'm-checkout mod-hide': true,
-          'mod-book': this.state.showCheckout
+          'm-checkout mod-book thank-you': this.state.showCheckout
         });
 
 
@@ -74,7 +74,10 @@ export default class Checkout extends React.Component {
             </div>
           </div>
           
-          <div class="m-button shadow-hover-2 shadow-active-3 mod-book" onClick={ ()=> this.setState({ showCheckout: !this.state.showCheckout })}>Purchase Classes</div>
+          <div class="m-button shadow-hover-2 shadow-active-3 mod-book" 
+            onClick={ ()=>{this.state.showCheckout = !this.state.showCheckout} }>
+            Purchase Classes
+          </div>
           <div class="thank-you m-tile shadow-2 anim-tile-in">
             <div class="thank-title">Your Class has been booked!</div>
             <div class="thank-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in turpis dapibus, tristique erat a, venenatis est. Aliquam id scelerisque metus. Nullam a maximus nibh. Curabitur auctor bibendum venenatis. Pellentesque et mi vehicula, pharetra est lobortis, mollis sem. In placerat sollicitudin eros et faucibus. Vivamus consectetur commodo egestas. Morbi pretium placerat purus, nec feugiat urna. Aliquam et interdum nibh, in feugiat nisl. In hac habitasse platea dictumst.</div>
