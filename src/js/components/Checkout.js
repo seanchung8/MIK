@@ -36,41 +36,41 @@ export default class Checkout extends React.Component {
         
         
           <div class="personal-info">
-            <div class="personal-title">Personal Information</div>
+            <div class="personal-title">PERSONAL INFORMATION</div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">First Name</label>
+              <label class="m-input-label">FIRST NAME</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Last Name</label>
+              <label class="m-input-label">LAST NAME</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Email</label>
+              <label class="m-input-label">EMAIL</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Phone Number</label>
+              <label class="m-input-label">PHONE NUMBER</label>
             </div>
           </div>
           <div class="purchase-info">
-            <div class="purchase-title">Payment Information</div>
+            <div class="purchase-title">PAYMENT INFORMATION</div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Name</label>
+              <label class="m-input-label">NAME</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Billing Address</label>
+              <label class="m-input-label">BILLING ADDRESS</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Credit Card</label>
+              <label class="m-input-label">CREDIT CARD</label>
             </div>
             <div class="m-input">
               <input type="text" required class="m-input-field" />
-              <label class="m-input-label">Security Code</label>
+              <label class="m-input-label">SECURITY CODE</label>
             </div>
           </div>
           

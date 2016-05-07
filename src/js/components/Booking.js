@@ -59,6 +59,8 @@ export default class Booking extends React.Component {
                   <div class="m-button shadow-hover-2 shadow-active-3" onClick={()=> this.startCheckout()}>Checkout</div>
               </div>
               <div><Appointment/></div>
+              <div><Appointment/></div>
+              <div><Appointment/></div>
               <div><MIKFooter/></div>
           </div>
               <Checkout/>
