@@ -57,19 +57,19 @@ export default class Party extends React.Component {
 
 
       var classNames = require('classnames');
-      var showDiscription = classNames(
-          'm-service m-tile shadow-2 anim-tile-in',
-          {
-              'mod-details': this.state.showDiscription,
-              'mod-times': this.state.showTimes,
-              'mod-booking': this.state.showBooking
-          });
+      // var showDiscription = classNames(
+      //     'm-service m-tile shadow-2 anim-tile-in',
+      //     {
+      //         'mod-details': this.state.showDiscription,
+      //         'mod-times': this.state.showTimes,
+      //         'mod-booking': this.state.showBooking
+      //     });
 
 
 
     return (
 
-        <div class='m-party m-tile shadow-2 anim-tile-in' >
+        <div class='m-party m-tile anim-tile-in' >
         <div class="m-party-image-event" style={BackImg}></div>
             <div class="m-party-description">
                 <div class="m-party-description-header" >{this.props.Title}</div>

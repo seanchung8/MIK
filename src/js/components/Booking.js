@@ -1,10 +1,10 @@
 import React from "react";
 import BookingStore from "../stores/BookingStore";
 import BookingActions from "../actions/BookingActions";
-import MIKHeader from "../Components/MIKHeader";
-import MIKFooter from "../Components/MIKFooter";
-import Appointment from "../Components/Appointment";
-import Checkout from "../Components/Checkout";
+import MIKHeader from "../components/MIKHeader";
+import MIKFooter from "../components/MIKFooter";
+import Appointment from "../components/Appointment";
+import Checkout from "../components/Checkout";
 import  * as PagesActions from "../actions/PagesActions";
 import PagesStore from "../stores/PagesStore"
 
