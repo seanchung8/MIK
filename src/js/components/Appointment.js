@@ -33,7 +33,7 @@ export default class Appointment extends React.Component {
             <div class="appointment-address">240 Broadway,
               New York, NY 10007</div>
             <div class="appointment-time">January 3rd at 12:30pm</div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3"><a href="/">Change Date/Location</a></div>
+            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Change Date/Location</div>
           </div>
           <div class="appointment-details">
             <div class="attendee-details">
@@ -46,7 +46,7 @@ export default class Appointment extends React.Component {
               <div class="attendee-email">Jane.Doe@skedge.me</div>
               <div class="attendee-phone">1412947743</div>
             </div>
-            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3"><a href="/">Change Details</a></div>
+            <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Change Details</div>
           </div>
         </div>
     );

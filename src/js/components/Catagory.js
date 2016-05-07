@@ -21,10 +21,7 @@ export default class Catagory extends React.Component {
         this.state = {
             viewing: PagesStore.getAll(),
             Headline: "",
-            Description: "Sed sagittis in neque laoreet dapibus. Maecenas eget egestas tortor. In massa leo, ullamcorper et lacus vitae, " +
-            "volutpat scelerisque mauris. Donec sollicitudin nisl scelerisque nunc placerat, " +
-            "nec rhoncus lectus maximus. Maecenas sapien libero, cursus in lobortis non, vestibulum sed magna. " +
-            "Curabitur at arcu in mauris suscipit tincidunt eget id ex. Aliquam sodales convallis vehicula. Pellentesque ultrices, ",
+            Description: "",
             Title: "IN STORE CLASSES",
             Pic: " "
 

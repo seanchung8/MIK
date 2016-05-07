@@ -68,8 +68,7 @@ export default class ClassesAndEvents extends React.Component {
         return(
             <div>
                 <MIKHeader/>
-                <div>
-
+                <div class="m-header-row">
                     <ServiceType
                         Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
                         Description={"With our exciting array of classes, there's always something new to learn and do! " +
