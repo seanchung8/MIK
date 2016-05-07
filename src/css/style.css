@@ -22,6 +22,7 @@ body {
   color : #5d5d5d;
 
   box-sizing: border-box;
+  min-width: 900px;
 }
 
 body * {
@@ -53,6 +54,7 @@ a {
 /* MICHEALS BUTTON */
 
 .m-button {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 43px;
@@ -62,7 +64,7 @@ a {
 
   box-sizing : border-box;
   height : 43px;
-  padding : 0 25px;
+  padding : 0 10px; 
 
   cursor : pointer;
   transform : translateZ(0);
@@ -103,6 +105,7 @@ a {
   width: calc(100% - 10px *2);
   height : 300px;
   margin-left : 10px;
+  min-width: 880px;  /* 900 - 10 for margin */
 }
 
 .appointment-image,
@@ -114,10 +117,21 @@ a {
   width : 400px;
   height : 100%;
 
-  background-image : url(../assets/SeviceTypes/instoreclass.jpg);
+  background-image : url(../assets/SeviceTypes/instoreclass.jpg); 
   background-size : cover;
 }
 
+.m-title-image-event {
+  position : absolute;
+  top : 0;
+  left : 0;
+
+  width : 400px;
+  height : 100%;
+
+  background-image : url(../assets/SeviceTypes/partyevent.jpg); 
+  background-size : cover;
+}
 .m-title-header {
   font-size : 30px;
   font-weight : bold;
@@ -146,16 +160,20 @@ a {
 }
 
 /* MICHEALS HEADER */
+.m-header-row {
+  height : 410px;
+  min-width: 900px;
+}
 
 .m-header {
   display : inline-block;
   overflow : hidden;
   width: calc(100%/2 - 20px);
   height : 400px;
-  margin: 10px;
+  margin: 0 10px 0 10px;
   transform : translateZ(0);
 
-  /*background-image : url(../assets/instoreclass.jpg);*/
+  background-image : url(../assets/instoreclass.jpg);
   background-size : cover;
 }
 
@@ -240,14 +258,101 @@ a {
   display : none;
 }
 
+/* MICHEALS PARTY */
+.m-party-row {
+  height : 460px;
+  min-width: 900px;
+}
+
+.m-party {
+  display : inline-block;
+  overflow : hidden;
+  margin: 10px;
+
+  width : calc(100%/3 - 10px * 2);
+  height : 440px;
+
+  transition : 0.25s ease all 0.25s, 0.25s ease width, 0.25s ease height;
+  transform : translateZ(0);
+
+  background-size : cover;
+  /* attempt to stop shrinking width */
+  min-width: 260px;
+}
+
+.m-party-image-event {
+  position : absolute;
+  top : 0;
+  left : 0;
+
+  width : 300px;
+  height : 320px;
+
+  background-size : cover;
+}
+
+.m-party-description {
+  font-size : 24px;
+  line-height : 43px;
+  position : absolute;
+  bottom : 0;
+  left : 0;
+
+  width : 100%;
+  height : 100%;
+  padding : 10px;
+
+  transform : translateZ(0) translateY(216px);
+
+  background-color : rgba(255,255,255,0.95);
+  min-width: 250px;
+}
+
+.m-party-description .m-party-description-header {
+  font-size : 18px;
+  font-weight : bold;
+  overflow: pre-wrap;
+  display : inline-block;
+  width: calc(100% - 0%);
+  line-height: 100%;
+}
+
+.m-party-description .m-party-description-text {
+  font-size : 14px;
+  line-height : 16px;
+
+  position : absolute;
+  top : 72px;
+  left : 0;
+
+  display : block;
+  overflow : pre-wrap;
+
+  width : calc(100% - 40px);
+  height : 145px;
+  margin : 0 10px;
+
+  transform : translate3d(0,0,0);
+  white-space : pre-wrap;
+  letter-spacing : 0.1em;
+
+  opacity : 1;
+}
+
 /* MICHEALS SERVICE */
+
+.m-service-row {
+  height : 320px;
+  min-width: 900px;
+}
 
 .m-service {
   display : inline-block;
   overflow : hidden;
   margin: 10px;
 
-  width : calc(100%/3 - 10px * 2);
+  width : calc(100%/3 - 20px);
+  /* width : calc(100%/3 - 10px); */
   height : 300px;
 
   transition : 0.25s ease all 0.25s, 0.25s ease width, 0.25s ease height;
@@ -255,6 +360,8 @@ a {
 
   /*background-image : url(../assets/instoreclass.jpg);*/
   background-size : cover;
+  /* attempt to stop shrinking width */
+  min-width: 260px;
 }
 
 .m-service.mod-times {
@@ -337,18 +444,22 @@ a {
 
   width : 100%;
   height : 100%;
-  padding : 20px;
+  /* padding : 20px; */
+  padding : 10px; 
 
   transform : translateZ(0) translateY(216px);
 
   background-color : rgba(255,255,255,0.95);
+  min-width: 250px;
 }
 
 .m-service-description .m-service-description-header {
   font-size : 18px;
   font-weight : bold;
-
+  overflow: pre-wrap;
   display : inline-block;
+  width: calc(100% - 44%);
+  line-height: 100%;
 }
 
 .m-service-description .m-service-description-text {
@@ -356,15 +467,17 @@ a {
   line-height : 16px;
 
   position : absolute;
-  top : 82px;
+  top : 84px;
   left : 0;
 
   display : block;
-  overflow : pre-wrap;
+  /* overflow : pre-wrap; */
+  overflow : auto;
 
-  width : calc(100% - 40px);
+
+  /* width : calc(100% - 40px); */
   height : 145px;
-  margin : 0 20px;
+  margin : 0 10px;
 
   transform : translate3d(0,0,0);
   white-space : pre-wrap;
@@ -386,13 +499,13 @@ a {
 .m-service-description .m-button.m-button-more-info {
   position : absolute;
   top : 20px;
-  right : 20px;
+  right : 10px;
 }
 
 .m-service-description .m-button.m-button-times {
   position : absolute;
   right : 20px;
-  bottom : 20px;
+  bottom : 10px;
 }
 
 .m-service.mod-details .m-button.m-button-more-info {
@@ -427,6 +540,7 @@ a {
   height : 100%;
   margin : 0;
   padding : 20px;
+  background-color: #e9e9e9;
 }
 
 @media( min-width: 1540px ) {
@@ -483,6 +597,7 @@ a {
 }
 
 .m-input-label {
+  font-family : Montserrat;
   font-size : 12px;
   font-weight : lighter;
   line-height : 38px;
@@ -543,14 +658,15 @@ a {
   padding : 0 20px;
 }
 
+/*
 .m-slider-label span {
   font-weight : bold;
 
   float : right;
 }
-
+*/
 .m-slider-circle {
-  position : absolute;
+  position : relative;
   z-index : 10;
   right : 55px;
   bottom : 16px;
@@ -564,11 +680,12 @@ a {
 }
 
 .m-slider-line {
-  width : calc( 100% - 40px );
+  position: relative;
   height : 2px;
-  margin : 0 20px;
-
+  left: 20px; 
   background-color : #5d5d5d;
+  display: block;
+  max-width: calc(100% - 40px);
 }
 
 .m-editable-list {
@@ -700,7 +817,9 @@ a {
 }
 
 .m-button-checkout {
+  font-family : Montserrat;
   font-size : 18px;
+  font-weight : lighter;
   line-height : 62px;
 
   display : block;
@@ -708,7 +827,14 @@ a {
   width : 100%;
   height : 63px;
 
+  cursor : pointer;
+  transform : translateZ(0);
+  text-transform : uppercase;
+
   text-align : center;
+  color: white;
+  background : #e21836;
+  border-radius : 7px;
 }
 
 .m-button-checkout::after {
@@ -1162,15 +1288,14 @@ a {
 }
 
 .m-appointments-title-bar {
-  position : fixed;
-  z-index : 20;
+  
+  z-index : 20px;
   top : 0;
   left : 0;
-
-  width : 100%;
-  margin : 0;
-  padding : 10px 20px;
-
+  height: 0;
+  width : 0px;
+  
+  padding : 0px 0px;
   transform : translateZ(0) translateY(-100%);
 
   background-color : rgba(255,255,255,0.95);
@@ -1178,6 +1303,11 @@ a {
 
 .mod-no-checkout .m-appointments-title-bar {
   transform : translateZ(0);
+  margin-top: 0px;
+  padding : 20px 20px;
+  width: 100%;
+  height: auto;
+
 }
 
 .m-appointments-title-bar .m-button {
@@ -1200,12 +1330,17 @@ a {
 
 .m-appointments {
   position : relative;
-
   width : 100%;
-  margin-top : 0;
+  margin-top : 0px;
 }
 
-.mod-no-checkout .m-appointments {
+.m-appointments-shrink {
+  position : relative;
+  width : calc(100% - 420px);
+  margin-top : 0px;
+}
+
+.ds .m-appointments {
   margin-top : 85px;
 }
 
