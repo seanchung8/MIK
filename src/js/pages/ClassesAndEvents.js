@@ -215,7 +215,7 @@ export default class ClassesAndEvents extends React.Component {
 
                 <MIKFooter/>
             </div>
-            <div><Locator/></div>
+            <div><Locator country={this.props.params.country} viewing={this.state.viewing}/></div>
 
             </div>
         );
@@ -253,7 +253,7 @@ export default class ClassesAndEvents extends React.Component {
         <MIKFooter/>
 
         </div>
-        <div><Locator/></div>
+        <div><Locator country={this.props.params.country} viewing={this.state.viewing}/></div>
 
         </div>);
     }
@@ -364,7 +364,7 @@ export default class ClassesAndEvents extends React.Component {
     <MIKFooter/>
 
 </div>
-            <div><Locator country={this.props.params.country}/></div>
+            <div><Locator country={this.props.params.country} viewing={this.state.viewing}/></div>
 
         </div>);
     }
@@ -470,7 +470,7 @@ export default class ClassesAndEvents extends React.Component {
                 <MIKFooter/>
 
             </div>
-            <div><Locator country={this.props.params.country}/></div>
+            <div><Locator country={this.props.params.country} viewing={this.state.viewing}/></div>
 
         </div>
         );

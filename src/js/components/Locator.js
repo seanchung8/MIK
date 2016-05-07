@@ -1,10 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 import xml2js from 'xml2js';
-import { Panel,Grid,Col,Row,PanelGroup,ListGroup,ListGroupItem,Well,ButtonToolbar,Button} from 'react-bootstrap';
-import ReactBootstrapSlider from 'react-bootstrap-slider';
-import ReactSliderNativeBootstrap from 'react-bootstrap-native-slider';
 import LocationItem from './LocationItem';
+import PagesStore from '../stores/PagesStore';
+import * as PagesActions from '../actions/PagesActions';
 
 export default class Locator extends React.Component {
     //Class Constructor 
@@ -98,6 +97,8 @@ export default class Locator extends React.Component {
         });
     }
 
+
+
     clickedLocation(isClicked,key){
 
         this.setState({
@@ -105,10 +106,37 @@ export default class Locator extends React.Component {
             locKey:key
         });
     }
-//Slider code for range Moved so it could be commented.
-// <div class=></div>
-// <div class=""></div>
 
+    navigation(){
+
+
+        var navLink = '';
+
+        switch(this.props.viewing){
+            case 'Events':
+            navLink = 'Classes';
+            break;
+            case 'Classes':
+            navLink = 'Events';
+            break;
+            case 'CategoryClasses':
+            navLink = 'Landing';
+            break;
+            case 'default':
+            console.log("This navigation case not handled: " + this.props.viewing);
+            break;
+        }
+
+        return navLink;
+    }
+
+    pageChange(){
+
+        var nav = this.navigation();
+        console.log("changing page from: "+this.props.viewing + " to: "+nav)
+
+        PagesActions.UpdateDisplayed(nav);
+    }
 
     render(){
         var value = 10;
@@ -122,6 +150,8 @@ export default class Locator extends React.Component {
         }
 
 
+        var nav = this.navigation();
+        console.log("view in locator "+this.props.viewing);
         var Clicked =false;
 
         var locKey = 0;
@@ -157,13 +187,13 @@ export default class Locator extends React.Component {
         return(
 
     <div class="m-sidebar anim-bar-left">
-        <div class="m-button shadow-2 shadow-hover-3 shadow-active-4 m-button-toggle">View Parties</div>
-        <div class="m-input shadow-2">
+        <div class="m-button shadow-hover-3 shadow-active-4 m-button-toggle" onClick={()=> this.pageChange()}>View {nav}</div>
+        <div class="m-input">
             <input ref="query" onChange={ (e) => { this.updateSearch();}} type="text" required class="m-input-field" />
-            <label class="m-input-label">Address</label>
+            <label class="m-input-label">Zip Code</label>
         </div>
-        <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Travel Distance <span><b>{this.state.travelRadius}</b></span> Miles</div>
+        <div class="m-slider ">
+            <div class="m-slider-label">MAX TRAVEL DISTANCE <span><b>{this.state.travelRadius}</b></span> MILES</div>
             <div>
                 <input className="m-slider-line" ref="travelDistanceInput" 
                 onInput={ (e) => { this.updateSearch();}}
@@ -173,28 +203,28 @@ export default class Locator extends React.Component {
 
         </div>
         {condition?
-            <div class={"m-editable-list mod-locations shadow-2"}>
+            <div class={"m-editable-list mod-locations"}>
                 <div onClick={ ()=> this.setState({ open: !this.state.open })} class="m-button">Show Location List</div>
 
                     <ul >{locations}</ul>
 
             </div>
             :
-            <div class={"m-editable-list mod-locations shadow-2 mod-closed"}>
+            <div class={"m-editable-list mod-locations mod-closed"}>
                 <div onClick={ ()=> this.setState({ open: !this.state.open })} class="m-button">Show Location List</div>
 
             </div>
         }
 
-        <div class="m-tag shadow-2">
-            <div class="m-tag-header">Age Group</div>
+        <div class="m-tag ">
+            <div class="m-tag-header">AGE GROUP</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Child</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Preteen</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Teenager</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">Adult</div>
         </div>
-        <div class="m-slider shadow-2">
-            <div class="m-slider-label">Max Cost <span><b>${this.state.maxCost}</b></span></div>
+        <div class="m-slider ">
+            <div class="m-slider-label">MAX COST <span><b>${this.state.maxCost}</b></span></div>
             <input className="m-slider-line" 
                 type="range" 
                 ref="maxCostInput" 

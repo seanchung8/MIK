@@ -49,7 +49,7 @@ export default class Appointment extends React.Component {
               <div class="attendee-email">Jane.Doe@skedge.me</div>
               <div class="attendee-phone">1412947743</div>
             </div>
-<<<<<<< HEAD
+
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">CHANGE DETAILS</div>
 
           </div>

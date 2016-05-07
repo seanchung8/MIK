@@ -576,7 +576,7 @@ a {
   border-radius : 0;
 }
 
-.m-input .m-input-field:valid + .m-input-label,
+/*.m-input .m-input-field:valid + .m-input-label,
 .m-input .m-input-field:focus + .m-input-label,
 .m-input:hover .m-input-label {
   width : 25%;
@@ -594,7 +594,7 @@ a {
 .m-input .m-input-field:focus + .m-input-label::after,
 .m-input:hover .m-input-label::after {
   display : none;
-}
+}*/
 
 .m-input-label {
   font-family : Montserrat;
@@ -607,7 +607,7 @@ a {
   top : 0;
   left : 0;
 
-  width : 100%;
+  width : 25%;
   height : 100%;
 
   text-align : center;
@@ -617,13 +617,13 @@ a {
   background : #5d5d5d;
 }
 
-.m-input-label::before {
+/*.m-input-label::before {
   content : 'Enter your ';
 }
 
 .m-input-label::after {
   content : ' here';
-}
+}*/
 
 .m-input-field {
   font-family : Montserrat;
