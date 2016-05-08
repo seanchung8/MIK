@@ -1,6 +1,4 @@
 import React from "react";
-//import BookingStore from "../stores/BookingStore";
-//import BookingActions from "../actions/BookingActions";
 import MIKHeader from "../components/MIKHeader";
 import MIKFooter from "../components/MIKFooter";
 import Appointment from "../components/Appointment";

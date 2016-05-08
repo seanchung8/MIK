@@ -16,7 +16,6 @@ import ServiceTypeActions from "../actions/ServiceTypeActions"
 import  * as PagesActions from "../actions/PagesActions"
 import Banner from "../components/Banner"
 import Party from "../components/Party"
-//import Service from "../components/Service"
 
 export default class ClassesAndEvents extends React.Component {
 
@@ -151,10 +150,7 @@ export default class ClassesAndEvents extends React.Component {
             </div>
 
         );
-
-
     }
-
 
     ChangeDisplayScreen(){
         console.log("Changing Display to classes");
@@ -162,9 +158,6 @@ export default class ClassesAndEvents extends React.Component {
         //ServiceTypeActions.ChangeDisplayed(this.state.View);
         PagesActions.UpdateDisplayed(this.state.View);
     }
-
-
-
 
     DrawEvents(){
         console.log("*** drawing events");
@@ -509,16 +502,13 @@ export default class ClassesAndEvents extends React.Component {
 
         }
 
-
     }
 
   render() {
 
       const {params} = this.props;
 
-
-      //console.log(this.state)
-      console.log(">>>In ClassesAndEvent.render(). state:" + this.state);
+      //console.log(">>>In ClassesAndEvent.render(). state:" + this.state);
 
       const defaultOption = this.state.selected
       const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected
@@ -542,15 +532,7 @@ export default class ClassesAndEvents extends React.Component {
 
       var ShownPage = this.state.isBooking;
 
-
-
-
       return (<body>{this.state.page}</body>);
   }
-
-
-
-
-
 
 }

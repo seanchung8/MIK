@@ -4,9 +4,6 @@ import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'r
 import * as PagesActions from "../actions/PagesActions"
 import StoresContainer from "./StoresContainer"
 
-
-
-
 export default class Service extends React.Component {
 
     //Class Constructor
@@ -24,7 +21,7 @@ export default class Service extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        this.serviceInit();
         // var locs = LocatorStore.getAll();
         // console.log(">>>Selected locations:" + locs);
 
@@ -34,8 +31,7 @@ export default class Service extends React.Component {
         // }
     }
 
-    ServiceTypeInit(){
-
+    serviceInit(){
 
             if(this.props.Description != null || this.props.Description != " ") {
                 this.setState({Description: this.props.Description});
@@ -44,13 +40,31 @@ export default class Service extends React.Component {
             if(this.props.Title != null || this.props.Title != " ") {
                 this.setState({Title: this.props.Title});
             }
-
-
     }
 
     setPage(){
-
         PagesActions.UpdateDisplayed("Booking");
+    }
+
+    closeWindow(){
+
+        if(this.state.showDiscription){
+
+            this.setState({
+                showDiscription:false,
+                showTimes:false,
+                showBooking:false
+            });
+        }
+        else{
+
+            this.setState({ showDiscription: true});
+
+        }
+
+        
+
+
 
     }
 
@@ -70,15 +84,13 @@ export default class Service extends React.Component {
               'mod-booking': this.state.showBooking
           });
 
-
-
     return (
 
         <div class={showDiscription} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
-                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
                 <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">
