@@ -60,7 +60,6 @@ a {
   line-height : 43px;
 
   display : inline-block;
-  overflow : hidden;
 
   box-sizing : border-box;
   height : 43px;
@@ -513,7 +512,7 @@ a {
 .m-service-description .m-button.m-button-times {
   position : absolute;
   right : 20px;
-  bottom : 10px;
+  bottom : 21px;
 }
 
 .m-service.mod-details .m-button.m-button-more-info {
