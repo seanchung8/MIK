@@ -232,7 +232,7 @@ export default class Locator extends React.Component {
                 max={this.state.max1} min={this.state.min1} defaultValue={this.state.maxCost} />
         </div>
 
-        <div class="m-editable-list mod-appointments shadow-2 mod-closed">
+        <div class="m-editable-list mod-appointments mod-closed">
             <div class="m-button">Show Appointments</div>
             <div class="m-appointments-appointment">
                 <div class="m-appointments-name">Face Painting Extravaganza</div>

@@ -64,7 +64,7 @@ a {
 
   box-sizing : border-box;
   height : 43px;
-  padding : 0 10px; 
+  padding : 0 15px;
 
   cursor : pointer;
   transform : translateZ(0);

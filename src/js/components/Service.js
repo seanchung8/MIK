@@ -166,19 +166,19 @@ export default class Service extends React.Component {
                 </div>
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">First Name</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Last Name</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Phone Number</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Email</label>
                         </div>
@@ -188,11 +188,11 @@ export default class Service extends React.Component {
                         <div class="address">600 madison avenue,</div>
                         <div class="address">New York, New York 10007</div>
                         <div class="dateTime">December 14th at 2:30pm</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
         </div>
 
@@ -281,19 +281,19 @@ export default class Service extends React.Component {
                 </div>
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">First Name</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Last Name</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Phone Number</label>
                         </div>
-                        <div class="m-input shadow-1">
+                        <div class="m-input">
                             <input type="text" required class="m-input-field" />
                             <label class="m-input-label">Email</label>
                         </div>
@@ -303,11 +303,11 @@ export default class Service extends React.Component {
                         <div class="address">600 madison avenue,</div>
                         <div class="address">New York, New York 10007</div>
                         <div class="dateTime">December 14th at 2:30pm</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
         </div>
         </div>
