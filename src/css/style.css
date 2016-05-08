@@ -350,7 +350,6 @@ a {
   display : inline-block;
   overflow : hidden;
   margin: 10px;
-
   width : calc(100%/3 - 20px);
   /* width : calc(100%/3 - 10px); */
   height : 300px;
@@ -365,15 +364,15 @@ a {
 }
 
 .m-service.mod-times {
-  display : block;
-
-  width : 900px;
-  height : 350px;
+  width : calc(100% - 20px);
+  max-width: 1600px;
+  height : 300px;
+  
 }
 
 .m-service.mod-times.mod-booking {
-  width : 670px;
-  height : 332px;
+  width : calc(100% - 20px);
+  height : 300px;
 }
 
 .m-service-time {
@@ -445,8 +444,8 @@ a {
   width : 100%;
   height : 100%;
   /* padding : 20px; */
-  padding : 10px; 
-
+  /*padding : 10px; */
+  padding-left: 10px;
   transform : translateZ(0) translateY(216px);
 
   background-color : rgba(255,255,255,0.95);
@@ -1268,22 +1267,21 @@ a {
 
 .m-appointment-description {
   position : relative;
-  top : 30px;
-
+  
   display : inline-block;
 
   width : 200px;
-  margin-left : 20px;
-
+  margin-left : 200px;
+  margin-bottom: 30px;
   text-align : center;
-  vertical-align : middle;
+  vertical-align : right;
 }
 
 .m-service-booking-form {
   display : inline-block;
-
+  position: relative;
   width : 400px;
-
+  margin-bottom: 100px;
   vertical-align : top;
 }
 

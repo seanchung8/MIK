@@ -63,7 +63,7 @@ export default class Service extends React.Component {
 
       var classNames = require('classnames');
       var showDiscription = classNames(
-          'm-service m-tile shadow-2 anim-tile-in',
+          'm-service m-tile anim-tile-in',
           {
               'mod-details': this.state.showDiscription,
               'mod-times': this.state.showTimes,
@@ -78,7 +78,7 @@ export default class Service extends React.Component {
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
                 <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">
@@ -172,8 +172,8 @@ export default class Service extends React.Component {
                     </div>
                     <div class="m-appointment-description">
                         <div class="title">Papercraft Ninjas</div>
-                        <div class="address">600 madison avenue,
-                            New York, New York 10007</div>
+                        <div class="address">600 madison avenue,</div>
+                        <div class="address">New York, New York 10007</div>
                         <div class="dateTime">December 14th at 2:30pm</div>
                         <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
                         <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
