@@ -18,30 +18,7 @@ export default class Party extends React.Component {
     }
 
     componentWillMount(){
-        // Called the first time the component is loaded right before the component is added to the page
-        //this.ServiceTypeInit();
-        // var locs = LocatorStore.getAll();
-        // console.log(">>>Selected locations:" + locs);
-
-        // for(var i =0;i < locs.length; i++){
-        //     console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
-        
-        // }
     }
-
-    // ServiceTypeInit(){
-
-
-    //         if(this.props.Description != null || this.props.Description != " ") {
-    //             this.setState({Description: this.props.Description});
-    //         }
-
-    //         if(this.props.Title != null || this.props.Title != " ") {
-    //             this.setState({Title: this.props.Title});
-    //         }
-
-
-    // }
 
     setPage(){
 
@@ -51,21 +28,11 @@ export default class Party extends React.Component {
 
 
   render() {
-      var BackImg = {
-          backgroundImage: this.props.Pic,
-      }
+    var BackImg = {
+        backgroundImage: this.props.Pic,
+    }
 
-
-      var classNames = require('classnames');
-      // var showDiscription = classNames(
-      //     'm-service m-tile shadow-2 anim-tile-in',
-      //     {
-      //         'mod-details': this.state.showDiscription,
-      //         'mod-times': this.state.showTimes,
-      //         'mod-booking': this.state.showBooking
-      //     });
-
-
+    var classNames = require('classnames');
 
     return (
 

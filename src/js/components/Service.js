@@ -4,9 +4,6 @@ import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'r
 import * as PagesActions from "../actions/PagesActions"
 import StoresContainer from "./StoresContainer"
 
-
-
-
 export default class Service extends React.Component {
 
     //Class Constructor
@@ -24,7 +21,7 @@ export default class Service extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        this.serviceInit();
         // var locs = LocatorStore.getAll();
         // console.log(">>>Selected locations:" + locs);
 
@@ -34,8 +31,7 @@ export default class Service extends React.Component {
         // }
     }
 
-    ServiceTypeInit(){
-
+    serviceInit(){
 
             if(this.props.Description != null || this.props.Description != " ") {
                 this.setState({Description: this.props.Description});
@@ -44,14 +40,10 @@ export default class Service extends React.Component {
             if(this.props.Title != null || this.props.Title != " ") {
                 this.setState({Title: this.props.Title});
             }
-
-
     }
 
     setPage(){
-
         PagesActions.UpdateDisplayed("Booking");
-
     }
 
 
@@ -69,8 +61,6 @@ export default class Service extends React.Component {
               'mod-times': this.state.showTimes,
               'mod-booking': this.state.showBooking
           });
-
-
 
     return (
 
