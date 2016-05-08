@@ -4,6 +4,8 @@ import xml2js from 'xml2js';
 import LocationItem from './LocationItem';
 import PagesStore from '../stores/PagesStore';
 import * as PagesActions from '../actions/PagesActions';
+import BookingStore from '../stores/BookingStore';
+import * as BookingActions from '../actions/BookingActions';
 
 export default class Locator extends React.Component {
     //Class Constructor 

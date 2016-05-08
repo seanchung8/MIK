@@ -3,6 +3,8 @@ import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'r
 
 import * as PagesActions from "../actions/PagesActions"
 import StoresContainer from "./StoresContainer"
+import * as BookingActions from "../actions/BookingActions"
+import BookingStore from "../stores/BookingStore"
 
 export default class Service extends React.Component {
 
@@ -15,7 +17,16 @@ export default class Service extends React.Component {
         this.state = {
             showDiscription:false,
             showTimes:false,
-            showBooking:false
+            showBooking:false,
+            location: null,
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            name: "",
+            id: "",
+            date: "",
+            time: "",
         };
     }
 
@@ -61,15 +72,14 @@ export default class Service extends React.Component {
             this.setState({ showDiscription: true});
 
         }
-
-        
-
-
-
     }
 
 
-  render() {
+    bookService(){
+
+    }
+
+    render() {
       var BackImg = {
           backgroundImage: this.props.Pic,
       }
