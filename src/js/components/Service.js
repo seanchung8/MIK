@@ -46,6 +46,28 @@ export default class Service extends React.Component {
         PagesActions.UpdateDisplayed("Booking");
     }
 
+    closeWindow(){
+
+        if(this.state.showDiscription){
+
+            this.setState({
+                showDiscription:false,
+                showTimes:false,
+                showBooking:false
+            });
+        }
+        else{
+
+            this.setState({ showDiscription: true});
+
+        }
+
+        
+
+
+
+    }
+
 
   render() {
       var BackImg = {
@@ -68,7 +90,7 @@ export default class Service extends React.Component {
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
-                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
                 <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">
