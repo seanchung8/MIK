@@ -8,7 +8,7 @@ export default {
 
     selectedPosition(row,col){
         dispatcher.dispatch({
-        type: "SELECT_SERV",
+        type: "SELECT_SERVICE",
         row: row,
         col: col
     });
