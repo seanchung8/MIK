@@ -6,6 +6,10 @@ import StoresContainer from "./StoresContainer"
 import * as BookingActions from "../actions/BookingActions"
 import BookingStore from "../stores/BookingStore"
 
+
+import ServiceStore from "../stores/ServiceStore";
+import * as ServiceActions from "../actions/ServiceActions";
+
 export default class Service extends React.Component {
 
     //Class Constructor
@@ -67,6 +71,48 @@ export default class Service extends React.Component {
         PagesActions.UpdateDisplayed("Booking");
     }
 
+    setMargin(){
+
+        var margins;
+
+        switch(this.props.Headline){
+
+            case "Class 1":
+            margins = "10px";
+            break;
+            case "Class 2":
+            margins = "-345px";
+            break;
+            case "Class 3":
+            margins = "-700px";
+            break;
+            case "Class 4":
+            margins = "10px";
+            break;
+            case "Class 5":
+            margins = "-345px";
+            break;
+            case "Class 6":
+            margins = "-700px";
+            break;
+            case "Class 7":
+            margins = "10px";
+            break;
+            case "Class 8":
+            margins = "-345px";
+            break;
+            default:
+            margins = "-345px"
+            break;
+
+
+
+        }
+
+        console.log(margins);
+            return margins;
+    }
+
     closeWindow(){
 
         if(this.state.showDiscription){
@@ -94,7 +140,11 @@ export default class Service extends React.Component {
           backgroundImage: this.props.Pic,
       }
 
+        var normalcss = {};
 
+      var LeftSet = {
+            marginLeft: this.setMargin(),
+      }
       var classNames = require('classnames');
       var showDiscription = classNames(
           'm-service m-tile anim-tile-in',
@@ -107,7 +157,7 @@ export default class Service extends React.Component {
       if (this.state.showDiscription){
                 return (
 
-        <div class={showDiscription} >
+        <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
@@ -135,15 +185,8 @@ export default class Service extends React.Component {
                             <div class="calendar-labels-label">SA</div>
                         </div>
                         <div class="calendar-labels">
-                            <div class="calendar-labels-label"></div>
-                            <div class="calendar-labels-label"></div>
-                            <div class="calendar-labels-label">1</div>
-                            <div class="calendar-labels-label">2</div>
-                            <div class="calendar-labels-label">3</div>
-                            <div class="calendar-labels-label">4</div>
-                            <div class="calendar-labels-label">5</div>
-                        </div>
-                        <div class="calendar-dates">
+
+
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">1</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">2</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2"> 3</div>
@@ -151,6 +194,8 @@ export default class Service extends React.Component {
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">5</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">6</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">7</div>
+                            </div>
+                            <div class="calendar-labels">
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">8</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">9</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">10</div>
@@ -158,6 +203,8 @@ export default class Service extends React.Component {
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">12</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">13</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">14</div>
+                            </div>
+                            <div class="calendar-labels">
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">15</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">16</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">17</div>
@@ -165,6 +212,8 @@ export default class Service extends React.Component {
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">19</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">20</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">21</div>
+                            </div>
+                            <div class="calendar-labels">
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">22</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">23</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">24</div>
@@ -172,6 +221,8 @@ export default class Service extends React.Component {
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">26</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">27</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">28</div>
+                            </div>
+                            <div class="calendar-labels">
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">29</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">30</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">31</div>

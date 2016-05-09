@@ -343,6 +343,8 @@ a {
 .m-service-row {
   height : 320px;
   min-width: 900px;
+  overflow: hidden;
+  left: 0;
 }
 
 .m-service {
@@ -372,16 +374,26 @@ a {
 .m-service.mod-times {
   position: absolute;
   left:350;
-  width : calc(100% - 350px);
+  width : calc(100% - 395px);
   min-width: 880px; 
   height : 300px;
   z-index: 1;
 }
 
-.m-service.mod-times.mod-booking {
+/*.m-service.mod-times.mod-booking {
   width : calc(100% - 20px);
   height : 300px;
+}*/
+
+.m-service.mod-times.mod-booking {
+  position: absolute;
+  left:350;
+  width : calc(100% - 395px);
+  min-width: 880px; 
+  height : 300px;
+  z-index: 1;
 }
+
 
 .m-service-time {
   position : absolute;
@@ -1089,6 +1101,27 @@ a {
   text-align : center;
 }
 
+.calendar-dates-day {
+  font-size : 12px;
+  line-height : 30px;
+
+  display : inline-block;
+
+ 
+
+  box-sizing : border-box;
+  width : calc( 100% / 7 );
+  height : 30px;
+
+  cursor : pointer;
+  -webkit-transition : 0.2s ease-out all;
+          transition : 0.2s ease-out all;
+  text-align : center;
+
+  color : #5d5d5d;
+  border-radius : 3px;
+}
+
 .calendar-dates {
   position : relative;
 
@@ -1104,7 +1137,7 @@ a {
           animation-iteration-count : infinite;
 }
 
-.calendar-dates-day {
+/*.calendar-dates-day {
   font-size : 12px;
   line-height : 30px;
 
@@ -1123,7 +1156,7 @@ a {
 
   color : #5d5d5d;
   border-radius : 3px;
-}
+}*/
 
 .calendar-dates-day:active {
   color : white;
