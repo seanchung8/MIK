@@ -142,6 +142,9 @@ export default class Service extends React.Component {
 
         var normalcss = {};
 
+      var timesLeft = {
+        left:100
+      }
       var LeftSet = {
             marginLeft: this.setMargin(),
       }
@@ -228,7 +231,7 @@ export default class Service extends React.Component {
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">31</div>
                         </div>
                     </div>
-                    <div class="m-tag mod-available-times">
+                    <div class="m-tag mod-available-times" style={timesLeft}>
                         <div class="m-tag-header">Select A Time</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>8:00am</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>8:30am</div>
