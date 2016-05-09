@@ -6,8 +6,13 @@ import dispatcher from "../dispatcher";
 
 export default {
 
-    changeDisplayed(view){
-        send({view});
+    selectedPosition(row,col){
+        dispatcher.dispatch({
+        type: "SELECT_SERV",
+        row: row,
+        col: col
+    });
+
     }
 
 }

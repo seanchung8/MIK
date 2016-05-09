@@ -4,6 +4,10 @@ import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'r
 import * as PagesActions from "../actions/PagesActions"
 import StoresContainer from "./StoresContainer"
 
+
+import ServiceStore from "../stores/ServiceStore";
+import * as ServiceActions from "../actions/ServiceActions";
+
 export default class Service extends React.Component {
 
     //Class Constructor
@@ -46,6 +50,48 @@ export default class Service extends React.Component {
         PagesActions.UpdateDisplayed("Booking");
     }
 
+    setMargin(){
+
+        var margins;
+
+        switch(this.props.Headline){
+
+            case "Class 1":
+            margins = "10px";
+            break;
+            case "Class 2":
+            margins = "-345px";
+            break;
+            case "Class 3":
+            margins = "-700px";
+            break;
+            case "Class 4":
+            margins = "10px";
+            break;
+            case "Class 5":
+            margins = "-345px";
+            break;
+            case "Class 6":
+            margins = "-700px";
+            break;
+            case "Class 7":
+            margins = "10px";
+            break;
+            case "Class 8":
+            margins = "-345px";
+            break;
+            default:
+            margins = "-345px"
+            break;
+
+
+
+        }
+
+        console.log(margins);
+            return margins;
+    }
+
     closeWindow(){
 
         if(this.state.showDiscription){
@@ -74,7 +120,11 @@ export default class Service extends React.Component {
           backgroundImage: this.props.Pic,
       }
 
+        var normalcss = {};
 
+      var LeftSet = {
+            marginLeft: this.setMargin(),
+      }
       var classNames = require('classnames');
       var showDiscription = classNames(
           'm-service m-tile anim-tile-in',
@@ -87,7 +137,7 @@ export default class Service extends React.Component {
       if (this.state.showDiscription){
                 return (
 
-        <div class={showDiscription} >
+        <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
