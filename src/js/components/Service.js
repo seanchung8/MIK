@@ -42,6 +42,16 @@ export default class Service extends React.Component {
         // }
     }
 
+
+    CreateCalender(){
+
+
+
+
+
+    }
+
+
     serviceInit(){
 
             if(this.props.Description != null || this.props.Description != " ") {
@@ -124,10 +134,19 @@ export default class Service extends React.Component {
                             <div class="calendar-labels-label">F</div>
                             <div class="calendar-labels-label">SA</div>
                         </div>
+                        <div class="calendar-labels">
+                            <div class="calendar-labels-label"></div>
+                            <div class="calendar-labels-label"></div>
+                            <div class="calendar-labels-label">1</div>
+                            <div class="calendar-labels-label">2</div>
+                            <div class="calendar-labels-label">3</div>
+                            <div class="calendar-labels-label">4</div>
+                            <div class="calendar-labels-label">5</div>
+                        </div>
                         <div class="calendar-dates">
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">1</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">2</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">3</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2"> 3</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">4</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">5</div>
                             <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">6</div>
