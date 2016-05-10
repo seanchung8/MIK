@@ -27,9 +27,9 @@ export default class StoresContainer extends React.Component {
     // }
 
 
-  selectLocation(loc,id){
+  selectLocation(loc){
     console.log('sending location')
-    LocatorActions.SelectedLocation(loc,true,loc.id)
+    LocatorActions.SelectedLocation(loc);
   }
 
 
@@ -49,7 +49,7 @@ export default class StoresContainer extends React.Component {
         var locName = location.location['name'];
         //console.log("index:" + index +"locName=>" + locName + ":" +location.location['name']);
         return (
-            <div key={index} onClick={()=>this.selectLocation(location.location,location.location.id)} >
+            <div key={index} onClick={()=>this.selectLocation(location.location,location.location['clientkey'])} >
                 <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">{locName}</div>
             </div>
         )

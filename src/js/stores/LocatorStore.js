@@ -100,14 +100,14 @@ class LocatorStore extends EventEmitter{
             break;
             case "SELECTED_LOCATION":
             this.selectedLocation ={ 
-                id: action.id,
+                id: action.location.clientkey,
                 location: action.location,
-                selected: action.selected
+                selected: true
                 };
                 console.log("selected the location: " + this.selectedLocation)
             break;
         }
-    }
+            }
 
 }
 

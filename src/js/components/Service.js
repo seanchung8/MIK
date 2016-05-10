@@ -144,13 +144,15 @@ export default class Service extends React.Component {
 
     }
 
-    setLocation(loc){
-
+    setLocation(){
+                this.setState({
+            location:loc
+        })
     }
 
     setTime(time){
 
-        console.log("Selected Date "+ date);
+        console.log("Selected time "+ time);
         this.setState({ showBooking: !this.state.showBooking, time:time });
     }
 

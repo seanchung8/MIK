@@ -11,7 +11,7 @@ class BookingStore extends EventEmitter{
 
         super()
         this.booked = []
-
+        this.selectedLocation ={ };
 
     }
 
@@ -52,6 +52,10 @@ class BookingStore extends EventEmitter{
         });
     }
 
+    getSelectedLoc(){
+        return this.location;
+    }
+
     handleActions(action){
         console.log("ServiceTypeStore received an action",action);
 
@@ -62,7 +66,16 @@ class BookingStore extends EventEmitter{
             case "REMOVE_SERVICE":
                 removeService(action.id);
             break;
+            case "SELECTED_LOCATION":
+            this.selectedLocation ={ 
+                id: action.location.clientkey,
+                location: action.location,
+                selected: true
+                };
+                console.log("selected the location: " + this.selectedLocation)
+            break;
         }
+console.log(this.selectedLocation);
 
     }
 
