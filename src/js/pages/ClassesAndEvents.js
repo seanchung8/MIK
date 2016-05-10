@@ -66,7 +66,7 @@ export default class ClassesAndEvents extends React.Component {
         console.log("*** in DrawLanding ***");
         return(
             <div>
-                <MIKHeader/>
+                <MIKHeader country={this.props.params.country}/>
                 <div class="m-header-row">
                     <ServiceType
                         Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
@@ -174,7 +174,7 @@ export default class ClassesAndEvents extends React.Component {
         return (<div>
 
             <div style={catStyle}>
-                <MIKHeader/>
+                <MIKHeader country={this.props.params.country}/>
                     <div>
                         <Banner 
                             Headline={"BIRTHDAY PARTIES AT MICHAELS JUST GOT BIGGER AND BETTER!"}
@@ -234,7 +234,7 @@ export default class ClassesAndEvents extends React.Component {
             <div>
                 <div style={varStyle}>
 
-                    <MIKHeader/>
+                    <MIKHeader country={this.props.params.country}/>
                     <Banner 
                         Headline={"This is the headline"}
                         Description={"This is the Catagory discription"}
@@ -269,7 +269,7 @@ export default class ClassesAndEvents extends React.Component {
 
 
         <div style={catStyle}>
-            <MIKHeader/>
+            <MIKHeader country={this.props.params.country}/>
 
         <div>
                 <Banner 
@@ -377,7 +377,7 @@ export default class ClassesAndEvents extends React.Component {
             <div style={catStyle}>
         
             <div>
-                <MIKHeader/>
+                <MIKHeader country={this.props.params.country}/>
 
                 <Banner 
                     Headline={"EMBRACE YOUR CREATIVITY IN 2016!"}
