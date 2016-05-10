@@ -130,6 +130,23 @@ export default class Service extends React.Component {
         }
     }
 
+    getDate(date){
+
+    }
+
+    getName(name){
+
+    }
+
+    getId(id){
+
+
+    }
+
+    getLocation(loc){
+
+    }
+
 
     bookService(){
 
@@ -175,7 +192,7 @@ export default class Service extends React.Component {
                     <div class="calendar">
                         <div class="calendar-header">
                             <div ontouchstart="" class="calendar-header-arrow"></div>
-                            <div class="calendar-header-title">Fake Month and Date</div>
+                            <div class="calendar-header-title"> MAY </div>
                             <div ontouchstart="" class="calendar-header-arrow"></div>
                         </div>
                         <div class="calendar-labels">

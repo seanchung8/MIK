@@ -25,7 +25,7 @@ export default class Booking extends React.Component {
   }
 
   goBackToLanding(){
-    PagesActions.UpdateDisplayed(this.state.View);
+    PagesActions.UpdateDisplayed("Landing");
   }
 
   render() {
