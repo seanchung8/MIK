@@ -48,7 +48,7 @@ class ServiceTypeStore extends EventEmitter{
 
 
     handleActions(action){
-        console.log("ServiceTypeStore received an action",action);
+        console.log("*** In APIStore::handleActions received an action",action);
 
         switch(action.type){
 
@@ -66,6 +66,5 @@ class ServiceTypeStore extends EventEmitter{
 
 const serviceTypeStore = new ServiceTypeStore;
 dispatcher.register(serviceTypeStore.handleActions.bind(serviceTypeStore));
-window.ServiceTypeStore = serviceTypeStore;
-window.dispatcher = dispatcher;
+
 export default serviceTypeStore;
