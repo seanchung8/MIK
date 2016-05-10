@@ -19,7 +19,7 @@ export default class Checkout extends React.Component {
 
     if (this.state.showCheckout) {
       return (
-        <div class="m-checkout thank-you m-tile shadow-2 anim-tile-in">
+        <div class="m-checkout thank-you m-tile anim-tile-in">
           <div class="thank-title">Your Class has been booked!</div>
           <div class="thank-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in turpis dapibus, tristique erat a, venenatis est. Aliquam id scelerisque metus. Nullam a maximus nibh. Curabitur auctor bibendum venenatis. Pellentesque et mi vehicula, pharetra est lobortis, mollis sem. In placerat sollicitudin eros et faucibus. Vivamus consectetur commodo egestas. Morbi pretium placerat purus, nec feugiat urna. Aliquam et interdum nibh, in feugiat nisl. In hac habitasse platea dictumst.</div>
           <div class="m-button shadow-hover-2 shadow-active-3 m-button-more" onClick={()=>this.goToLanding()}>View More Classes</div>

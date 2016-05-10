@@ -81,25 +81,26 @@ export default class Service extends React.Component {
             margins = "10px";
             break;
             case "Class 2":
-            margins = "-345px";
+            //margins = "-345px";
+            margins = "-294px";
             break;
             case "Class 3":
-            margins = "-700px";
+            margins = "-600px";
             break;
             case "Class 4":
             margins = "10px";
             break;
             case "Class 5":
-            margins = "-345px";
+            margins = "-294px";
             break;
             case "Class 6":
-            margins = "-700px";
+            margins = "-600px";
             break;
             case "Class 7":
             margins = "10px";
             break;
             case "Class 8":
-            margins = "-345px";
+            margins = "-294px";
             break;
             default:
             margins = "-345px"
