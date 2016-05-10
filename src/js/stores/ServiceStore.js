@@ -29,14 +29,14 @@ class ServiceStore extends EventEmitter{
 
     handleActions(action){
         console.log("ServiceStore received an action",action);
-        switch(action.type){
-            case SELECT_SERVICE:
-            this.setState({
-                row: action.row,
-                col: action.col
-            })
-            break;
-        }
+        // switch(action.type){
+        //     case SELECT_SERVICE:
+        //     this.setState({
+        //         row: action.row,
+        //         col: action.col
+        //     })
+        //     break;
+        // }
 
     }
 
