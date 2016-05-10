@@ -10,6 +10,7 @@ class LocatorStore extends EventEmitter{
 
         super(props)
         this.locations = [ ];
+        this.selectedLocation = {};
     }
 
     getAll(){
@@ -96,6 +97,14 @@ class LocatorStore extends EventEmitter{
         switch(action.type){
             case "SELECT_LOCATION":
                 this.SelectLocation(action.text,action.isSelected,action.id);
+            break;
+            case "SELECTED_LOCATION":
+            this.selectedLocation ={ 
+                id: action.id,
+                location: action.location,
+                selected: action.selected
+                };
+                console.log("selected the location: " + this.selectedLocation)
             break;
         }
     }

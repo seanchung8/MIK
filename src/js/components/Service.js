@@ -47,13 +47,7 @@ export default class Service extends React.Component {
     }
 
 
-    CreateCalender(){
 
-
-
-
-
-    }
 
 
     serviceInit(){
@@ -133,26 +127,36 @@ export default class Service extends React.Component {
         }
     }
 
-    getDate(date){
+    setDate(date){
+        this.setState({
+            date:date
+        })
+
+        console.log("Selected Date "+ date)
+    }
+
+    setName(name){
 
     }
 
-    getName(name){
-
-    }
-
-    getId(id){
+    setId(id){
 
 
     }
 
-    getLocation(loc){
+    setLocation(loc){
 
     }
 
+    setTime(time){
+
+        console.log("Selected Date "+ date);
+        this.setState({ showBooking: !this.state.showBooking, time:time });
+    }
 
     bookService(){
 
+        
     }
 
     render() {
@@ -210,61 +214,62 @@ export default class Service extends React.Component {
                         <div class="calendar-labels">
 
 
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">1</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">2</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2"> 3</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">4</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">5</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">6</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">7</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 1 2016')}>1</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 2 2016')}>2</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 3 2016')}> 3</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 4 2016')}>4</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 5 2016')}>5</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 6 2016')}>6</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 7 2016')}>7</div>
                             </div>
                             <div class="calendar-labels">
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">8</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">9</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">10</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">11</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">12</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">13</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">14</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 8 2016')}>8</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 9 2016')}>9</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 10 2016')}>10</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 11 2016')}>11</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 12 2016')}>12</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 13 2016')}>13</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 14 2016')}>14</div>
                             </div>
                             <div class="calendar-labels">
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">15</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">16</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">17</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">18</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">19</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">20</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">21</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 15 2016')}>15</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 16 2016')}>16</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 17 2016')}>17</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 18 2016')}>18</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 19 2016')}>19</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 20 2016')}>20</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 21 2016')}>21</div>
                             </div>
                             <div class="calendar-labels">
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">22</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">23</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">24</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">25</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">26</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">27</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">28</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 22 2016')}>22</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 23 2016')}>23</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 24 2016')}>24</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 25 2016')}>25</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 26 2016')}>26</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 27 2016')}>27</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 28 2016')}>28</div>
                             </div>
                             <div class="calendar-labels">
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">29</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">30</div>
-                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2">31</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 29 2016')}>29</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 30 2016')}>30</div>
+                            <div ontouchstart="" class="calendar-dates-day shadow-hover-1 shadow-active-2" onClick={ ()=> this.setDate('MAY 31 2016')}>31</div>
                         </div>
                     </div>
                     <div class="m-tag mod-available-times" style={timesLeft}>
                         <div class="m-tag-header">Select A Time</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>8:00am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>8:30am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>9:20am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>10:00am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>10:30am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>11:20am</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>1:00pm</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>1:30pm</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>2:30pm</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>3:00pm</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>3:30pm</div>
-                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>4:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('8:00am')}>8:00am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('8:30am')}>8:30am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('9:00am')}>9:20am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('9:20am')}>9:20am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('10:00am')}>10:00am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('10:30am')}>10:30am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('11:20am')}>11:20am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('1:00pm')}>1:00pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('1:30pm')}>1:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('2:30pm')}>2:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('3:00pm')}>3:00pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('3:30pm')}>3:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('4:30pm')}>4:30pm</div>
                     </div>
                 </div>
                 <div class="m-service-booking">

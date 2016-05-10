@@ -14,12 +14,13 @@ export function SelectLocation(location,selected,id) {
     })
 }
 
-export function SelectedLocation(location,select) {
+export function SelectedLocation(location,select,id) {
 	console.log(">> in LocationActions.SelectLocation:" + location);
     dispatcher.dispatch({
-        type: "SELECTED_LOC",
+        type: "SELECTED_LOCATION",
         location: location,
-        selected: select
+        selected: select,
+        id:id
         
     })
 }

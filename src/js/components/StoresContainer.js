@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as LocatorActions from "../actions/LocatorActions";
 import LocatorStore from "../stores/LocatorStore";
 
 export default class StoresContainer extends React.Component {
@@ -26,6 +26,13 @@ export default class StoresContainer extends React.Component {
     //   todoStore.removeChangeListener(this._onChange);
     // }
 
+
+  selectLocation(loc,id){
+    console.log('sending location')
+    LocatorActions.SelectedLocation(loc,true,loc.id)
+  }
+
+
   render() {
 
     var elementAlign = {
@@ -42,7 +49,7 @@ export default class StoresContainer extends React.Component {
         var locName = location.location['name'];
         //console.log("index:" + index +"locName=>" + locName + ":" +location.location['name']);
         return (
-            <div key={index} >
+            <div key={index} onClick={()=>this.selectLocation(location.location,location.location.id)} >
                 <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">{locName}</div>
             </div>
         )
