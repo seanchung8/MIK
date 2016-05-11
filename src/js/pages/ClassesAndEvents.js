@@ -387,7 +387,7 @@ export default class ClassesAndEvents extends React.Component {
                     Title={"IN-STORE CLASSES"}
                     Pic={"url(../assets/SeviceTypes/instoreclass.jpg)"}
                     View={"Classes"}            
-                    NavElenment={"Classes"} />
+                    NavElenment={"Classes"}/>
 
                 <div class="m-service-row" >
                     <Service
@@ -396,21 +396,24 @@ export default class ClassesAndEvents extends React.Component {
                          "Choose from our Courses that build skills in four in-depth sessions, or try the Michaels " +
                           "EXCLUSIVE technique classes that focus on specific cake decorating techniques in a single session."}
                         Title={tmpTitle + " 1" }
-                        Pic={"url(../assets/Catagories/box_wilton.jpg)"}/>
+                        Pic={"url(../assets/Catagories/box_wilton.jpg)"}
+                        price='30' seats='4'/>
                     <Service
                         Headline={"Class 2"}
                         Description={"Learn basic acrylic painting techniques and create your own art piece featuring landscapes, " +
                          "florals, seascapes, still-life paintings and portraits. " +
                           "No painting experience required!"}
                         Title={tmpTitle + " 2"}
-                        Pic={"url(../assets/Catagories/ArtPaintingAndDrawing.jpg)"}/>
+                        Pic={"url(../assets/Catagories/ArtPaintingAndDrawing.jpg)"}
+                        price='25' seats='2'/>
                     <Service
                         Headline={"Class 3"}
                         Description={"Complete a unique jewelry piece with the guidance of our qualified instructors. " +
                          "You'll learn the latest trends, tricks and techniques for using the right tools, " +
                           "beads and findings that will bring your inspiration to life."}
                         Title={tmpTitle + " 3"}
-                        Pic={"url(../assets/Catagories/jewelry.jpg)"}/>
+                        Pic={"url(../assets/Catagories/jewelry.jpg)"}
+                        price='10' seats='9'/>
                 </div>
 
                 <div class="m-service-row" >
@@ -420,20 +423,23 @@ export default class ClassesAndEvents extends React.Component {
                          "Sharpen your paper crafting skills, play with ink or test your favorite tools. " +
                           "No matter what you love to paper-craft, you’ll find your class in our paper crafting classes. "}
                         Title={tmpTitle + " 4"}
-                        Pic={"url(../assets/Catagories/paperCrafting.jpg)"}/>
+                        Pic={"url(../assets/Catagories/paperCrafting.jpg)"}
+                        price='5' seats='8'/>
                     <Service
                         Headline={"Class 5"}
                         Description={"Whether you want to learn how to knit or crochet or already know the basics, " +
                          "Craft Yarn Council's Discover Knit and Crochet class series offers something for everyone. " +
                           "Learn new skills by completing a fun and fashionable project with the guidance of our certified instructors."}
                         Title={tmpTitle + " 5"}
-                        Pic={"url(../assets/Catagories/knitAndCrochet.jpg)"}/>
+                        Pic={"url(../assets/Catagories/knitAndCrochet.jpg)"}
+                        price='10' seats='1'/>
                     <Service
                         Headline={"Class 6"}
                         Description={"Discover the educational and developmental benefits of crafting in our Kids' Classes. \n" +
                          "\nWith Kids' Club® let your kids explore their creativity while you shop! Just $2 per child ages 3 and up. All supplies included."}
                         Title={tmpTitle + " 6"}
-                        Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}/>
+                        Pic={"url(../assets/Catagories/kidsPrograms.jpg)"}
+                        price='25' seats='6'/>
                 </div>
 
                 <div class="m-service-row" >
@@ -442,13 +448,15 @@ export default class ClassesAndEvents extends React.Component {
                         Description={"Be in-style and on-trend. Create what moves you in these special DIY classes focusing on the latest trends. " +
                          "Enroll now!"}
                         Title={tmpTitle + " 7"}
-                        Pic={"url(../assets/Catagories/TrendClasses.jpg)"}/>
+                        Pic={"url(../assets/Catagories/TrendClasses.jpg)"}
+                        price='40' seats='5'/>
                     <Service
                         Headline={"Class 8"}
                         Description={"Birthday Parties at Michaels are now bigger and better. Choose from lots of fun, kid friendly party themes, " +
                          "or design your own custom celebration. See your local store associate to learn more and book your party."}
                         Title={tmpTitle + " 8"}
-                        Pic={"url(../assets/Catagories/Birthday.jpg)"}/>
+                        Pic={"url(../assets/Catagories/Birthday.jpg)"}
+                        price='20' seats='3'/>
 
                 </div>
                 <MIKFooter/>

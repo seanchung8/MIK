@@ -162,10 +162,27 @@ export default class Service extends React.Component {
 
         var normalcss = {};
         var priceCss = {
-                textAlign: 'center',
-                marginTop: '-15px'
+                textAlign: 'left',
+                padding:'10',
+                fontSize: '18',
+                zIndex: 1
 
         }
+        var seatCss = {
+
+            textAlign: 'right',
+                padding:'18',
+                fontSize: '18',
+                zIndex: 1
+               
+
+        }
+
+        var priceInfo={
+            marginTop:'-63'
+        }
+
+
       var timesLeft = {
         left:100
       }
@@ -189,18 +206,21 @@ export default class Service extends React.Component {
                 <div class="m-service-description">
 
                 <div class="m-service-description-header" >{this.props.Title}</div>
-<div style={priceCss}>Price: $50 Seats: 5</div>
+
 
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
                 
                 <div class="m-service-description-text" >{this.props.Description}</div>
+
                 <div class="m-service-time">
+                
                     <div class="m-tag">
                                             <div class="m-tag-header">Select A Location</div>
                         <StoresContainer />
                         
                     </div>
                     <div class="calendar">
+                    <div style={priceInfo}> <span style={priceCss}>Price: ${this.props.price}</span> <span style={seatCss}>Available Seats: {this.props.seats}</span></div>
                         <div class="calendar-header">
                             <div ontouchstart="" class="calendar-header-arrow"></div>
                             <div class="calendar-header-title"> MAY </div>
