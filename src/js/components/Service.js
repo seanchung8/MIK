@@ -161,7 +161,11 @@ export default class Service extends React.Component {
       }
 
         var normalcss = {};
+        var priceCss = {
+                textAlign: 'center',
+                marginTop: '-15px'
 
+        }
       var timesLeft = {
         left:100
       }
@@ -183,12 +187,16 @@ export default class Service extends React.Component {
         <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
+
                 <div class="m-service-description-header" >{this.props.Title}</div>
+<div style={priceCss}>Price: $50 Seats: 5</div>
+
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                
                 <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">
-                        <div class="m-tag-header">Select A Location</div>
+                                            <div class="m-tag-header">Select A Location</div>
                         <StoresContainer />
                         
                     </div>
@@ -295,6 +303,7 @@ export default class Service extends React.Component {
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
+
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
         </div>
