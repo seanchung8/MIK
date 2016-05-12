@@ -1023,7 +1023,7 @@ a {
   position : relative;
 
   display : inline-block;
-
+  right:40px;
   width : 280px;
   margin : 0 15px;
 }

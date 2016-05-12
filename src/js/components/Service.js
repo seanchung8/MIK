@@ -162,8 +162,8 @@ export default class Service extends React.Component {
 
         var normalcss = {};
         var priceCss = {
-                textAlign: 'left',
-                padding:'10',
+                textAlign: 'right',
+                paddingRight:'40',
                 fontSize: '18',
                 zIndex: 1
 
@@ -171,7 +171,7 @@ export default class Service extends React.Component {
         var seatCss = {
 
             textAlign: 'right',
-                padding:'18',
+                paddingRight:'0',
                 fontSize: '18',
                 zIndex: 1
                
@@ -179,12 +179,14 @@ export default class Service extends React.Component {
         }
 
         var priceInfo={
-            marginTop:'-63'
+            marginTop:'-175',
+            marginRight:'-140'
         }
 
 
       var timesLeft = {
-        left:100
+        right:30,
+        bottom:10
       }
       var LeftSet = {
             marginLeft: this.setMargin(),
@@ -220,8 +222,7 @@ export default class Service extends React.Component {
                         
                     </div>
                     <div class="calendar">
-                    <div style={priceInfo}> <span style={priceCss}>Price: ${this.props.price}</span> <span style={seatCss}>Available Seats: {this.props.seats}</span></div>
-                        <div class="calendar-header">
+                            <div class="calendar-header">
                             <div ontouchstart="" class="calendar-header-arrow"></div>
                             <div class="calendar-header-title"> MAY </div>
                             <div ontouchstart="" class="calendar-header-arrow"></div>
@@ -293,6 +294,10 @@ export default class Service extends React.Component {
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>3:00pm</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>3:30pm</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>4:30pm</div>
+                    </div>
+                    <div style={priceInfo}> 
+                        <div style={priceCss}>Price: ${this.props.price}</div> 
+                        <div style={seatCss}>Available Seats: {this.props.seats}</div>
                     </div>
                 </div>
                 <div class="m-service-booking">
