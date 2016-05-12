@@ -167,9 +167,32 @@ export default class Service extends React.Component {
       }
 
         var normalcss = {};
+        var priceCss = {
+                textAlign: 'right',
+                paddingRight:'40',
+                fontSize: '18',
+                zIndex: 1
+
+        }
+        var seatCss = {
+
+            textAlign: 'right',
+                paddingRight:'0',
+                fontSize: '18',
+                zIndex: 1
+               
+
+        }
+
+        var priceInfo={
+            marginTop:'-175',
+            marginRight:'-140'
+        }
+
 
       var timesLeft = {
-        left:100
+        right:30,
+        bottom:10
       }
       var LeftSet = {
             marginLeft: this.setMargin(),
@@ -189,17 +212,23 @@ export default class Service extends React.Component {
         <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
+
                 <div class="m-service-description-header" >{this.props.Title}</div>
+
+
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                
                 <div class="m-service-description-text" >{this.props.Description}</div>
+
                 <div class="m-service-time">
+                
                     <div class="m-tag">
-                        <div class="m-tag-header">Select A Location</div>
+                                            <div class="m-tag-header">Select A Location</div>
                         <StoresContainer />
                         
                     </div>
                     <div class="calendar">
-                        <div class="calendar-header">
+                            <div class="calendar-header">
                             <div ontouchstart="" class="calendar-header-arrow"></div>
                             <div class="calendar-header-title"> MAY </div>
                             <div ontouchstart="" class="calendar-header-arrow"></div>
@@ -273,6 +302,10 @@ export default class Service extends React.Component {
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('3:30pm')}>3:30pm</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('4:30pm')}>4:30pm</div>
                     </div>
+                    <div style={priceInfo}> 
+                        <div style={priceCss}>Price: ${this.props.price}</div> 
+                        <div style={seatCss}>Available Seats: {this.props.seats}</div>
+                    </div>
                 </div>
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
@@ -302,6 +335,7 @@ export default class Service extends React.Component {
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
+
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
         </div>
