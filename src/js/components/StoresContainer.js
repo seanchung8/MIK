@@ -1,6 +1,8 @@
 import React from "react";
 import * as LocatorActions from "../actions/LocatorActions";
 import LocatorStore from "../stores/LocatorStore";
+import LocationButton from "../components/LocationButton";
+import BookingStore from "../stores/BookingStore"
 
 export default class StoresContainer extends React.Component {
 
@@ -41,16 +43,19 @@ export default class StoresContainer extends React.Component {
       alignItems: 'center'
     };
 
+
+    
     var locKey = 0;
 
     var myStores = LocatorStore.getAll();
 
     var listItems = myStores.map(function(location, index){
         var locName = location.location['name'];
+        
         //console.log("index:" + index +"locName=>" + locName + ":" +location.location['name']);
         return (
-            <div key={index} onClick={()=>this.selectLocation(location.location,location.location['clientkey'])} >
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">{locName}</div>
+            <div key={index}  >
+                <LocationButton name={locName} location={location.location}/>
             </div>
         )
       }.bind(this));

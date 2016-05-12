@@ -32,6 +32,7 @@ class BookingStore extends EventEmitter{
                 break;
             }
         }
+        this.emit("change");
     }
 
     bookService(loc,date,time,id,firstName,lastName,phone,email,name){
@@ -50,6 +51,18 @@ class BookingStore extends EventEmitter{
 
 
         });
+        this.emit("change");
+    }
+
+    IsSelectedLocation(locName){
+        if(locName == this.selectedLocation.name){
+            console.log('this is the right location ' + locName + " == "+ this.selectedLocation.name)
+            return true;
+        }
+        else{
+            console.log('this is not the right location ' + locName  + " != "+ this.selectedLocation.name)
+            return false;
+        }
     }
 
     getSelectedLoc(){
@@ -72,7 +85,7 @@ class BookingStore extends EventEmitter{
                 location: action.location,
                 selected: true
                 };
-                console.log("selected the location: " + this.selectedLocation)
+                this.emit("change");
             break;
         }
 console.log(this.selectedLocation);
