@@ -21,7 +21,8 @@ export default class Layout extends React.Component {
        
             <Link to="classesandevents/US"><button >Go to Michaels USA</button></Link>
             <Link to="classesandevents/CA"><button>Go to Michaels Canada</button></Link>
-          
+            <Link to="Confirmation/CA"><button>Go to Confirmation Canada</button></Link>
+            <Link to="Confirmation/US"><button>Go to Confirmation USA</button></Link>
 
       </div>
     );
