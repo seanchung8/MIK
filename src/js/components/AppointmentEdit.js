@@ -96,6 +96,7 @@ export default class Appointment extends React.Component {
         var priceCss = {
                 textAlign: 'right',
                 paddingRight:'40',
+                marginRight:125,
                 fontSize: '18',
                 zIndex: 1
 
@@ -104,6 +105,7 @@ export default class Appointment extends React.Component {
 
             textAlign: 'right',
                 paddingRight:'0',
+                marginRight:220,
                 fontSize: '18',
                 zIndex: 1
                
@@ -111,8 +113,8 @@ export default class Appointment extends React.Component {
         }
 
         var priceInfo={
-            marginTop:'-175',
-            marginRight:'-140'
+            marginTop:'-230',
+            marginLeft:'-140'
         }
 
         var calendarCss ={
@@ -283,7 +285,10 @@ export default class Appointment extends React.Component {
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>4:30pm</div>
                     </div>
                 </div>
-
+                  <div style={priceInfo}> 
+                        <div style={priceCss}>Available Seats</div> 
+                        <div style={seatCss}>{4}</div>
+                    </div>
             </div>
       
             );
