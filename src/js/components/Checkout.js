@@ -15,6 +15,11 @@ export default class Checkout extends React.Component {
     PagesActions.UpdateDisplayed("Landing");
   }
 
+  showConfirmation() {
+    this.setState({ showCheckout: !this.state.showCheckout });
+    window.scrollTo(0,0);
+  }
+
   render() {
 
     if (this.state.showCheckout) {
@@ -70,7 +75,7 @@ export default class Checkout extends React.Component {
             </div>
 
             <div class="m-button shadow-hover-2 shadow-active-3 mod-book" 
-              onClick={ ()=> this.setState({ showCheckout: !this.state.showCheckout })}>
+              onClick={ ()=> this.showConfirmation()}>
               Purchase Classes
             </div>
           </div>
