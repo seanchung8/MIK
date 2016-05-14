@@ -1,6 +1,5 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
-import CatagoryStore from '../stores/CatagoryStore';
 import  * as PagesActions from "../actions/PagesActions";
 
 
@@ -21,10 +20,7 @@ export default class Catagory extends React.Component {
         this.state = {
             viewing: PagesStore.getAll(),
             Headline: "",
-            Description: "Sed sagittis in neque laoreet dapibus. Maecenas eget egestas tortor. In massa leo, ullamcorper et lacus vitae, " +
-            "volutpat scelerisque mauris. Donec sollicitudin nisl scelerisque nunc placerat, " +
-            "nec rhoncus lectus maximus. Maecenas sapien libero, cursus in lobortis non, vestibulum sed magna. " +
-            "Curabitur at arcu in mauris suscipit tincidunt eget id ex. Aliquam sodales convallis vehicula. Pellentesque ultrices, ",
+            Description: "",
             Title: "IN STORE CLASSES",
             Pic: " "
 
@@ -34,7 +30,8 @@ export default class Catagory extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        //this.ServiceTypeInit();
+        this.CategoryInit();
 
         PagesStore.on("change", ()=>{
 
@@ -47,10 +44,12 @@ export default class Catagory extends React.Component {
 
     }
 
-    ServiceTypeInit(){
+    componentWillUnmount() {
+        console.log("=== in Category.componentWillUnmount() ===");    
+    }
 
-
-
+    //ServiceTypeInit(){
+    CategoryInit(){
         if(this.props.Description != null || this.props.Description != " ") {
             this.setState({Description: this.props.Description});
         }
@@ -70,8 +69,9 @@ export default class Catagory extends React.Component {
 
 
     setPage(){
-      PagesActions.UpdateDisplayed("Catagories");
-        //PagesActions.SelectCatagory(this.state.Title);
+      console.log("*** in Category.setPage() this.state.Title:" + this.state.Title);
+      //PagesActions.UpdateDisplayed("Catagories", this.state.Title);
+      PagesActions.SelectCatagory(this.state.Title);
     }
 
 
