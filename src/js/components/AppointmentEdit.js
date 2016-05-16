@@ -84,7 +84,7 @@ export default class Appointment extends React.Component {
     }
 
     var appointmentInfo2={
-      top:100,
+      marginTop:85,
       marginLeft:20
     }
 
@@ -96,7 +96,7 @@ export default class Appointment extends React.Component {
         var priceCss = {
                 textAlign: 'right',
                 paddingRight:'40',
-                marginRight:125,
+                marginRight:100,
                 fontSize: '18',
                 zIndex: 1
 
@@ -105,7 +105,7 @@ export default class Appointment extends React.Component {
 
             textAlign: 'right',
                 paddingRight:'0',
-                marginRight:220,
+                marginRight:200,
                 fontSize: '18',
                 zIndex: 1
                
@@ -119,13 +119,13 @@ export default class Appointment extends React.Component {
 
         var calendarCss ={
 
-          marginLeft:400,
-          marginTop:-90
+          marginLeft:430,
+          marginTop:-135
 
         }
 
         var timesCss={
-          marginLeft:700,
+          marginLeft:740,
           marginTop: -210,
           width:400,
           height: 400
@@ -155,8 +155,8 @@ export default class Appointment extends React.Component {
            'm-tile anim-tile-in',
           {
               'mod-details':true,
-              'mod-times': true
-              //'mod-booking': this.state.showBooking
+              'mod-times': true,
+              'mod-booking': true
           });
     
     //var classNames = require('classnames');
@@ -175,8 +175,7 @@ export default class Appointment extends React.Component {
         <div class="m-tile m-appointment anim-tile-in" >
             
               <div class="appointment-image"></div>
-              <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 mod-clear-appointment">X</div>
-              
+                            
               <div class="appointment-occurrence">
               <div class="appointment-location-name" style={appointmentName}>{"Class Name Here"}</div>
                 <div class="appointment-location-name">{'Store Location Name'}</div>
@@ -209,9 +208,11 @@ export default class Appointment extends React.Component {
     }
     else{
     return (
+
 <div class={showDiscription} style={rescheduleCss} >
             <div class="m-service-row">
-                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" style={LeftSet}  onClick={()=>this.setState({showReschedule: false})}>X</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 mod-clear-appointment" onClick={()=>this.setState({showReschedule: false})}>X</div>
+
                 
               <div class="appointment-occurrence" style={appointmentInfo2}>
               <div class="appointment-location-name" style={appointmentName2}>{"Class Name Here"}</div>
