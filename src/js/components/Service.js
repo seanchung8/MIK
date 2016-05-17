@@ -22,7 +22,7 @@ export default class Service extends React.Component {
             showDiscription:false,
             showTimes:false,
             showBooking:false,
-            location: null,
+            location: BookingStore.getSelectedLoc(),
             firstName: "",
             lastName: "",
             phone: "",
@@ -44,6 +44,19 @@ export default class Service extends React.Component {
         //     console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
         
         // }
+        console.log("Component mounted location is set to: " +this.state.location);
+
+            BookingStore.on("change", ()=>{
+      
+      this.setState({
+
+        date: BookingStore.getSelectedDate(),
+        location:BookingStore.getSelectedLoc()
+
+      });
+        console.log("Change detected changing location to: " +this.state.location);
+
+      });
     }
 
 
@@ -106,7 +119,7 @@ export default class Service extends React.Component {
 
         }
 
-        console.log(margins);
+      
             return margins;
     }
 
@@ -157,13 +170,36 @@ export default class Service extends React.Component {
         BookingActions.SelectTime(time);
     }
 
-    bookDate(){
-        this.setState({ showBooking: !this.state.showBooking});
-        console.log("Set booked date and time " + this.state.date +" at "+this.state.time)
+    updateFirstName(){
+        this.setState({firstName:this.refs.fName.value});
+        
+
     }
 
-    bookService(){
+    updateLastName(){
 
+        this.setState({lastName:this.refs.lName.value});
+        
+
+    }
+
+    updatePhone(){
+        this.setState({phone:this.refs.phone.value});
+    }
+
+    updateEmail(){
+        this.setState({email:this.refs.email.value});
+    }
+
+    bookDate(){
+        var log = this.state.location;
+        console.log("hit bookDate: " + String(log))
+        this.setState({ showBooking: !this.state.showBooking});
+            }
+
+    bookService(){
+console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
+        this.setPage();
         
     }
 
@@ -224,6 +260,9 @@ export default class Service extends React.Component {
       var LeftSet = {
             marginLeft: this.setMargin(),
       }
+
+      
+
       var classNames = require('classnames');
       var showDiscription = classNames(
           'm-service m-tile anim-tile-in',
@@ -285,32 +324,33 @@ export default class Service extends React.Component {
                             <label class="m-input-label">First Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" ref="lName" required class="m-input-field" />
+                            <input type="text" ref="lName" required class="m-input-field" onChange={ (e) => { this.updateLastName();}}/>
                             <label class="m-input-label">Last Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" ref="phone" required class="m-input-field" />
+                            <input type="text" ref="phone" required class="m-input-field" onChange={ (e) => { this.updatePhone();}}/>
                             <label class="m-input-label">Phone Number</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" ref="email" required class="m-input-field" />
+                            <input type="text" ref="email" required class="m-input-field" onChange={ (e) => { this.updateEmail();}}/>
                             <label class="m-input-label">Email</label>
                         </div>
                     </div>
                     <div class="m-appointment-description">
-                        <div class="title">Papercraft Ninjas</div>
-                        <div class="address">600 madison avenue,</div>
-                        <div class="address">New York, New York 10007</div>
-                        <div class="dateTime">December 14th at 2:30pm</div>
+                        <div class="title">{this.props.Title != null ? this.props.Title : " "}</div>
+                        <div class="address">{this.state.location != null ? this.state.location['address1'] :" "},</div>
+                        <div class="address">{this.state.location != null ? this.state.location['city'] :" "}, {this.state.location != null ? this.state.location['state']:" "} {this.state.location !=null ? this.state.location['postalcode'] : " "}</div>
+                        <div class="dateTime">May {this.state.date} at {this.state.time}</div>
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
-                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.bookService()}> Book Now </div>
                     </div>
                 </div>
 
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
-        </div>
+            <div></div>
 
+        </div>
     );
 
       } else {

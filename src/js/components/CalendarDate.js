@@ -20,13 +20,14 @@ export default class CalendarDate extends React.Component {
 
     BookingStore.on("change", ()=>{
       var myStatus = BookingStore.isSelectedDate(this.state.day);
+      
       this.setState({selected: myStatus});
       });
   }
 
   setDate(){
 
-      BookingActions.SelectDate("May " +this.state.day+" 2016")
+      BookingActions.SelectDate(this.state.day)
       console.log("Setting Date button for day "+this.state.day)  
   }
 

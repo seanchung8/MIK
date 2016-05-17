@@ -13,11 +13,31 @@ class BookingStore extends EventEmitter{
         this.booked = []
         this.selectedLocation ={ };
         this.selectedTime = "";
-        this.selectedDate
+        this.selectedDate ="";
+        this.email ="";
+        this.phone ="";
+        this.selectedService =""
 
     }
 
-
+    getSelectedDate(){
+        return this.selectedDate;
+    }
+    getSelectedTime(){
+        return this.selectedTime;
+    }
+    getSelectedLoc(){
+        return this.selectedLocation;
+    }
+        getSelectedEmail(){
+        return this.email;
+    }
+        getSelectedPhone(){
+        return this.phone;
+    }
+        getSelectedService(){
+        return this.selectedService;
+    }
     getAll() {
         return this.booked;
     }
@@ -54,15 +74,16 @@ class BookingStore extends EventEmitter{
         this.emit("change");
     }
 
+
+
+
     isSelectedLocation(locName){
         //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
         var myName = this.selectedLocation.location.name;
         if(locName == myName){
-            console.log('this is the right location ' + locName + " == "+ myName)
             return true;
         }
         else{
-            console.log('this is NOT the right location ' + locName  + " != "+ myName)
             return false;
         }
     }
@@ -71,11 +92,9 @@ class BookingStore extends EventEmitter{
         //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
         var myTime = this.selectedTime;
         if(time == myTime){
-            console.log('this is the right location ' + time + " == "+ myTime)
             return true;
         }
         else{
-            console.log('this is NOT the right location ' + time  + " != "+ myTime)
             return false;
         }
     }
@@ -93,9 +112,7 @@ class BookingStore extends EventEmitter{
         }
     }
 
-    getSelectedLoc(){
-        return this.location;
-    }
+
 
     handleActions(action){
         console.log("BookingStore received an action",action);
