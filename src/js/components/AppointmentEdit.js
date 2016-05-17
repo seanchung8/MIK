@@ -23,14 +23,14 @@ export default class Appointment extends React.Component {
   render() {
 
     var RescBtnCSS = { 
-      background:"red",
+      background: '#e21836',
       width:'48%',
       textAlign:'center',
       margin:5,
       //right:-10
     }
     var CancBtnCSS = { 
-      background:"red",
+      background: '#e21836',
       width:'48%',
       textAlign:'center',
       margin:5,
@@ -38,10 +38,10 @@ export default class Appointment extends React.Component {
 
     }
 
-          var timesLeft = {
+    var timesLeft = {
         right:30,
         bottom:10
-      }
+    }
 
     var appointmentName={
 
@@ -49,8 +49,8 @@ export default class Appointment extends React.Component {
       textAlign:'center',
       top:-10,
       fontSize : 22
-
     }
+
     var appointmentName2={
 
       backgroundColor:'transparent',
@@ -88,83 +88,74 @@ export default class Appointment extends React.Component {
       marginLeft:20
     }
 
-          var BackImg = {
-          backgroundImage: this.props.Pic,
-      }
+    var BackImg = {
+      backgroundImage: this.props.Pic,
+    }
 
-        var normalcss = {};
-        var priceCss = {
-                textAlign: 'right',
-                paddingRight:'40',
-                marginRight:100,
-                fontSize: '18',
-                zIndex: 1
+    var normalcss = {};
+    var priceCss = {
+      textAlign: 'right',
+      paddingRight:'40',
+      marginRight:100,
+      fontSize: '18',
+      zIndex: 1
+    }
 
-        }
-        var seatCss = {
+    var seatCss = {
 
-            textAlign: 'right',
-                paddingRight:'0',
-                marginRight:200,
-                fontSize: '18',
-                zIndex: 1
-               
+        textAlign: 'right',
+        paddingRight:'0',
+        marginRight:200,
+        fontSize: '18',
+        zIndex: 1
+    }
 
-        }
+    var priceInfo={
+        marginTop:'-230',
+        marginLeft:'-140'
+    }
 
-        var priceInfo={
-            marginTop:'-230',
-            marginLeft:'-140'
-        }
+    var calendarCss ={
 
-        var calendarCss ={
+      marginLeft:430,
+      marginTop:-135
 
-          marginLeft:430,
-          marginTop:-135
+    }
 
-        }
+    var timesCss={
+      marginLeft:740,
+      marginTop: -210,
+      width:400,
+      height: 400
+    }
 
-        var timesCss={
-          marginLeft:740,
-          marginTop: -210,
-          width:400,
-          height: 400
-        }
+    var rescheduleCss={
+      height:244,
+      width:'100%'
+    }
 
-        var rescheduleCss={
-          height:244,
-          width:'100%'
+    var LeftSet = {
+      marginLeft : '95%',
 
+      //content : '',
+      //transform : translateZ(0);
 
+      backgroundImage : 'none !important'
+      //background-repeat : no-repeat;
+      //background-size : contain;
 
-        }
+    }
 
-      var LeftSet = {
-            marginLeft : '95%',
-
-            //content : '',
-            //transform : translateZ(0);
-
-            backgroundImage : 'none !important'
-            //background-repeat : no-repeat;
-            //background-size : contain;
-
-      }
-      var classNames = require('classnames');
-      var showDiscription = classNames(
-           'm-tile anim-tile-in',
-          {
-              'mod-details':true,
-              'mod-times': true,
-              'mod-booking': true
-          });
-    
-    //var classNames = require('classnames');
-
-/*    var btnClass = classNames(
+    var classNames = require('classnames');
+    var showDiscription = classNames(
+         'm-tile anim-tile-in',
         {
-          'mod-no-checkout': this.state.showCheckout
-        });*/
+            'mod-details':true,
+            'mod-times': true,
+            'mod-booking': true
+        });
+
+    var redTxt = { color:"red"}
 
     var reschedule = this.state.showReschedule;
     var cancel = this.state.showCancel;
@@ -182,7 +173,7 @@ export default class Appointment extends React.Component {
                 <div class="appointment-address">240 Broadway,
                   New York, NY 10007</div>
 
-                <div class="appointment-time" >January 3rd at 12:30pm</div>
+                <div class="appointment-time" style={redTxt}>January 3rd at 12:30pm</div>
                 
 
               </div>
@@ -193,7 +184,7 @@ export default class Appointment extends React.Component {
             
                   <div class="attendee-name">Attending</div>
                   <div class="attendee-email">Damion McCoy</div>
-                  <div class="attendee-email">Sean Lastname</div>
+                  <div class="attendee-email">Sean Penn</div>
                 </div>
                 
 
@@ -211,7 +202,7 @@ export default class Appointment extends React.Component {
 
 <div class={showDiscription} style={rescheduleCss} >
             <div class="m-service-row">
-                <div class="m-button shadow-hover-2 shadow-active-3 mod-clear-appointment" onClick={()=>this.setState({showReschedule: false})}>X</div>
+                <div class="m-button-simple shadow-hover-2 shadow-active-3 mod-clear-appointment" onClick={()=>this.setState({showReschedule: false})}>X</div>
 
                 
               <div class="appointment-occurrence" style={appointmentInfo2}>
