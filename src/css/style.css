@@ -95,6 +95,27 @@ a {
   background-size : contain;
 }
 
+.m-button-simple {
+  font-family : Montserrat;
+  font-size : 12px;
+  font-weight : lighter;
+  line-height : 43px;
+
+  display : inline-block;
+
+  box-sizing : border-box;
+  height : 43px;
+  padding : 0 15px;
+
+  cursor : pointer;
+  transform : translateZ(0);
+  text-transform : uppercase;
+
+  color : white;
+  border-radius : 7px;
+  background : #e21836;
+}
+
 .m-tile {
   position : relative;
 
@@ -232,6 +253,7 @@ a {
 }
 
 .m-button.mod-clear-appointment,
+.m-button-simple.mod-clear-appointment,
 .m-header-description .m-button.m-button-more-info {
   position : absolute;
   top : 20px;
