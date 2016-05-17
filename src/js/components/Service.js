@@ -1,10 +1,14 @@
 import React from "react";
 import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
 
+import * as PagesActions from "../actions/PagesActions"
+import StoresContainer from "./StoresContainer"
+import * as BookingActions from "../actions/BookingActions"
+import BookingStore from "../stores/BookingStore"
+import Calendar from "../components/Calendar"
 
-
-
-
+import ServiceStore from "../stores/ServiceStore";
+import * as ServiceActions from "../actions/ServiceActions";
 
 export default class Service extends React.Component {
 
@@ -17,18 +21,36 @@ export default class Service extends React.Component {
         this.state = {
             showDiscription:false,
             showTimes:false,
-            showBooking:false
+            showBooking:false,
+            location: null,
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            name: "",
+            id: "",
+            date: "",
+            time: "",
         };
     }
 
-
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        this.serviceInit();
+        // var locs = LocatorStore.getAll();
+        // console.log(">>>Selected locations:" + locs);
+
+        // for(var i =0;i < locs.length; i++){
+        //     console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
+        
+        // }
     }
 
-    ServiceTypeInit(){
 
+
+
+
+    serviceInit(){
 
             if(this.props.Description != null || this.props.Description != " ") {
                 this.setState({Description: this.props.Description});
@@ -37,44 +59,275 @@ export default class Service extends React.Component {
             if(this.props.Title != null || this.props.Title != " ") {
                 this.setState({Title: this.props.Title});
             }
+    }
+
+    setPage(){
+        PagesActions.UpdateDisplayed("Booking");
+    }
+
+    setMargin(){
+
+        var margins;
+
+        switch(this.props.Headline){
+
+            case "Class 1":
+            margins = "10px";
+            break;
+            case "Class 2":
+            margins = "-345px";
+            //margins = "-294px";
+            break;
+            case "Class 3":
+            margins = "-700px";
+            break;
+            case "Class 4":
+            margins = "10px";
+            break;
+            case "Class 5":
+            //margins = "-294px";
+            margins = "-345px";
+            break;
+            case "Class 6":
+            margins = "-700px";
+            break;
+            case "Class 7":
+            margins = "10px";
+            break;
+            case "Class 8":
+            //margins = "-294px";
+            margins = "-345px";
+            break;
+            default:
+            margins = "-345px"
+            break;
+
+
+
+        }
+
+        console.log(margins);
+            return margins;
+    }
+
+    closeWindow(){
+
+        if(this.state.showDiscription){
+
+            this.setState({
+                showDiscription:false,
+                showTimes:false,
+                showBooking:false
+            });
+        }
+        else{
+
+            this.setState({ showDiscription: true});
+
+        }
+    }
+
+    setDate(date){
+        this.setState({
+            date:date
+        })
+
+        console.log("Selected Date "+ date)
+    }
+
+    setName(name){
+
+    }
+
+    setId(id){
 
 
     }
 
+    setLocation(){
+                this.setState({
+            location:loc
+        })
+    }
+
+    setTime(time){
+
+        console.log("Selected time "+ time);
+        this.setState({time:time });
+        BookingActions.SelectTime(time);
+    }
+
+    bookDate(){
+        this.setState({ showBooking: !this.state.showBooking});
+        console.log("Set booked date and time " + this.state.date +" at "+this.state.time)
+    }
+
+    bookService(){
+
+        
+    }
+
+    render() {
+        var BackImg = {
+            backgroundImage: this.props.Pic,
+        }
+
+        var normalcss = {};
+        var priceCss = {
+            textAlign: 'right',
+            paddingRight:'40',
+            fontSize: '18',
+            zIndex: 1
+
+        }
+        var seatCss = {
+
+            textAlign: 'right',
+                paddingRight:'0',
+                fontSize: '18',
+                zIndex: 1
+               
+
+        }
+
+        var locCSS={
+            height:220,
+            width:280,
+            overflowX : 'hidden',
+            overflowY : 'scroll'
+        }
+
+        var calendarCSS={
+
+            marginLeft:310,
+            marginTop:'-220'
+        }
+
+        var timesBtn = {
+
+            marginLeft: 890,
+            marginTop: 100
+        }
+
+        var priceInfo={
+            marginTop:'-450',
+            marginRight:'-5'
+        }
 
 
-  render() {
-
+      var timesLeft = {
+        overflowX : 'hidden',
+        overflowY : 'scroll',
+        right:'-584',
+        bottom:237
+      }
+      var LeftSet = {
+            marginLeft: this.setMargin(),
+      }
       var classNames = require('classnames');
       var showDiscription = classNames(
-          'm-service m-tile shadow-2 anim-tile-in',
+          'm-service m-tile anim-tile-in',
           {
               'mod-details': this.state.showDiscription,
               'mod-times': this.state.showTimes,
               'mod-booking': this.state.showBooking
           });
 
+      if (this.state.showDiscription){
+                return (
+
+        <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
+            <div class="m-title-image-event" style={BackImg}></div>
+                <div class="m-service-description">
+
+                <div class="m-service-description-header" >{this.props.Title}</div>
 
 
-    return (
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                
+                <div class="m-service-description-text" >{this.props.Description}</div>
+
+                <div class="m-service-time">
+                
+                    <div class="m-tag" style={locCSS}>
+                        <div class="m-tag-header" >Select A Location</div>
+                           <StoresContainer />
+                        
+                    </div>
+                    <div style={calendarCSS}>
+                            <Calendar/>
+                    </div>
+                    <div class="m-tag mod-available-times" style={timesLeft}>
+                        <div class="m-tag-header">Select A Time</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('8:00am')}>8:00am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('8:30am')}>8:30am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('9:00am')}>9:20am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('10:00am')}>10:00am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('10:30am')}>10:30am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('11:20am')}>11:20am</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('1:00pm')}>1:00pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('1:30pm')}>1:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('2:30pm')}>2:30pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('3:00pm')}>3:00pm</div>
+                        <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setTime('3:30pm')}>3:30pm</div>
+                    </div>
+                    <div style={priceInfo}> 
+                        <div style={priceCss}>Price: ${this.props.price}</div> 
+                        <div style={seatCss}>Available Seats: {this.props.seats}</div>
+                    </div>
+
+                     <div class="m-button shadow-hover-2 shadow-active-3" style={timesBtn} onClick={ ()=> this.bookDate()}>SELECT TIME</div>
+                </div>
+                <div class="m-service-booking">
+                    <div class="m-service-booking-form">
+                        <div class="m-input">
+                            <input type="text" ref="fName" required class="m-input-field" onChange={ (e) => { this.updateFirstName();}}/>
+                            <label class="m-input-label">First Name</label>
+                        </div>
+                        <div class="m-input">
+                            <input type="text" ref="lName" required class="m-input-field" />
+                            <label class="m-input-label">Last Name</label>
+                        </div>
+                        <div class="m-input">
+                            <input type="text" ref="phone" required class="m-input-field" />
+                            <label class="m-input-label">Phone Number</label>
+                        </div>
+                        <div class="m-input">
+                            <input type="text" ref="email" required class="m-input-field" />
+                            <label class="m-input-label">Email</label>
+                        </div>
+                    </div>
+                    <div class="m-appointment-description">
+                        <div class="title">Papercraft Ninjas</div>
+                        <div class="address">600 madison avenue,</div>
+                        <div class="address">New York, New York 10007</div>
+                        <div class="dateTime">December 14th at 2:30pm</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
+                    </div>
+                </div>
+
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
+            </div>
+        </div>
+
+    );
+
+      } else {
+            return (
 
         <div class={showDiscription} >
-            <div class="m-service-description">
-                <div class="m-service-description-header" >Arts And Crafts</div>
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
-                <div class="m-service-description-text" >Sed sagittis in neque laoreet dapibus. Maecenas eget egestas tortor. In massa leo, ullamcorper et lacus vitae, volutpat scelerisque mauris. Donec sollicitudin nisl scelerisque nunc placerat, nec rhoncus lectus maximus. Maecenas sapien libero, cursus in lobortis non, vestibulum sed magna. Curabitur at arcu in mauris suscipit tincidunt eget id ex. Aliquam sodales convallis vehicula. Pellentesque ultrices, ante non fringilla efficitur, mi erat consectetur turpis, et pellentesque odio tellus quis enim. Mauris euismod facilisis lectus eget vulputate. Vivamus et dui nulla. Phasellus a lorem eros. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                    Pellentesque volutpat pharetra purus, nec bibendum leo viverra et. Proin dapibus nisl et ultrices suscipit. Phasellus non magna odio. Aliquam nec bibendum diam. Fusce rutrum, justo quis congue maximus, urna nulla ultricies enim, id sollicitudin tellus quam in tellus. Nulla facilisi. Aenean interdum et dolor accumsan finibus. Duis ultricies, sem sit amet sollicitudin convallis, magna diam pulvinar eros, ac euismod metus nibh in nisl. Suspendisse rutrum erat erat, sit amet auctor purus elementum eu. Maecenas eget lorem odio. Vivamus auctor, metus nec lacinia ullamcorper, enim erat tempus nisi, dictum placerat ante felis ac augue. Integer et nulla quis justo vulputate viverra. Ut porta rutrum porta. Proin faucibus ut sapien sit amet efficitur.</div>
+            <div class="m-service-row">
+            <div class="m-title-image-event" style={BackImg}></div>
+                <div class="m-service-description">
+                <div class="m-service-description-header" >{this.props.Title}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">
                         <div class="m-tag-header">Select A Location</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">22-20 23rd</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">280 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">255 Broadway</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">600 Madison</div>
+                        <StoresContainer />
+                        
                     </div>
                     <div class="calendar">
                         <div class="calendar-header">
@@ -140,39 +393,43 @@ export default class Service extends React.Component {
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>3:30pm</div>
                         <div class="m-button shadow-hover-1 shadow-active-2"onClick={ ()=> this.setState({ showBooking: !this.state.showBooking })}>4:30pm</div>
                     </div>
+                    <div  onClick={ ()=> this.setState({ showBooking: !this.state.showBooking})}>Select Time</div>
                 </div>
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
-                        <div class="m-input shadow-1">
-                            <input type="text" required class="m-input-field" />
+                        <div class="m-input">
+                            <input type="text" ref="fName" required class="m-input-field" onChange={ (e) => { this.updateFirstName();}}/>
                             <label class="m-input-label">First Name</label>
                         </div>
-                        <div class="m-input shadow-1">
-                            <input type="text" required class="m-input-field" />
+                        <div class="m-input">
+                            <input type="text" ref="lName" required class="m-input-field" />
                             <label class="m-input-label">Last Name</label>
                         </div>
-                        <div class="m-input shadow-1">
-                            <input type="text" required class="m-input-field" />
+                        <div class="m-input">
+                            <input type="text" ref="phone" required class="m-input-field" />
                             <label class="m-input-label">Phone Number</label>
                         </div>
-                        <div class="m-input shadow-1">
-                            <input type="text" required class="m-input-field" />
+                        <div class="m-input">
+                            <input type="text" ref="email" required class="m-input-field" />
                             <label class="m-input-label">Email</label>
                         </div>
                     </div>
                     <div class="m-appointment-description">
                         <div class="title">Papercraft Ninjas</div>
-                        <div class="address">600 madison avenue,
-                            New York, New York 10007</div>
+                        <div class="address">600 madison avenue,</div>
+                        <div class="address">New York, New York 10007</div>
                         <div class="dateTime">December 14th at 2:30pm</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-book"><a href="/booking.html">Book Now</a></div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.setPage()}> Book Now </div>
                     </div>
                 </div>
-                <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-times" onClick={ ()=> this.setState({ showTimes: !this.state.showTimes })}>Get Times</div>
             </div>
+        </div>
         </div>
 
     );
+
+      }
   }
 }
