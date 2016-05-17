@@ -1169,6 +1169,11 @@ a {
   background-color : #e21836;
 }
 
+.calendar-dates-day.mod-active {
+   color : white;
+  background-color : #e21836;
+}
+
 .calendar-dates-day.hidden {
   cursor : default;
 

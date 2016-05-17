@@ -25,3 +25,17 @@ export function RemoveService(id) {
         id:id
     })
 }
+
+export function SelectDate(date) {
+    dispatcher.dispatch({
+        type: "SELECTED_DATE",
+        date:date
+    })
+}
+
+export function SelectTime(time) {
+    dispatcher.dispatch({
+        type: "SELECTED_TIME",
+        time:time
+    })
+}
