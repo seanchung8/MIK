@@ -28,6 +28,12 @@ export default class Booking extends React.Component {
     PagesActions.UpdateDisplayed("Landing");
   }
 
+  componentDidMount() {
+      if (this.state.showCheckout) {
+        window.scrollTo(0,0);
+      }
+    }
+
   render() {
     console.log("in booking.render(). this.state.showCheckout:" + this.state.showCheckout);
 
