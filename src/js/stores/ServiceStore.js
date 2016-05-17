@@ -10,9 +10,11 @@ class ServiceStore extends EventEmitter{
     constructor(){
 
         super()
-        this.serviceStore = [
 
-        ]
+        this.state = {
+            row: "",
+            col: ""
+        }
 
 
     }
@@ -26,7 +28,11 @@ class ServiceStore extends EventEmitter{
 
 
     handleActions(action){
-        console.log("ServiceTypeStore received an action",action);
+        console.log("ServiceStore received an action",action);
+
+        switch(action.type){
+        }
+
 
     }
 
