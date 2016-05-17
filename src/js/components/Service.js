@@ -159,6 +159,7 @@ export default class Service extends React.Component {
 
     bookDate(){
         this.setState({ showBooking: !this.state.showBooking});
+        console.log("Set booked date and time " + this.state.date +" at "+this.state.time)
     }
 
     bookService(){
@@ -280,19 +281,19 @@ export default class Service extends React.Component {
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="fName" required class="m-input-field" onChange={ (e) => { this.updateFirstName();}}/>
                             <label class="m-input-label">First Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="lName" required class="m-input-field" />
                             <label class="m-input-label">Last Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="phone" required class="m-input-field" />
                             <label class="m-input-label">Phone Number</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="email" required class="m-input-field" />
                             <label class="m-input-label">Email</label>
                         </div>
                     </div>
@@ -397,19 +398,19 @@ export default class Service extends React.Component {
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="fName" required class="m-input-field" onChange={ (e) => { this.updateFirstName();}}/>
                             <label class="m-input-label">First Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="lName" required class="m-input-field" />
                             <label class="m-input-label">Last Name</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="phone" required class="m-input-field" />
                             <label class="m-input-label">Phone Number</label>
                         </div>
                         <div class="m-input">
-                            <input type="text" required class="m-input-field" />
+                            <input type="text" ref="email" required class="m-input-field" />
                             <label class="m-input-label">Email</label>
                         </div>
                     </div>
