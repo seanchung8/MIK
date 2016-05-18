@@ -19,7 +19,7 @@ export default class Service extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            showDiscription:false,
+            showDescription:false,
             showTimes:false,
             showBooking:false,
             location: BookingStore.getSelectedLoc(),
@@ -31,37 +31,27 @@ export default class Service extends React.Component {
             id: "",
             date: "",
             time: "",
+            locationAddr: "",
+            locationCity: "",
+            locationState: "",
+            postalcode: ""
         };
     }
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.serviceInit();
-        // var locs = LocatorStore.getAll();
-        // console.log(">>>Selected locations:" + locs);
-
-        // for(var i =0;i < locs.length; i++){
-        //     console.log(">>>" + locs[i].id + "-" + locs[i].location + locs[i].selected);
-        
-        // }
         console.log("Component mounted location is set to: " +this.state.location);
 
-            BookingStore.on("change", ()=>{
-      
-      this.setState({
+        BookingStore.on("change", ()=>{
+            this.setState({
 
-        date: BookingStore.getSelectedDate(),
-        location:BookingStore.getSelectedLoc()
-
-      });
-        console.log("Change detected changing location to: " +this.state.location);
+            date: BookingStore.getSelectedDate(),
+            location:BookingStore.getSelectedLoc()
+        });
 
       });
     }
-
-
-
-
 
     serviceInit(){
 
@@ -85,57 +75,46 @@ export default class Service extends React.Component {
         switch(this.props.Headline){
 
             case "Class 1":
-            margins = "10px";
-            break;
-            case "Class 2":
-            margins = "-345px";
-            //margins = "-294px";
-            break;
-            case "Class 3":
-            margins = "-700px";
-            break;
             case "Class 4":
-            margins = "10px";
-            break;
-            case "Class 5":
-            //margins = "-294px";
-            margins = "-345px";
-            break;
-            case "Class 6":
-            margins = "-700px";
-            break;
             case "Class 7":
-            margins = "10px";
+                margins = "10px";
             break;
+
+            case "Class 2":
+            case "Class 5":
             case "Class 8":
+                margins = "-345px";
             //margins = "-294px";
-            margins = "-345px";
             break;
+
+            case "Class 3":
+            case "Class 6":
+            case "Class 9":
+                margins = "-700px";
+            break;
+
             default:
-            margins = "-345px"
+                margins = "-345px"
             break;
-
-
 
         }
 
-      
-            return margins;
+        return margins;
     }
 
     closeWindow(){
 
-        if(this.state.showDiscription){
+        if(this.state.showDescription){
 
             this.setState({
-                showDiscription:false,
+                showDescription:false,
                 showTimes:false,
                 showBooking:false
             });
         }
         else{
 
-            this.setState({ showDiscription: true});
+            this.setState({ showDescription: true});
 
         }
     }
@@ -154,7 +133,6 @@ export default class Service extends React.Component {
 
     setId(id){
 
-
     }
 
     setLocation(){
@@ -172,15 +150,11 @@ export default class Service extends React.Component {
 
     updateFirstName(){
         this.setState({firstName:this.refs.fName.value});
-        
-
     }
 
     updateLastName(){
 
         this.setState({lastName:this.refs.lName.value});
-        
-
     }
 
     updatePhone(){
@@ -192,15 +166,23 @@ export default class Service extends React.Component {
     }
 
     bookDate(){
-        var log = this.state.location;
-        console.log("hit bookDate: " + String(log))
+        this.setState({location: BookingStore.getSelectedLoc()});
+        var myLocation = this.state.location.location;
+        
+        if (typeof myLocation != 'undefined') {
+            console.log("location > " + myLocation['name'] + " " + myLocation['address1'] + " " + myLocation['state']);
+            this.setState({locationAddr : myLocation['address1']});
+            this.setState({locationCity : myLocation['city']});
+            this.setState({locationState : myLocation['state']});
+            this.setState({postalcode : myLocation['postalcode']});
+        }
+
         this.setState({ showBooking: !this.state.showBooking});
-            }
+    }
 
     bookService(){
-console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
+        console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
         this.setPage();
-        
     }
 
     render() {
@@ -219,11 +201,9 @@ console.log("Set booked date and time " + this.state.date +" at "+this.state.tim
         var seatCss = {
 
             textAlign: 'right',
-                paddingRight:'0',
-                fontSize: '18',
-                zIndex: 1
-               
-
+            paddingRight:'0',
+            fontSize: '18',
+            zIndex: 1
         }
 
         var locCSS={
@@ -251,38 +231,37 @@ console.log("Set booked date and time " + this.state.date +" at "+this.state.tim
         }
 
 
-      var timesLeft = {
-        overflowX : 'hidden',
-        overflowY : 'scroll',
-        right:'-584',
-        bottom:237
-      }
-      var LeftSet = {
+        var timesLeft = {
+            overflowX : 'hidden',
+            overflowY : 'scroll',
+            right:'-584',
+            bottom:237
+        }
+        var LeftSet = {
             marginLeft: this.setMargin(),
-      }
+        }
 
       
 
       var classNames = require('classnames');
-      var showDiscription = classNames(
+      var showDescription = classNames(
           'm-service m-tile anim-tile-in',
           {
-              'mod-details': this.state.showDiscription,
+              'mod-details': this.state.showDescription,
               'mod-times': this.state.showTimes,
               'mod-booking': this.state.showBooking
           });
 
-      if (this.state.showDiscription){
+      if (this.state.showDescription){
                 return (
 
-        <div class={showDiscription} style={ this.state.showTimes? LeftSet : normalcss} >
+        <div class={showDescription} style={ this.state.showTimes? LeftSet : normalcss} >
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
 
                 <div class="m-service-description-header" >{this.props.Title}</div>
 
-
-                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDescription? "X":"More Info"}</div>
                 
                 <div class="m-service-description-text" >{this.props.Description}</div>
 
@@ -338,8 +317,8 @@ console.log("Set booked date and time " + this.state.date +" at "+this.state.tim
                     </div>
                     <div class="m-appointment-description">
                         <div class="title">{this.props.Title != null ? this.props.Title : " "}</div>
-                        <div class="address">{this.state.location != null ? this.state.location['address1'] :" "},</div>
-                        <div class="address">{this.state.location != null ? this.state.location['city'] :" "}, {this.state.location != null ? this.state.location['state']:" "} {this.state.location !=null ? this.state.location['postalcode'] : " "}</div>
+                        <div class="address">{this.state.locationAddr},</div>
+                        <div class="address">{this.state.locationCity}, {this.state.locationState} {this.state.postalcode} </div>
                         <div class="dateTime">May {this.state.date} at {this.state.time}</div>
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.bookService()}> Book Now </div>
@@ -356,12 +335,12 @@ console.log("Set booked date and time " + this.state.date +" at "+this.state.tim
       } else {
             return (
 
-        <div class={showDiscription} >
+        <div class={showDescription} >
             <div class="m-service-row">
             <div class="m-title-image-event" style={BackImg}></div>
                 <div class="m-service-description">
                 <div class="m-service-description-header" >{this.props.Title}</div>
-                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDiscription? "X":"More Info"}</div>
+                <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDescription? "X":"More Info"}</div>
                 <div class="m-service-description-text" >{this.props.Description}</div>
                 <div class="m-service-time">
                     <div class="m-tag">

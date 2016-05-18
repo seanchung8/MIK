@@ -23,21 +23,27 @@ class BookingStore extends EventEmitter{
     getSelectedDate(){
         return this.selectedDate;
     }
+
     getSelectedTime(){
         return this.selectedTime;
     }
+
     getSelectedLoc(){
         return this.selectedLocation;
     }
-        getSelectedEmail(){
+
+    getSelectedEmail(){
         return this.email;
     }
-        getSelectedPhone(){
+    
+    getSelectedPhone(){
         return this.phone;
     }
-        getSelectedService(){
+        
+    getSelectedService(){
         return this.selectedService;
     }
+    
     getAll() {
         return this.booked;
     }
@@ -103,11 +109,11 @@ class BookingStore extends EventEmitter{
         //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
         var myDate = this.selectedDate;
         if(date == myDate){
-            console.log('this is the right location ' + date + " == "+ myDate)
+            console.log('this is the right date ' + date + " == "+ myDate)
             return true;
         }
         else{
-            console.log('this is NOT the right location ' + date  + " != "+ myDate)
+            //console.log('this is NOT the right date ' + date  + " != "+ myDate)
             return false;
         }
     }
