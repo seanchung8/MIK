@@ -7,7 +7,8 @@ export default class Appointment extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showCheckout:true
+      showCheckout:true,
+      appointInfo: this.props.appointInfo
     };
   }
 
@@ -20,7 +21,7 @@ export default class Appointment extends React.Component {
         {
           'mod-no-checkout': this.state.showCheckout
         });
-
+    console.log(this.state.appointInfo)
 
     return (
 
@@ -28,26 +29,26 @@ export default class Appointment extends React.Component {
         <div class="m-tile m-appointment anim-tile-in">
           <div class="appointment-image"></div>
           <div class="m-button shadow-1 shadow-hover-2 shadow-active-3 mod-clear-appointment">X</div>
-          <div class="appointment-name">FINGER PAINTING</div>
+          <div class="appointment-name">{this.state.appointInfo.name}</div>
           <div class="appointment-occurrence">
-            <div class="appointment-location-name">MICHAEL'S QUEENS</div>
-            <div class="appointment-address">240 Broadway,
-              New York, NY 10007</div>
+            <div class="appointment-location-name">{this.state.appointInfo.location.name}</div>
+            <div class="appointment-address">{this.state.appointInfo.location.address1},
+              {this.state.appointInfo.location.city}, {this.state.appointInfo.location.state} {this.state.appointInfo.location.postalcode}</div>
 
-            <div class="appointment-time" style={redTxt}>January 3rd at 12:30pm</div>
+            <div class="appointment-time" style={redTxt}>May {this.state.appointInfo.date} at {this.state.appointInfo.time}</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">CHANGE DATE/LOCATION</div>
 
           </div>
           <div class="appointment-details">
             <div class="attendee-details">
-              <div class="attendee-name">Rafe Lepre</div>
-              <div class="attendee-email">rafe.lepre@skedge.me</div>
-              <div class="attendee-phone">1412947743</div>
+              <div class="attendee-name">{this.state.appointInfo.firstName} {this.state.appointInfo.lastName}</div>
+              <div class="attendee-email">{this.state.appointInfo.email}</div>
+              <div class="attendee-phone">{this.state.appointInfo.phone}</div>
             </div>
             <div class="attendee-details">
-              <div class="attendee-name">Jane Doe</div>
-              <div class="attendee-email">Jane.Doe@skedge.me</div>
-              <div class="attendee-phone">1412947743</div>
+              <div class="attendee-name"></div>
+              <div class="attendee-email"></div>
+              <div class="attendee-phone"></div>
             </div>
 
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">CHANGE DETAILS</div>

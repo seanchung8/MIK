@@ -14,9 +14,11 @@ class BookingStore extends EventEmitter{
         this.selectedLocation ={ };
         this.selectedTime = "";
         this.selectedDate ="";
+        this.firstName = "";
+        this.lastName = "";
         this.email ="";
         this.phone ="";
-        this.selectedService =""
+        this.selectedService ="";
 
     }
 
@@ -30,6 +32,14 @@ class BookingStore extends EventEmitter{
 
     getSelectedLoc(){
         return this.selectedLocation;
+    }
+
+    getSelectedFirstName(){
+        return this.firstName;
+    }
+
+    getSelectedLastName(){
+        return this.lastName;
     }
 
     getSelectedEmail(){
@@ -77,6 +87,15 @@ class BookingStore extends EventEmitter{
 
 
         });
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+
+
+
+        console.log("service booked"+ this.booked);
         this.emit("change");
     }
 

@@ -1,5 +1,7 @@
 import React from "react";
 import * as PagesActions from "../actions/PagesActions"
+import BookingStore from "../stores/BookingStore"
+
 
 export default class Checkout extends React.Component {
 
@@ -7,7 +9,12 @@ export default class Checkout extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showCheckout:false
+      showCheckout:false,
+      fName: BookingStore.getSelectedFirstName(),
+      lName: BookingStore.getSelectedLastName(),
+      email: BookingStore.getSelectedEmail(),
+      phone: BookingStore.getSelectedPhone()
+
     };
   }
 
@@ -38,19 +45,19 @@ export default class Checkout extends React.Component {
             <div class="personal-info">
               <div class="personal-title">PERSONAL INFORMATION</div>
               <div class="m-input">
-                <input type="text" required class="m-input-field" />
+                <input type="text" value={this.state.fName} required class="m-input-field" />
                 <label class="m-input-label">FIRST NAME</label>
               </div>
               <div class="m-input">
-                <input type="text" required class="m-input-field" />
+                <input type="text" value={this.state.lName} required class="m-input-field" />
                 <label class="m-input-label">LAST NAME</label>
               </div>
               <div class="m-input">
-                <input type="text" required class="m-input-field" />
+                <input type="text" value={this.state.email} required class="m-input-field" />
                 <label class="m-input-label">EMAIL</label>
               </div>
               <div class="m-input">
-                <input type="text" required class="m-input-field" />
+                <input type="text" value={this.state.phone} required class="m-input-field" />
                 <label class="m-input-label">PHONE NUMBER</label>
               </div>
             </div>

@@ -181,7 +181,12 @@ export default class Service extends React.Component {
     }
 
     bookService(){
-        console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
+        console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + 
+            " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
+
+
+        BookingActions.SelectService(this.state.location.location,this.state.date,this.state.time,null,this.state.firstName,this.state.lastName,this.state.phone,this.state.email,this.props.Title) 
+
         this.setPage();
     }
 
@@ -320,7 +325,7 @@ export default class Service extends React.Component {
                         <div class="address">{this.state.locationAddr},</div>
                         <div class="address">{this.state.locationCity}, {this.state.locationState} {this.state.postalcode} </div>
                         <div class="dateTime">May {this.state.date} at {this.state.time}</div>
-                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date">Change Date/Time</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3 m-button-date" onClick={()=>this.setState({showBooking:false})}>Change Date/Time</div>
                         <div class="m-button shadow-hover-2 shadow-active-3 m-button-book" onClick={ ()=> this.bookService()}> Book Now </div>
                     </div>
                 </div>

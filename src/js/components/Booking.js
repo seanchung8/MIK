@@ -5,6 +5,9 @@ import Appointment from "../components/Appointment";
 import Checkout from "../components/Checkout";
 import  * as PagesActions from "../actions/PagesActions";
 import PagesStore from "../stores/PagesStore"
+import * as BookingActions from "../actions/BookingActions"
+import BookingStore from "../stores/BookingStore"
+
 
 export default class Booking extends React.Component {
 
@@ -13,7 +16,8 @@ export default class Booking extends React.Component {
     super(props);
     this.state = {
       showCheckout:true,
-      View:'Booking'
+      View:'Booking',
+      appointments: BookingStore.getAll()
     };
   }
 
@@ -50,8 +54,22 @@ export default class Booking extends React.Component {
           'm-appointments-shrink': !this.state.showCheckout,
           'm-appointments': this.state.showCheckout
         });
+            var locKey = 0;
 
-      
+        var appointments = _.map(this.state.appointments, (appointment) => {
+                locKey++;
+            var tempHolder =
+
+                        <div key={locKey} >
+                            <Appointment
+                                appointInfo={appointment}
+
+                            />
+                            <p/>
+                        </div>
+
+                return tempHolder;
+            })
     return (
       <div class={btnClass}>
           
@@ -70,9 +88,8 @@ export default class Booking extends React.Component {
                       </div>
                   </div>
 
-                  <div><Appointment/></div> 
-                  <div><Appointment/></div>
-                  <div><Appointment/></div>
+                  <div>{appointments}</div> 
+                  
               </div>
               <Checkout/>
               </div>
