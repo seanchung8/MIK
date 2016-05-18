@@ -1288,6 +1288,7 @@ a {
   color : #e21836;
 }
 
+/* duplicates
 .m-service-time {
   position : absolute;
   top : 63px;
@@ -1297,6 +1298,7 @@ a {
 
   opacity : 0;
 }
+*/
 
 .m-appointment-description .title {
   font-size : 16px;
@@ -1555,6 +1557,7 @@ a {
 
 .mod-no-checkout .m-checkout {
   transform : translateZ(0) translate3d(100%,85px,0);
+    opacity: 0;
 }
 
 .m-checkout .personal-info .personal-title {
@@ -1591,7 +1594,7 @@ a {
 }
 
 .thank-you {
-  top: 96px;
+  top: 116px;
   padding : 20px;
   height: auto;
   width: 380px;
