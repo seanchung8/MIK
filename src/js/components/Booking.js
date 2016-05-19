@@ -49,6 +49,10 @@ export default class Booking extends React.Component {
           'mod-hide': !this.state.showCheckout
         });
 
+    var apointPosCss={
+      height:300
+    }
+
     var btnApt = classNames(
         {
           'm-appointments-shrink': !this.state.showCheckout,
@@ -65,7 +69,6 @@ export default class Booking extends React.Component {
                                 appointInfo={appointment}
 
                             />
-                            <p/>
                         </div>
 
                 return tempHolder;
@@ -77,7 +80,7 @@ export default class Booking extends React.Component {
               <div><MIKHeader/></div>
               <div class="m-box-wrapper"> 
               <div class={btnApt}>
-                  <div class="m-appointments-title-bar m-tile shadow-1">
+                  <div class="m-appointments-title-bar m-tile" >
                       <div class="m-button shadow-hover-2 shadow-active-3" 
                         onClick={()=> this.goBackToLanding()}>
                         View More Classes
@@ -88,7 +91,7 @@ export default class Booking extends React.Component {
                       </div>
                   </div>
 
-                  <div>{appointments}</div> 
+                  <div >{appointments} </div>
                   
               </div>
               <Checkout/>
