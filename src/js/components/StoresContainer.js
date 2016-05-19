@@ -62,7 +62,7 @@ export default class StoresContainer extends React.Component {
              
     return (
       <div style={elementAlign}>
-        <div class="m-tag">{listItems}</div>
+        <div >{listItems}</div>
       </div>
     );
   }

@@ -197,49 +197,56 @@ export default class Service extends React.Component {
 
         var normalcss = {};
         var priceCss = {
-            textAlign: 'right',
+            textAlign: 'center',
             paddingRight:'40',
             fontSize: '18',
-            zIndex: 1
+            zIndex: 0,
+            //width:'calc(100%/4)'
 
         }
         var seatCss = {
 
-            textAlign: 'right',
+            textAlign: 'center',
             paddingRight:'0',
             fontSize: '18',
-            zIndex: 1
+            zIndex: 0,
+           // width:'calc(100%/4)'
         }
 
         var locCSS={
             height:220,
-            width:280,
+            //width:280,
             overflowX : 'hidden',
-            overflowY : 'scroll'
+            overflowY : 'scroll',
+            width:'calc(100%/4 -20)'
         }
 
         var calendarCSS={
 
-            marginLeft:310,
-            marginTop:'-220'
+            marginLeft:283,
+            marginTop:'-220',
+            width:'calc(100%/4 -20)'
         }
 
         var timesBtn = {
 
-            marginLeft: 890,
-            marginTop: 100
+            marginLeft: 70,
+            marginTop: 87
         }
 
         var priceInfo={
             marginTop:'-450',
-            marginRight:'-5'
+            marginLeft:795,
+            width:'calc(100%/4)',
+            position:'absolute',
+            display : 'block'
         }
 
 
         var timesLeft = {
             overflowX : 'hidden',
             overflowY : 'scroll',
-            right:'-584',
+            marginLeft:'535',
             bottom:237
         }
         var LeftSet = {
@@ -297,9 +304,10 @@ export default class Service extends React.Component {
                     <div style={priceInfo}> 
                         <div style={priceCss}>Price: ${this.props.price}</div> 
                         <div style={seatCss}>Available Seats: {this.props.seats}</div>
+                        <div class="m-button shadow-hover-2 shadow-active-3" style={timesBtn} onClick={ ()=> this.bookDate()}>SELECT TIME</div>
                     </div>
 
-                     <div class="m-button shadow-hover-2 shadow-active-3" style={timesBtn} onClick={ ()=> this.bookDate()}>SELECT TIME</div>
+                     
                 </div>
                 <div class="m-service-booking">
                     <div class="m-service-booking-form">
