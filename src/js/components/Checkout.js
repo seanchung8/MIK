@@ -27,6 +27,23 @@ export default class Checkout extends React.Component {
     window.scrollTo(0,0);
   }
 
+  updateFirstName(){
+        this.setState({fName:this.refs.fName.value});
+  }
+
+  updateLastName(){
+
+      this.setState({lName:this.refs.lName.value});
+  }
+
+  updatePhone(){
+      this.setState({phone:this.refs.phone.value});
+  }
+
+  updateEmail(){
+      this.setState({email:this.refs.email.value});
+  }
+
   render() {
 
     if (this.state.showCheckout) {
@@ -45,19 +62,19 @@ export default class Checkout extends React.Component {
             <div class="personal-info">
               <div class="personal-title">PERSONAL INFORMATION</div>
               <div class="m-input">
-                <input type="text" value={this.state.fName} required class="m-input-field" />
+                <input type="text" value={this.state.fName} onChange={()=>this.getSelectedFirstName()} required class="m-input-field" />
                 <label class="m-input-label">FIRST NAME</label>
               </div>
               <div class="m-input">
-                <input type="text" value={this.state.lName} required class="m-input-field" />
+                <input type="text" value={this.state.lName} onChange={()=>this.getSelectedLastName()} required class="m-input-field" />
                 <label class="m-input-label">LAST NAME</label>
               </div>
               <div class="m-input">
-                <input type="text" value={this.state.email} required class="m-input-field" />
+                <input type="text" value={this.state.email} onChange={()=>this.getSelectedEmail()} required class="m-input-field" />
                 <label class="m-input-label">EMAIL</label>
               </div>
               <div class="m-input">
-                <input type="text" value={this.state.phone} required class="m-input-field" />
+                <input type="text" value={this.state.phone} onChange={()=>this.getSelectedPhone()} required class="m-input-field" />
                 <label class="m-input-label">PHONE NUMBER</label>
               </div>
             </div>

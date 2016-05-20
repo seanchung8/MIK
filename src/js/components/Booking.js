@@ -7,7 +7,7 @@ import  * as PagesActions from "../actions/PagesActions";
 import PagesStore from "../stores/PagesStore"
 import * as BookingActions from "../actions/BookingActions"
 import BookingStore from "../stores/BookingStore"
-
+import appointmentDisplay from "../components/appointmentDisplay";
 
 export default class Booking extends React.Component {
 
@@ -17,7 +17,7 @@ export default class Booking extends React.Component {
     this.state = {
       showCheckout:true,
       View:'Booking',
-      appointments: BookingStore.getAll()
+      
     };
   }
 
@@ -60,19 +60,6 @@ export default class Booking extends React.Component {
         });
             var locKey = 0;
 
-        var appointments = _.map(this.state.appointments, (appointment) => {
-                locKey++;
-            var tempHolder =
-
-                        <div key={locKey} >
-                            <Appointment
-                                appointInfo={appointment}
-
-                            />
-                        </div>
-
-                return tempHolder;
-            })
     return (
       <div class={btnClass}>
           
@@ -91,14 +78,14 @@ export default class Booking extends React.Component {
                       </div>
                   </div>
 
-                  <div >{appointments} </div>
+                  <div > <appointmentDisplay/> </div>
                   
               </div>
               <Checkout/>
               </div>
-              <div><MIKFooter/></div>
+              
           </div>
-
+<div><MIKFooter/></div>
       </div>
           
     );

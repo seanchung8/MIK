@@ -55,6 +55,7 @@ class BookingStore extends EventEmitter{
     }
     
     getAll() {
+        console.log('getting all booked appointments')
         return this.booked;
     }
 
