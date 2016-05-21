@@ -473,11 +473,12 @@ export default class ClassesAndEvents extends React.Component {
 
     DrawBooking() {
         console.log("In DrawBooking. Doing nothing");
+        var contain={minHeight:800}
         return(
             <div>
                 <div>
                     <div><MIKHeader/></div>
-                    <div><Booking/></div>
+                    <div style={contain}><Booking/></div>
                 </div>
                 <div><MIKFooter/></div>
             </div>

@@ -3,8 +3,13 @@ import React from "react";
 
 export default class MIKFooter extends React.Component {
   render() {
+
+    var position = {
+      position: 'absolute'
+    }
+
     return (
-        <div id="mik-footer" role="contentinfo">
+        <div id="mik-footer" role="contentinfo" >
 
           <div>
             <p>

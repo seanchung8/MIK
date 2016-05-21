@@ -52,7 +52,8 @@ export default class Booking extends React.Component {
 
     var apointContain = {
 
-      height:900,
+      height:700,
+      overflowY : 'scroll'
       
     }
     var footerPos={
@@ -107,9 +108,9 @@ export default class Booking extends React.Component {
                       </div>
                   </div>
                   <div>
-                  <span style={checkoutCss}><Checkout/></span>
+                    <span style={checkoutCss}><Checkout/></span>
 
-                 <span style={apointContain}>{appointments}</span>
+                    <span style={apointContain}>{appointments}</span>
                   </div>
               </div>
             
