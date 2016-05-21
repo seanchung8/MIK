@@ -475,8 +475,9 @@ export default class ClassesAndEvents extends React.Component {
         console.log("In DrawBooking. Doing nothing");
         return(
             <div>
-                
+                <div><MIKHeader/></div>
                 <div><Booking/></div>
+                
             </div>
 
         );

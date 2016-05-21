@@ -58,7 +58,7 @@ export default class Checkout extends React.Component {
     else {
       return (
 
-        <div class='m-checkout'>
+        <div class='m-checkout mod-hide'>
             <div class="personal-info">
               <div class="personal-title">PERSONAL INFORMATION</div>
               <div class="m-input">

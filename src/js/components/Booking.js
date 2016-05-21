@@ -17,7 +17,8 @@ export default class Booking extends React.Component {
     this.state = {
       showCheckout:true,
       View:'Booking',
-      
+      appointments: BookingStore.getAll()
+
     };
   }
 
@@ -49,9 +50,30 @@ export default class Booking extends React.Component {
           'mod-hide': !this.state.showCheckout
         });
 
+    var apointContain = {
+
+      height:900,
+      zIndex:0
+    }
+
     var apointPosCss={
       height:300
     }
+    var locKey = 0;
+    var appointments = _.map(this.state.appointments, (appointment) => {
+                locKey++;
+            var tempHolder =
+
+                        <div key={locKey} >
+                            <Appointment
+                                appointInfo={appointment}
+
+                            />
+                        </div>
+                        console.log('apointments '+ appointment)
+                return tempHolder;
+            })
+
 
     var btnApt = classNames(
         {
@@ -64,7 +86,7 @@ export default class Booking extends React.Component {
       <div class={btnClass}>
           
           <div>
-              <div><MIKHeader/></div>
+              
               <div class="m-box-wrapper"> 
               <div class={btnApt}>
                   <div class="m-appointments-title-bar m-tile" >
@@ -77,17 +99,19 @@ export default class Booking extends React.Component {
                         Checkout
                       </div>
                   </div>
+                  <span><Checkout/></span>
 
-                  <div > <appointmentDisplay/> </div>
+                 <span style={apointContain}>{appointments}</span>
                   
               </div>
-              <Checkout/>
+            
               </div>
               
           </div>
-<div><MIKFooter/></div>
+          <div><MIKFooter/></div>
+
       </div>
-          
+            
     );
   }
 
