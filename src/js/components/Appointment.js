@@ -35,7 +35,8 @@ export default class Appointment extends React.Component {
           <div class="appointment-occurrence">
             <div class="appointment-location-name">{this.state.appointInfo.location.name}</div>
             <div class="appointment-address">{this.state.appointInfo.location.address1},
-              {this.state.appointInfo.location.city}, {this.state.appointInfo.location.state} {this.state.appointInfo.location.postalcode}</div>
+            <p/>
+              {this.state.appointInfo.location.city}, {this.state.appointInfo.location.state} <p/>{this.state.appointInfo.location.postalcode}</div>
 
             <div class="appointment-time" style={redTxt}>May {this.state.appointInfo.date} at {this.state.appointInfo.time}</div>
             <div class="m-button shadow-1 shadow-hover-2 shadow-active-3">CHANGE DATE/LOCATION</div>
