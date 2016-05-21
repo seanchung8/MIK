@@ -477,7 +477,7 @@ export default class ClassesAndEvents extends React.Component {
             <div>
                 <div><MIKHeader/></div>
                 <div><Booking/></div>
-                
+                <div><MIKFooter/></div>
             </div>
 
         );
@@ -541,7 +541,7 @@ export default class ClassesAndEvents extends React.Component {
 
       var ShownPage = this.state.isBooking;
 
-      return (<body>{this.state.page}</body>);
+      return (<div>{this.state.page}</div>);
   }
 
 }

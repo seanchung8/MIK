@@ -77,24 +77,24 @@ export default class Service extends React.Component {
             case "Class 1":
             case "Class 4":
             case "Class 7":
-                margins = "10px";
+                margins = 10;
             break;
 
             case "Class 2":
             case "Class 5":
             case "Class 8":
-                margins = "-345px";
+                margins = -345;
             //margins = "-294px";
             break;
 
             case "Class 3":
             case "Class 6":
             case "Class 9":
-                margins = "-700px";
+                margins = -700;
             break;
 
             default:
-                margins = "-345px"
+                margins = -345
             break;
 
         }
@@ -200,8 +200,8 @@ export default class Service extends React.Component {
         var normalcss = {};
         var priceCss = {
             textAlign: 'center',
-            paddingRight:'40',
-            fontSize: '18',
+            paddingRight:40,
+            fontSize: 18,
             zIndex: 0,
             //width:'calc(100%/4)'
 
@@ -209,8 +209,8 @@ export default class Service extends React.Component {
         var seatCss = {
 
             textAlign: 'center',
-            paddingRight:'0',
-            fontSize: '18',
+            paddingRight:0,
+            fontSize: 18,
             zIndex: 0,
            // width:'calc(100%/4)'
         }
@@ -226,7 +226,7 @@ export default class Service extends React.Component {
         var calendarCSS={
 
             marginLeft:283,
-            marginTop:'-220',
+            marginTop:-220,
             width:'calc(100%/4 -20)'
         }
 
@@ -237,7 +237,7 @@ export default class Service extends React.Component {
         }
 
         var priceInfo={
-            marginTop:'-450',
+            marginTop:-450,
             marginLeft:795,
             width:'calc(100%/4)',
             position:'absolute',
@@ -248,7 +248,7 @@ export default class Service extends React.Component {
         var timesLeft = {
             overflowX : 'hidden',
             overflowY : 'scroll',
-            marginLeft:'535',
+            marginLeft:535,
             bottom:237
         }
         var LeftSet = {

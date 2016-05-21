@@ -53,6 +53,13 @@ export default class Booking extends React.Component {
     var apointContain = {
 
       height:900,
+      
+    }
+    var footerPos={
+
+      bottom:'0 !important'
+    }
+    var checkoutCss={
       zIndex:0
     }
 
@@ -85,7 +92,7 @@ export default class Booking extends React.Component {
     return (
       <div class={btnClass}>
           
-          <div>
+          
               
               <div class="m-box-wrapper"> 
               <div class={btnApt}>
@@ -99,16 +106,17 @@ export default class Booking extends React.Component {
                         Checkout
                       </div>
                   </div>
-                  <span><Checkout/></span>
+                  <div>
+                  <span style={checkoutCss}><Checkout/></span>
 
                  <span style={apointContain}>{appointments}</span>
-                  
+                  </div>
               </div>
             
               </div>
               
-          </div>
-          <div><MIKFooter/></div>
+          
+          
 
       </div>
             

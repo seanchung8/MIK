@@ -46,6 +46,8 @@ export default class Checkout extends React.Component {
 
   render() {
 
+    var pos ={zIndex:'0 !important'}
+
     if (this.state.showCheckout) {
       return (
         <div class="m-checkout thank-you m-tile anim-tile-in">
@@ -58,7 +60,7 @@ export default class Checkout extends React.Component {
     else {
       return (
 
-        <div class='m-checkout mod-hide'>
+        <div class='m-checkout mod-hide' style={pos}>
             <div class="personal-info">
               <div class="personal-title">PERSONAL INFORMATION</div>
               <div class="m-input">
