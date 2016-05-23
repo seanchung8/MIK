@@ -9,6 +9,7 @@ import * as BookingActions from "../actions/BookingActions"
 import BookingStore from "../stores/BookingStore"
 import appointmentDisplay from "../components/appointmentDisplay";
 
+
 export default class Booking extends React.Component {
 
 

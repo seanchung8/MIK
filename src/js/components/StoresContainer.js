@@ -22,11 +22,12 @@ export default class StoresContainer extends React.Component {
     //   todoStore.addChangeListener(this._onChange);
     // }
 
-    // componentWillUnmount(){
-    //   console.log("in StoreContainer.componentWillUnmount()");
-      
-    //   todoStore.removeChangeListener(this._onChange);
-    // }
+    componentWillUnmount(){
+      console.log("in StoreContainer.componentWillUnmount()");
+      LocatorStore.removeChangeListener= this._onChange;
+
+      //todoStore.removeChangeListener(this._onChange);
+    }
 
 
   selectLocation(loc){
@@ -43,7 +44,10 @@ export default class StoresContainer extends React.Component {
       alignItems: 'center'
     };
 
-
+    var appointCss = {
+      fontSize:18
+    }    
+    var locked = LocatorStore.IsLocationLocked();
     
     var locKey = 0;
 
@@ -53,11 +57,20 @@ export default class StoresContainer extends React.Component {
         var locName = location.location['name'];
         
         //console.log("index:" + index +"locName=>" + locName + ":" +location.location['name']);
-        return (
-            <div key={index}  >
-                <LocationButton name={locName} location={location.location}/>
-            </div>
-        )
+        if(!locked){
+          return (
+              <div key={index}  >
+                  <LocationButton name={locName} location={location.location}/>
+              </div>
+          )
+        }
+        else{
+          return(
+            <div key={index}  class="appointment-occurrence" style={appointCss}>
+              <div class="appointment-location-name">{location.location.name}</div>
+              </div>
+          )
+        }
       }.bind(this));
              
     return (

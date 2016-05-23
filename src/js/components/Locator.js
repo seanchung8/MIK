@@ -6,6 +6,10 @@ import PagesStore from '../stores/PagesStore';
 import * as PagesActions from '../actions/PagesActions';
 import BookingStore from '../stores/BookingStore';
 import * as BookingActions from '../actions/BookingActions';
+import APIStore from '../stores/APIStore';
+import * as APIActions from '../actions/APIActions';
+import LocatorStore from '../stores/LocatorStore';
+
 
 export default class Locator extends React.Component {
     //Class Constructor 
@@ -30,18 +34,26 @@ export default class Locator extends React.Component {
             locKey:0,
             country: this.props.country,
             travelRadius: 10,
-            maxCost:25
+            maxCost:25,
+            isLocationLocked: LocatorStore.IsLocationLocked(),
+
         };
     }
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.search();
-        console.log(this.state.country);
+                
     }
 
     componentDidMount(){
         // Called after the component has been rendered into the page
+          console.log(this.state.country);
+        APIStore.on("change", ()=>{this.setState({
+            locations:APIStore.getLocations(),
+
+
+        })});
+
     }
 
     componentWillReceiveProps(nextProps){
@@ -49,33 +61,27 @@ export default class Locator extends React.Component {
     }
 
     componentWillUpdate(nextProps, nextState){
-        // Called when the props and/or state change
+        // Called when the props and/or state chang
+
+
     }
 
     componentWillUnmount(){
         // Called when the component is removed
+        //APIStore.removeListener("change");
+        APIStore.removeChangeListener= this._onChange;
+
     }
 
     updateSearch(){
         //console.log("update search got hit and this.refs.query val = " + this.refs.query.valueOf());
-        this.state.travelRadius = this.refs.travelDistanceInput.value;
 
-          var address = "http://api.slippymap.com/rest?&xml_request=" + encodeURIComponent("<request> " +
-                    "<appkey>7D3183D8-683E-11E3-A044-AF8B407E493E</appkey> " +
-                    "<formdata id='locatorsearch'> " +
-                    "<geolocs> " +
-                    "<geoloc> " +
-                    "<addressline>" + (this.refs.query.value != "" ? this.refs.query.value : "8675309") + "</addressline>" +
-                    "<country>" + this.props.country + "</country> " +
-                    "</geoloc> " +
-                    "</geolocs> " +
-                    "<searchradius>" + this.state.travelRadius + "</searchradius> " +
-                    "</formdata> " +
-                    "</request>"
-                );
+        if(!this.state.isLocationLocked){
+            this.setState({travelRadius: this.refs.travelDistanceInput.value})
 
+            APIActions.fetchStores(this.refs.query.value,this.refs.travelDistanceInput.value,this.state.country)
+        }
 
-            this.search(address);
     }
 
     updateMaxCost() {
@@ -151,6 +157,12 @@ export default class Locator extends React.Component {
             condition = false;
         }
 
+        var locked = LocatorStore.IsLocationLocked();
+
+
+        
+
+        console.log(locked);
 
         var nav = this.navigation();
         console.log("view in locator "+this.props.viewing);
@@ -161,37 +173,30 @@ export default class Locator extends React.Component {
         var locations= _.map(this.state.locations, (location) => {
                 locKey++;
             var tempHolder =
-
-
-                   // (this.state.showDiscription && locKey == this.state.locKey) ?
                         <div key={locKey} >
                             <LocationItem
                                 location={location}
-
                             />
                             <p/>
                         </div>
-                    // :
-                    //     <div key={locKey} onClick={ ()=> this.clickedLocation.bind(true,locKey)} class='m-editable-list-location mod-active'>
-                    //         <div>{location.name}</div>
-                    //         {console.log(locKey)}
-                    //         <div>{location.address1}</div>
-                    //         <div>{location.city}, {location.state}</div>
-                    //         <div>{location.postalcode}</div>
-                    //         <div>{location.phone}</div>
-                    //         <p/>
-                    //     </div>;
-
-
                 return tempHolder;
             })
+
+        var searchField;
+        if(locked){
+          searchField =  <input ref="query" value={APIStore.getSearchZip()} readOnly="true" type="text" required class="m-input-field" />
+        }
+        else{
+           searchField = <input ref="query" onChange={ (e) => { this.updateSearch();}} type="text" required class="m-input-field" />
+        }
+
 
         return(
 
     <div class="m-sidebar anim-bar-left">
         <div class="m-button shadow-hover-3 shadow-active-4 m-button-toggle" onClick={()=> this.pageChange()}>View {nav}</div>
         <div class="m-input">
-            <input ref="query" onChange={ (e) => { this.updateSearch();}} type="text" required class="m-input-field" />
+            {searchField}
             <label class="m-input-label">Zip Code</label>
         </div>
         <div class="m-slider ">
@@ -265,52 +270,7 @@ export default class Locator extends React.Component {
 
 
     search(query = "") {
-        var request = require('superagent');
-        var xml2jsParser = require('superagent-xml2jsparser');
-        var parser = new xml2js.Parser();
-        var dataFromJson = null;
-        console.log(query);
-        query = query != "" ? query : "https://localhost";
-        if(query != "") {
-            request
-                .get(query)
-                .accept('text/xml')
-                .parse(xml2jsParser) // add the parser function
-                .then((res) => {
 
-                    var xml = res.text;
-
-                    var myXML = parser.parseString(xml, function (err, result) {
-                        //Extract the value from the data element
-                        try {
-                            dataFromJson = require('util').inspect(result.response.collection[0].poi, {
-                                showHidden: false,
-                                depth: null
-                            });
-                        } catch (exc)
-                        {
-                            if (result != null
-                                && result.response != null
-                                && result.response.message != null
-                                && result.response.message[0] != null
-                                && result.response.message[0].text != null
-                                && result.response.message[0].text[0] != null
-                            )
-                            {
-                                console.log(result.response.message[0].text[0]);
-                            }
-                        }
-
-                        dataFromJson = eval(dataFromJson);
-                    });
-
-                    this.setState({locations: dataFromJson});
-
-                })
-        }
-        else{
-            this.setState({locations: []});
-        }
     }
 
 }

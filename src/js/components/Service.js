@@ -6,7 +6,7 @@ import StoresContainer from "./StoresContainer"
 import * as BookingActions from "../actions/BookingActions"
 import BookingStore from "../stores/BookingStore"
 import Calendar from "../components/Calendar"
-
+import * as LocatorActions from "../actions/LocatorActions"
 import ServiceStore from "../stores/ServiceStore";
 import * as ServiceActions from "../actions/ServiceActions";
 
@@ -34,11 +34,12 @@ export default class Service extends React.Component {
             locationAddr: "",
             locationCity: "",
             locationState: "",
-            postalcode: ""
+            postalcode: "",
+            isLocationLocked:false
         };
     }
 
-    componentWillMount(){
+    componentDidMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.serviceInit();
         console.log("Component mounted location is set to: " +this.state.location);
@@ -51,6 +52,11 @@ export default class Service extends React.Component {
         });
 
       });
+    }
+
+    componentWillUnmount(){
+        BookingStore.removeChangeListener= this._onChange;
+
     }
 
     serviceInit(){
@@ -178,6 +184,8 @@ export default class Service extends React.Component {
                 postalcode : myLocation['postalcode']
             });
         }
+        this.setState({isLocationLocked:true});
+        LocatorActions.SetLocationLock(true);
 
         this.setState({ showBooking: !this.state.showBooking});
     }
@@ -185,8 +193,8 @@ export default class Service extends React.Component {
     bookService(){
         console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + 
             " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
-
-
+        this.setState({isLocationLocked:true});
+        LocatorActions.SetLocationLock(true);
         BookingActions.SelectService(this.state.location.location,this.state.date,this.state.time,null,this.state.firstName,this.state.lastName,this.state.phone,this.state.email,this.props.Title) 
 
         this.setPage();
@@ -247,7 +255,7 @@ export default class Service extends React.Component {
 
         var timesLeft = {
             overflowX : 'hidden',
-            overflowY : 'scroll',
+            //overflowY : 'scroll',
             marginLeft:535,
             bottom:237
         }

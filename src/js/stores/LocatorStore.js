@@ -11,10 +11,16 @@ class LocatorStore extends EventEmitter{
         super(props)
         this.locations = [ ];
         this.selectedLocation = {};
+        this.locationSelected = false;
+        this.isLocationLocked = false;
     }
 
     getAll(){
         return this.locations;
+    }
+
+    IsLocationLocked(){
+        return this.isLocationLocked;
     }
 
 
@@ -53,6 +59,13 @@ class LocatorStore extends EventEmitter{
     }
 
 
+   ClearAndLockLoc(locked){
+        if(locked){
+            this.locations =[];
+            this.locations.push(this.selectedLocation);
+            console.log('clearing location list and pushing the selected location ' + this.locations)
+        }
+   } 
    IsLocationActive(id){
 
     var isActive = false;
@@ -105,6 +118,12 @@ class LocatorStore extends EventEmitter{
                 selected: true
                 };
                 console.log("selected the location id: " + this.selectedLocation.id + " name: " + this.selectedLocation.location.name);
+            break;
+            case "LOCATION_LOCKED":
+                this.isLocationLocked = action.locked;
+                this.ClearAndLockLoc(action.locked);
+                console.log("Location lock is: " + this.isLocationLocked)
+                this.emit("change");
             break;
         }
             }

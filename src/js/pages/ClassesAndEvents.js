@@ -58,8 +58,9 @@ export default class ClassesAndEvents extends React.Component {
         this.UpdateScreen();
     }
 
-    componentWillUnmount() {
-        console.log("=== in ClassesAndEvents.componentWillUnmount() ===");    
+    componentWillUnmount(){
+        // Called when the component is removed
+        //PagesStore.removeListener("change");
     }
 
     DrawLanding(){

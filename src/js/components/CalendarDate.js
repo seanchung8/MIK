@@ -24,7 +24,11 @@ export default class CalendarDate extends React.Component {
       this.setState({selected: myStatus});
       });
   }
-
+    componentWillUnmount(){
+        // Called when the component is removed
+        //BookingStore.removeListener("change");
+        BookingStore.removeChangeListener= this._onChange;
+    }
   setDate(){
 
       BookingActions.SelectDate(this.state.day)

@@ -23,3 +23,10 @@ export function SelectedLocation(location) {
         
     })
 }
+
+export function SetLocationLock(lock){
+    dispatcher.dispatch({
+        type: "LOCATION_LOCKED",
+        locked:lock
+    })
+}
