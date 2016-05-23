@@ -27,3 +27,13 @@ export function fetchEvents(view) {
 
     })
 }
+
+export function fetchStores(zip,radius,countries){
+    dispatcher.dispatch({
+        type: "SEARCH_STORES",
+        zip: zip,
+        radius:radius,
+        countries:countries
+    })
+
+}

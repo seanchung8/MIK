@@ -4,8 +4,29 @@
 import dispatcher from "../dispatcher";
 
 
-export function ChangeDisplayed() {
+export function SelectLocation(location,selected,id) {
+	console.log(">> in LocationActions.SelectLocation:" + location);
     dispatcher.dispatch({
-        type: "CHANGE_DISPLAY"
+        type: "SELECT_LOCATION",
+        text: location,
+        isSelected: selected,
+        id: id
+    })
+}
+
+export function SelectedLocation(location) {
+	console.log(">> in LocationActions.SelectedLocation:" + location);
+    dispatcher.dispatch({
+        type: "SELECTED_LOCATION",
+        location: location,
+
+        
+    })
+}
+
+export function SetLocationLock(lock){
+    dispatcher.dispatch({
+        type: "LOCATION_LOCKED",
+        locked:lock
     })
 }
