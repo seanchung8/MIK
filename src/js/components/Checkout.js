@@ -19,7 +19,7 @@ export default class Checkout extends React.Component {
   }
 
   goToLanding(){
-    PagesActions.UpdateDisplayed("Landing");
+    PagesActions.updateDisplayed("Landing");
   }
 
   showConfirmation() {
