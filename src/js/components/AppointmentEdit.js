@@ -21,7 +21,9 @@ export default class AppointmentEdit extends React.Component {
   }
 
   cancelAppointment(){
-
+      this.setState({
+        showCancel:true
+      });
   }
 
   render() {
@@ -194,7 +196,7 @@ export default class AppointmentEdit extends React.Component {
 
               </div>
               <div style={btnPanel}>
-              <span class="m-button shadow-hover-2 shadow-active-3" style={cancBtnCSS} onClick={()=>this.cancelAppointment()}>{!this.state.showCancel? Cancel}</span>
+              <span class="m-button shadow-hover-2 shadow-active-3" style={cancBtnCSS} onClick={()=>this.cancelAppointment()}>{!this.state.showCancel? "Cancel":"Confirm Cancel"}</span>
               <span class="m-button shadow-hover-2 shadow-active-3" style={rescBtnCSS} onClick={()=>this.setState({showReschedule: true})}>Reschedule</span>
               </div>  
               </div>
