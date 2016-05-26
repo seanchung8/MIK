@@ -5,10 +5,10 @@ import dispatcher from "../dispatcher";
 
 
 //Make API call for services
-export function fetchServices(catagory) {
+export function fetchServices(category) {
     dispatcher.dispatch({
         type: "GET_SERVICES",
-        text: catagory
+        text: category
 
     })
 }

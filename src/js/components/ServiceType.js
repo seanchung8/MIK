@@ -22,15 +22,15 @@ export default class ServiceType extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
+        this.serviceTypeInit();
 
     }
 
-    ChangeDisplayScreen(){
-        PagesActions.UpdateDisplayed(this.state.view);
+    changeDisplayScreen(){
+        PagesActions.updateDisplayed(this.state.view);
     }
 
-    ServiceTypeInit(){
+    serviceTypeInit(){
 
 
         if(this.props.description != null || this.props.description != " ") {
@@ -83,7 +83,7 @@ export default class ServiceType extends React.Component {
                      onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
                 <div className="m-header-description-text" ><p><b>{this.state.headline}</b></p><p>{this.state.description}</p></div>
                 <div className="m-button shadow-active-3 m-button-classes"
-                     onClick={()=> this.ChangeDisplayScreen()}>View {this.state.title}</div>
+                     onClick={()=> this.changeDisplayScreen()}>View {this.state.title}</div>
             </div>
         </div>
     );

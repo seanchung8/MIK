@@ -5,7 +5,7 @@ import  * as PagesActions from "../actions/PagesActions";
 
 
 
-export default class Catagory extends React.Component {
+export default class Category extends React.Component {
 
     //Class Constructor
     //Optional Props:
@@ -66,9 +66,8 @@ export default class Catagory extends React.Component {
 
 
     setPage(){
-      PagesActions.selectCatagory(this.state.title);
+      PagesActions.selectCategory(this.state.title);
     }
-
 
   render() {
 

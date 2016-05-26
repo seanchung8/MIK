@@ -11,7 +11,7 @@ class PagesStore extends EventEmitter{
 
         super(props)
         this.viewing = "Landing",
-        this.selectedCatagory = ""
+        this.selectedCategory = ""
     }
 
     changePage(text){
@@ -23,8 +23,8 @@ class PagesStore extends EventEmitter{
         return this.viewing;
     }
 
-    getSelectedCatagory(){
-        return this.selectedCatagory;
+    getSelectedCategory(){
+        return this.selectedCategory;
     }
     
     getViewing()
@@ -36,12 +36,12 @@ class PagesStore extends EventEmitter{
         switch (action.type){
 
             case "CHANGE_DISPLAY":
-                this.selectedCatagory="";
+                this.selectedCategory="";
                 this.changePage(action.text);
                 break;
 
-            case "SELECT_CATAGORY":
-                this.selectedCatagory = action.text;
+            case "SELECT_CATEGORY":
+                this.selectedCategory = action.text;
                 this.changePage('CategoryClasses');
                 break;
         }

@@ -4,21 +4,21 @@
 import dispatcher from "../dispatcher";
 
 //Action to change which components are displayed on the main page
-export function updateDisplayed(view,catagory="") {
+export function updateDisplayed(view,category="") {
     dispatcher.dispatch({
         type: "CHANGE_DISPLAY",
         text: view,
-        catagory: catagory
+        category: category
 
     });
 
 }
 
-//Action to select a catagory to display services for
-export function selectCatagory(catagory){
+//Action to select a category to display services for
+export function selectCategory(category){
     dispatcher.dispatch({
-        type: "SELECT_CATAGORY",
-        text: catagory
+        type: "SELECT_CATEGORY",
+        text: category
     });
 }
 
