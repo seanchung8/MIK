@@ -1,5 +1,5 @@
 import React from "react";
-import CalendarDate from "../components/CalendarDate"
+import CalendarDate from "../components/CalendarDate";
 
 export default class Calendar extends React.Component {
 

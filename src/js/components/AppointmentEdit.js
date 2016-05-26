@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default class Appointment extends React.Component {
+export default class AppointmentEdit extends React.Component {
 
 
   constructor(props){
@@ -22,14 +22,14 @@ export default class Appointment extends React.Component {
 
   render() {
 
-    var RescBtnCSS = { 
+    var rescBtnCSS = { 
       background: '#e21836',
       width:'48%',
       textAlign:'center',
       margin:5,
       //right:-10
     }
-    var CancBtnCSS = { 
+    var cancBtnCSS = { 
       background: '#e21836',
       width:'48%',
       textAlign:'center',
@@ -71,7 +71,7 @@ export default class Appointment extends React.Component {
 
     }
 
-    var BookingInfo = {
+    var bookingInfo = {
 
       fontSize: 22
 
@@ -88,7 +88,7 @@ export default class Appointment extends React.Component {
       marginLeft:20
     }
 
-    var BackImg = {
+    var backImg = {
       backgroundImage: this.props.Pic,
     }
 
@@ -134,7 +134,7 @@ export default class Appointment extends React.Component {
       width:'100%'
     }
 
-    var LeftSet = {
+    var leftSet = {
       marginLeft : '95%',
 
       //content : '',
@@ -179,7 +179,7 @@ export default class Appointment extends React.Component {
               </div>
               <div class="appointment-details">
                 <div class="attendee-details">
-                  <div class="attendee-name" style={BookingInfo}>BOOKING FIELDS</div>
+                  <div class="attendee-name" style={bookingInfo}>BOOKING FIELDS</div>
                   <div class="attendee-name">{4} Seats</div>
             
                   <div class="attendee-name">Attending</div>
@@ -190,8 +190,8 @@ export default class Appointment extends React.Component {
 
               </div>
               <div style={btnPanel}>
-              <span class="m-button shadow-hover-2 shadow-active-3" style={CancBtnCSS}>Cancel</span>
-              <span class="m-button shadow-hover-2 shadow-active-3" style={RescBtnCSS} onClick={()=>this.setState({showReschedule: true})}>Reschedule</span>
+              <span class="m-button shadow-hover-2 shadow-active-3" style={cancBtnCSS}>Cancel</span>
+              <span class="m-button shadow-hover-2 shadow-active-3" style={rescBtnCSS} onClick={()=>this.setState({showReschedule: true})}>Reschedule</span>
               </div>  
               </div>
 

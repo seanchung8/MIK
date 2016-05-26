@@ -7,13 +7,13 @@ export default class LocationItem extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      LocName: "Test Name",
-      LocAddress: "4848 dfjkl ",
-      LocCity: "spo",
-      LocState: "kldjf",
-      LocPostCode: "94949",
-      LocPhone:"40493984",
-      SelectedLoc: false,
+      locName: "Test Name",
+      locAddress: "4848 dfjkl ",
+      locCity: "spo",
+      locState: "kldjf",
+      locPostCode: "94949",
+      locPhone:"40493984",
+      selectedLoc: false,
       location: null,
       key: 2384
     };
@@ -21,57 +21,47 @@ export default class LocationItem extends React.Component {
 
   componentWillMount(){
     LocatorStore.on("change", ()=>{
-      // this.setState({
-      //     SelectedLoc: LocatorStore.IsLocationActive(this.state.location),
-      // });
-      //this.ServiceTypeInit();
 
     })
-      //this.ServiceTypeInit();
   }
 
-  ServiceTypeInit(){
+  serviceTypeInit(){
 
-            this.setState({LocName: this.props.location.name});
-            this.setState({LocAddress: this.props.location.address1});
-            this.setState({LocCity: this.props.location.city});
-            this.setState({LocState: this.props.location.state});
-            this.setState({LocPostCode: this.props.location.postalcode});
-            this.setState({LocPhone: this.props.location.phone});
-            this.setState({key: this.props.location.clientkey});
-            this.setState({location: this.props.location});
-           
-            //this.setState({SelectedLoc: this.props.SelectedLoc});
+    this.setState({locName: this.props.location.name});
+    this.setState({locAddress: this.props.location.address1});
+    this.setState({locCity: this.props.location.city});
+    this.setState({locState: this.props.location.state});
+    this.setState({locPostCode: this.props.location.postalcode});
+    this.setState({locPhone: this.props.location.phone});
+    this.setState({key: this.props.location.clientkey});
+    this.setState({location: this.props.location});
             
   }
 
 
-  SelectLoc(){
+  selectLoc(){
       
-      LocatorActions.SelectLocation(this.props.location,!this.state.SelectedLoc,this.props.location.clientkey);
-      this.setState({SelectedLoc: !this.state.SelectedLoc});
+      LocatorActions.selectLocation(this.props.location,!this.state.selectedLoc,this.props.location.clientkey);
+      this.setState({selectedLoc: !this.state.selectedLoc});
   }
 
   render() {
 
         //console.log("Location is active " + LocatorStore.IsLocationActive(this.props.location.clientkey));
         var classNames = require('classnames');
-
-
-
-
+        
         var btnClass = classNames(
             'm-editable-list-location',
             {
 
-            'mod-active': this.state.SelectedLoc
+            'mod-active': this.state.selectedLoc
         });
 
 
     return (
 
 
-        <div class={btnClass} onClick={ ()=> this.SelectLoc()}>
+        <div class={btnClass} onClick={ ()=> this.selectLoc()}>
 
           <div>{this.props.location.name}</div>
           <div>{this.props.location.address1}</div>

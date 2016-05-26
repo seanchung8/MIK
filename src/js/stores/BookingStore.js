@@ -8,7 +8,6 @@ import dispatcher from "../dispatcher";
 class BookingStore extends EventEmitter{
 
     constructor() {
-
         super()
         this.booked = []
         this.selectedLocation ={ };
@@ -55,13 +54,10 @@ class BookingStore extends EventEmitter{
     }
     
     getAll() {
-        console.log('getting all booked appointments')
         return this.booked;
     }
 
     removeService(id) {
-
-        
         for(var i =0;i < this.booked.length;i++){
 
             if(this.booked[i].id == id){
@@ -75,18 +71,15 @@ class BookingStore extends EventEmitter{
     bookService(loc,date,time,id,firstName,lastName,phone,email,name){
 
         this.booked.push({
-
-        location:loc,
-        date:date,
-        time:time,
-        id: id,
-        firstName: firstName,
-        lastName: lastName,
-        phone: phone,
-        email: email,
-        name: name
-
-
+            location:loc,
+            date:date,
+            time:time,
+            id: id,
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            email: email,
+            name: name
         });
 
         this.firstName = firstName;
@@ -94,17 +87,10 @@ class BookingStore extends EventEmitter{
         this.email = email;
         this.phone = phone;
 
-
-
-        console.log("service booked"+ this.booked);
         this.emit("change");
     }
 
-
-
-
     isSelectedLocation(locName){
-        //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
         var myName = this.selectedLocation.location.name;
         if(locName == myName){
             return true;
@@ -114,8 +100,7 @@ class BookingStore extends EventEmitter{
         }
     }
 
-        isSelectedTime(time){
-        //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
+    isSelectedTime(time){
         var myTime = this.selectedTime;
         if(time == myTime){
             return true;
@@ -125,15 +110,12 @@ class BookingStore extends EventEmitter{
         }
     }
 
-        isSelectedDate(date){
-        //console.log("+++locName:" + JSON.stringify(this.selectedLocation));
+    isSelectedDate(date){
         var myDate = this.selectedDate;
         if(date == myDate){
-            console.log('this is the right date ' + date + " == "+ myDate)
             return true;
         }
         else{
-            //console.log('this is NOT the right date ' + date  + " != "+ myDate)
             return false;
         }
     }
@@ -141,7 +123,6 @@ class BookingStore extends EventEmitter{
 
 
     handleActions(action){
-        console.log("BookingStore received an action",action);
 
         switch(action.type){
             case "SELECT_SERVICE":
@@ -160,13 +141,13 @@ class BookingStore extends EventEmitter{
                     };
                 this.emit("change");
                 break;
+
             case "SELECTED_DATE":
-                console.log(action.date);
                 this.selectedDate = action.date;
                 this.emit("change");
                 break;
+
             case "SELECTED_TIME":
-                console.log(action.time);
                 this.selectedTime = action.time;
                 this.emit("change");
                 break;

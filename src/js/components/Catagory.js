@@ -19,10 +19,10 @@ export default class Catagory extends React.Component {
         super(props);
         this.state = {
             viewing: PagesStore.getAll(),
-            Headline: "",
-            Description: "",
-            Title: "IN STORE CLASSES",
-            Pic: " "
+            headline: "",
+            description: "",
+            title: "IN STORE CLASSES",
+            pic: " "
 
         };
     }
@@ -30,56 +30,51 @@ export default class Catagory extends React.Component {
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        //this.ServiceTypeInit();
-        this.CategoryInit();
+        this.categoryInit();
 
         PagesStore.on("change", ()=>{
 
             this.state = {
                 viewing: PagesStore.getViewing()
             }
-            console.log("ChangingPage to: " + this.state.viewing)
 
         })
 
     }
 
-    componentWillUnmount() {
-        console.log("=== in Category.componentWillUnmount() ===");    
+    componentWillUnmount() {   
     }
 
     //ServiceTypeInit(){
-    CategoryInit(){
-        if(this.props.Description != null || this.props.Description != " ") {
-            this.setState({Description: this.props.Description});
+    categoryInit(){
+        if(this.props.description != null || this.props.description != " ") {
+            this.setState({description: this.props.description});
         }
 
-        if(this.props.Title != null || this.props.Title != " ") {
-            this.setState({Title: this.props.Title});
+        if(this.props.title != null || this.props.title != " ") {
+            this.setState({title: this.props.title});
         }
 
-        if(this.props.Pic != null || this.props.Pic != " "){
-            this.setState({Pic: this.props.Pic});
+        if(this.props.pic != null || this.props.pic != " "){
+            this.setState({pic: this.props.pic});
         }
 
-        if(this.props.Headline != null || this.props.Headline != " "){
-            this.setState({Headline: this.props.Headline});
+        if(this.props.headline != null || this.props.headline != " "){
+            this.setState({headline: this.props.headline});
         }
     }
 
 
     setPage(){
-      console.log("*** in Category.setPage() this.state.Title:" + this.state.Title);
-      //PagesActions.UpdateDisplayed("Catagories", this.state.Title);
-      PagesActions.SelectCatagory(this.state.Title);
+      PagesActions.selectCatagory(this.state.title);
     }
 
 
   render() {
 
-      var pic = this.state.Pic;
+      var pic = this.state.pic;
 
-      var BackImg = {
+      var backImg = {
 
           backgroundImage: pic,
           
@@ -106,12 +101,12 @@ export default class Catagory extends React.Component {
 
     return (
 
-        <div className={btnClass} style={BackImg}>
+        <div className={btnClass} style={backImg}>
             <div class="m-service-description">
-                <div class="m-service-description-header" >{this.state.Title}</div>
+                <div class="m-service-description-header" >{this.state.title}</div>
                 <div class="m-button shadow-active-3 m-button-more-info"
                      onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
-                <div class="m-service-description-text" ><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
+                <div class="m-service-description-text" ><p><b>{this.state.headline}</b></p><p>{this.state.description}</p></div>
                 
                 <div class="m-button shadow-active-3 m-button-classes" onClick={ ()=> this.setPage()}>See Classes</div>
             </div>

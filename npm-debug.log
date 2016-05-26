@@ -1,0 +1,664 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose readDependencies loading dependencies from /Users/haas/Desktop/MIK/package.json
+5 warn package.json michaels-prototype@0.0.1 No repository field.
+6 warn package.json Dependency 'css-loader' exists in both dependencies and devDependencies, using 'css-loader@^0.23.1' from dependencies
+7 verbose install where, deps [ '/Users/haas/Desktop/MIK',
+7 verbose install   [ 'babel-loader',
+7 verbose install     'babel-plugin-add-module-exports',
+7 verbose install     'babel-plugin-react-html-attrs',
+7 verbose install     'babel-plugin-transform-class-properties',
+7 verbose install     'babel-plugin-transform-decorators-legacy',
+7 verbose install     'babel-preset-es2015',
+7 verbose install     'babel-preset-react',
+7 verbose install     'babel-preset-stage-0',
+7 verbose install     'classnames',
+7 verbose install     'css-loader',
+7 verbose install     'cssx',
+7 verbose install     'flux',
+7 verbose install     'history',
+7 verbose install     'less',
+7 verbose install     'lodash',
+7 verbose install     'react-bootstrap',
+7 verbose install     'react-bootstrap-native-slider',
+7 verbose install     'react-bootstrap-slider',
+7 verbose install     'react-dropdown',
+7 verbose install     'react-rangeslider',
+7 verbose install     'react',
+7 verbose install     'react-dom',
+7 verbose install     'react-router',
+7 verbose install     'style-loader',
+7 verbose install     'superagent',
+7 verbose install     'superagent-xml2jsparser',
+7 verbose install     'webpack',
+7 verbose install     'webpack-dev-server',
+7 verbose install     'xml2js',
+7 verbose install     'less-loader' ] ]
+8 verbose install where, peers [ '/Users/haas/Desktop/MIK', [] ]
+9 verbose installManyTop reading for lifecycle /Users/haas/Desktop/MIK/package.json
+10 info preinstall michaels-prototype@0.0.1
+11 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/amdefine/package.json
+12 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/asap/package.json
+13 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-core/package.json
+14 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-loader/package.json
+15 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-add-module-exports/package.json
+16 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-react-html-attrs/package.json
+17 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-transform-class-properties/package.json
+18 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-transform-decorators-legacy/package.json
+19 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-es2015/package.json
+20 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-react/package.json
+21 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-stage-0/package.json
+22 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/base62/package.json
+23 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/bootstrap-slider/package.json
+24 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/classnames/package.json
+25 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/core-js/package.json
+26 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/css-loader/package.json
+27 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/cssx/package.json
+28 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/deep-equal/package.json
+29 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/encoding/package.json
+30 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/envify/package.json
+31 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/esprima-fb/package.json
+32 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/fbjs/package.json
+33 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/flux/package.json
+34 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/history/package.json
+35 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/hoist-non-react-statics/package.json
+36 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/iconv-lite/package.json
+37 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/invariant/package.json
+38 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/is-stream/package.json
+39 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/isomorphic-fetch/package.json
+40 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/js-tokens/package.json
+41 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/jstransform/package.json
+42 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/less/package.json
+43 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/less-loader/package.json
+44 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/lodash/package.json
+45 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/loose-envify/package.json
+46 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/node-fetch/package.json
+47 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/object-assign/package.json
+48 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/promise/package.json
+49 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/query-string/package.json
+50 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react/package.json
+51 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap/package.json
+52 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap-native-slider/package.json
+53 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap-slider/package.json
+54 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-dom/package.json
+55 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-dropdown/package.json
+56 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-input-range/package.json
+57 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-rangeslider/package.json
+58 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/react-router/package.json
+59 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/source-map/package.json
+60 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/strict-uri-encode/package.json
+61 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/style-loader/package.json
+62 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/superagent/package.json
+63 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/superagent-xml2jsparser/package.json
+64 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/through/package.json
+65 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/ua-parser-js/package.json
+66 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/warning/package.json
+67 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/webpack/package.json
+68 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/webpack-dev-server/package.json
+69 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/whatwg-fetch/package.json
+70 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/xml-parser/package.json
+71 verbose installManyTop reading scoped package data from /Users/haas/Desktop/MIK/node_modules/xml2js/package.json
+72 info package.json asap@2.0.3 license should be a valid SPDX license expression
+73 info package.json base62@0.1.1 No license field.
+74 info package.json esprima-fb@13001.1001.0-dev-harmony-fb No license field.
+75 info package.json hoist-non-react-statics@1.0.6 No license field.
+76 info package.json jstransform@10.1.0 No license field.
+77 info package.json source-map@0.1.31 No license field.
+78 info package.json ua-parser-js@0.7.10 No license field.
+79 info package.json less-loader@2.2.3 No license field.
+80 verbose readDependencies loading dependencies from /Users/haas/Desktop/MIK/package.json
+81 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/amdefine/package.json
+82 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/asap/package.json
+83 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-core/package.json
+84 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-loader/package.json
+85 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-add-module-exports/package.json
+86 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-react-html-attrs/package.json
+87 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-transform-class-properties/package.json
+88 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-plugin-transform-decorators-legacy/package.json
+89 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-es2015/package.json
+90 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-react/package.json
+91 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/babel-preset-stage-0/package.json
+92 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/base62/package.json
+93 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/bootstrap-slider/package.json
+94 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/classnames/package.json
+95 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/core-js/package.json
+96 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/css-loader/package.json
+97 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/cssx/package.json
+98 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/deep-equal/package.json
+99 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/encoding/package.json
+100 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/envify/package.json
+101 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/esprima-fb/package.json
+102 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/fbjs/package.json
+103 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/flux/package.json
+104 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/history/package.json
+105 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/hoist-non-react-statics/package.json
+106 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/iconv-lite/package.json
+107 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/invariant/package.json
+108 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/is-stream/package.json
+109 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/isomorphic-fetch/package.json
+110 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/js-tokens/package.json
+111 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/jstransform/package.json
+112 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/less/package.json
+113 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/less-loader/package.json
+114 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/lodash/package.json
+115 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/loose-envify/package.json
+116 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/node-fetch/package.json
+117 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/object-assign/package.json
+118 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/promise/package.json
+119 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/query-string/package.json
+120 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react/package.json
+121 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap/package.json
+122 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap-native-slider/package.json
+123 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-bootstrap-slider/package.json
+124 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-dom/package.json
+125 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-dropdown/package.json
+126 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-input-range/package.json
+127 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-rangeslider/package.json
+128 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/react-router/package.json
+129 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/source-map/package.json
+130 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/strict-uri-encode/package.json
+131 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/style-loader/package.json
+132 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/superagent/package.json
+133 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/superagent-xml2jsparser/package.json
+134 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/through/package.json
+135 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/ua-parser-js/package.json
+136 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/warning/package.json
+137 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/webpack/package.json
+138 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/webpack-dev-server/package.json
+139 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/whatwg-fetch/package.json
+140 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/xml-parser/package.json
+141 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/xml2js/package.json
+142 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/envify/package.json
+143 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/esparse/package.json
+144 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/esvalidate/package.json
+145 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/lessc/package.json
+146 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/loose-envify/package.json
+147 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/webpack/package.json
+148 verbose targetResolver reading package data from /Users/haas/Desktop/MIK/node_modules/.bin/webpack-dev-server/package.json
+149 verbose already installed skipping babel-plugin-react-html-attrs@^2.0.0 /Users/haas/Desktop/MIK
+150 verbose already installed skipping babel-plugin-transform-class-properties@^6.3.13 /Users/haas/Desktop/MIK
+151 verbose already installed skipping babel-plugin-transform-decorators-legacy@^1.3.4 /Users/haas/Desktop/MIK
+152 verbose already installed skipping babel-preset-es2015@^6.3.13 /Users/haas/Desktop/MIK
+153 verbose already installed skipping babel-preset-react@^6.3.13 /Users/haas/Desktop/MIK
+154 verbose already installed skipping babel-preset-stage-0@^6.3.13 /Users/haas/Desktop/MIK
+155 verbose already installed skipping classnames@^2.2.3 /Users/haas/Desktop/MIK
+156 verbose already installed skipping css-loader@^0.23.1 /Users/haas/Desktop/MIK
+157 verbose already installed skipping cssx@^3.8.2 /Users/haas/Desktop/MIK
+158 verbose already installed skipping flux@^2.1.1 /Users/haas/Desktop/MIK
+159 verbose already installed skipping history@^2.1.1 /Users/haas/Desktop/MIK
+160 verbose already installed skipping less@^2.6.1 /Users/haas/Desktop/MIK
+161 verbose already installed skipping lodash@^4.9.0 /Users/haas/Desktop/MIK
+162 verbose already installed skipping react-bootstrap@^0.28.5 /Users/haas/Desktop/MIK
+163 verbose already installed skipping react-bootstrap-native-slider@^1.1.6 /Users/haas/Desktop/MIK
+164 verbose already installed skipping react-bootstrap-slider@^1.0.0 /Users/haas/Desktop/MIK
+165 verbose already installed skipping react-dropdown@^1.0.2 /Users/haas/Desktop/MIK
+166 verbose already installed skipping react-rangeslider@^1.0.0 /Users/haas/Desktop/MIK
+167 verbose already installed skipping react@^15.0.2 /Users/haas/Desktop/MIK
+168 verbose already installed skipping react-dom@^15.0.2 /Users/haas/Desktop/MIK
+169 verbose already installed skipping react-router@^2.4.0 /Users/haas/Desktop/MIK
+170 verbose already installed skipping style-loader@^0.13.1 /Users/haas/Desktop/MIK
+171 verbose already installed skipping superagent@^1.8.3 /Users/haas/Desktop/MIK
+172 verbose already installed skipping superagent-xml2jsparser@^0.1.1 /Users/haas/Desktop/MIK
+173 verbose already installed skipping webpack@^1.12.14 /Users/haas/Desktop/MIK
+174 verbose already installed skipping webpack-dev-server@^1.14.1 /Users/haas/Desktop/MIK
+175 verbose already installed skipping xml2js@^0.4.16 /Users/haas/Desktop/MIK
+176 verbose already installed skipping less-loader@^2.2.3 /Users/haas/Desktop/MIK
+177 verbose already installed skipping babel-loader@^6.2.0 /Users/haas/Desktop/MIK
+178 verbose already installed skipping babel-plugin-add-module-exports@^0.1.2 /Users/haas/Desktop/MIK
+179 silly install resolved []
+180 info build /Users/haas/Desktop/MIK
+181 info linkStuff michaels-prototype@0.0.1
+182 silly linkStuff michaels-prototype@0.0.1 has /Users/haas/Desktop as its parent node_modules
+183 verbose linkBins michaels-prototype@0.0.1
+184 verbose linkMans michaels-prototype@0.0.1
+185 verbose rebuildBundles michaels-prototype@0.0.1
+186 verbose rebuildBundles [ '.bin',
+186 verbose rebuildBundles   'amdefine',
+186 verbose rebuildBundles   'asap',
+186 verbose rebuildBundles   'babel-core',
+186 verbose rebuildBundles   'babel-loader',
+186 verbose rebuildBundles   'babel-plugin-add-module-exports',
+186 verbose rebuildBundles   'babel-plugin-react-html-attrs',
+186 verbose rebuildBundles   'babel-plugin-transform-class-properties',
+186 verbose rebuildBundles   'babel-plugin-transform-decorators-legacy',
+186 verbose rebuildBundles   'babel-preset-es2015',
+186 verbose rebuildBundles   'babel-preset-react',
+186 verbose rebuildBundles   'babel-preset-stage-0',
+186 verbose rebuildBundles   'base62',
+186 verbose rebuildBundles   'bootstrap-slider',
+186 verbose rebuildBundles   'classnames',
+186 verbose rebuildBundles   'core-js',
+186 verbose rebuildBundles   'css-loader',
+186 verbose rebuildBundles   'cssx',
+186 verbose rebuildBundles   'deep-equal',
+186 verbose rebuildBundles   'encoding',
+186 verbose rebuildBundles   'envify',
+186 verbose rebuildBundles   'esprima-fb',
+186 verbose rebuildBundles   'fbjs',
+186 verbose rebuildBundles   'flux',
+186 verbose rebuildBundles   'history',
+186 verbose rebuildBundles   'hoist-non-react-statics',
+186 verbose rebuildBundles   'iconv-lite',
+186 verbose rebuildBundles   'invariant',
+186 verbose rebuildBundles   'is-stream',
+186 verbose rebuildBundles   'isomorphic-fetch',
+186 verbose rebuildBundles   'js-tokens',
+186 verbose rebuildBundles   'jstransform',
+186 verbose rebuildBundles   'less',
+186 verbose rebuildBundles   'less-loader',
+186 verbose rebuildBundles   'lodash',
+186 verbose rebuildBundles   'loose-envify',
+186 verbose rebuildBundles   'node-fetch',
+186 verbose rebuildBundles   'object-assign',
+186 verbose rebuildBundles   'promise',
+186 verbose rebuildBundles   'query-string',
+186 verbose rebuildBundles   'react',
+186 verbose rebuildBundles   'react-bootstrap',
+186 verbose rebuildBundles   'react-bootstrap-native-slider',
+186 verbose rebuildBundles   'react-bootstrap-slider',
+186 verbose rebuildBundles   'react-dom',
+186 verbose rebuildBundles   'react-dropdown',
+186 verbose rebuildBundles   'react-input-range',
+186 verbose rebuildBundles   'react-rangeslider',
+186 verbose rebuildBundles   'react-router',
+186 verbose rebuildBundles   'source-map',
+186 verbose rebuildBundles   'strict-uri-encode',
+186 verbose rebuildBundles   'style-loader',
+186 verbose rebuildBundles   'superagent',
+186 verbose rebuildBundles   'superagent-xml2jsparser',
+186 verbose rebuildBundles   'through',
+186 verbose rebuildBundles   'ua-parser-js',
+186 verbose rebuildBundles   'warning',
+186 verbose rebuildBundles   'webpack',
+186 verbose rebuildBundles   'webpack-dev-server',
+186 verbose rebuildBundles   'whatwg-fetch',
+186 verbose rebuildBundles   'xml-parser',
+186 verbose rebuildBundles   'xml2js' ]
+187 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/amdefine
+188 info build /Users/haas/Desktop/MIK/node_modules/amdefine
+189 info preinstall amdefine@1.0.0
+190 info linkStuff amdefine@1.0.0
+191 silly linkStuff amdefine@1.0.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+192 verbose linkBins amdefine@1.0.0
+193 verbose linkMans amdefine@1.0.0
+194 verbose rebuildBundles amdefine@1.0.0
+195 info install amdefine@1.0.0
+196 info postinstall amdefine@1.0.0
+197 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/asap
+198 info build /Users/haas/Desktop/MIK/node_modules/asap
+199 info preinstall asap@2.0.3
+200 info linkStuff asap@2.0.3
+201 silly linkStuff asap@2.0.3 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+202 verbose linkBins asap@2.0.3
+203 verbose linkMans asap@2.0.3
+204 verbose rebuildBundles asap@2.0.3
+205 info install asap@2.0.3
+206 info postinstall asap@2.0.3
+207 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/babel-core
+208 info build /Users/haas/Desktop/MIK/node_modules/babel-core
+209 info preinstall babel-core@6.7.4
+210 info linkStuff babel-core@6.7.4
+211 silly linkStuff babel-core@6.7.4 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+212 verbose linkBins babel-core@6.7.4
+213 verbose linkMans babel-core@6.7.4
+214 verbose rebuildBundles babel-core@6.7.4
+215 verbose rebuildBundles [ '.bin',
+215 verbose rebuildBundles   'babel-code-frame',
+215 verbose rebuildBundles   'babel-generator',
+215 verbose rebuildBundles   'babel-helpers',
+215 verbose rebuildBundles   'babel-messages',
+215 verbose rebuildBundles   'babel-register',
+215 verbose rebuildBundles   'babel-runtime',
+215 verbose rebuildBundles   'babel-template',
+215 verbose rebuildBundles   'babel-traverse',
+215 verbose rebuildBundles   'babel-types',
+215 verbose rebuildBundles   'babylon',
+215 verbose rebuildBundles   'convert-source-map',
+215 verbose rebuildBundles   'debug',
+215 verbose rebuildBundles   'json5',
+215 verbose rebuildBundles   'lodash',
+215 verbose rebuildBundles   'minimatch',
+215 verbose rebuildBundles   'path-exists',
+215 verbose rebuildBundles   'path-is-absolute',
+215 verbose rebuildBundles   'private',
+215 verbose rebuildBundles   'shebang-regex',
+215 verbose rebuildBundles   'slash',
+215 verbose rebuildBundles   'source-map' ]
+216 info install babel-core@6.7.4
+217 info postinstall babel-core@6.7.4
+218 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/base62
+219 info build /Users/haas/Desktop/MIK/node_modules/base62
+220 info preinstall base62@0.1.1
+221 info linkStuff base62@0.1.1
+222 silly linkStuff base62@0.1.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+223 verbose linkBins base62@0.1.1
+224 verbose linkMans base62@0.1.1
+225 verbose rebuildBundles base62@0.1.1
+226 info install base62@0.1.1
+227 info postinstall base62@0.1.1
+228 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/bootstrap-slider
+229 info build /Users/haas/Desktop/MIK/node_modules/bootstrap-slider
+230 info preinstall bootstrap-slider@7.0.0
+231 info linkStuff bootstrap-slider@7.0.0
+232 silly linkStuff bootstrap-slider@7.0.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+233 verbose linkBins bootstrap-slider@7.0.0
+234 verbose linkMans bootstrap-slider@7.0.0
+235 verbose rebuildBundles bootstrap-slider@7.0.0
+236 info install bootstrap-slider@7.0.0
+237 info postinstall bootstrap-slider@7.0.0
+238 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/core-js
+239 info build /Users/haas/Desktop/MIK/node_modules/core-js
+240 info preinstall core-js@1.2.6
+241 info linkStuff core-js@1.2.6
+242 silly linkStuff core-js@1.2.6 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+243 verbose linkBins core-js@1.2.6
+244 verbose linkMans core-js@1.2.6
+245 verbose rebuildBundles core-js@1.2.6
+246 info install core-js@1.2.6
+247 info postinstall core-js@1.2.6
+248 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/deep-equal
+249 info build /Users/haas/Desktop/MIK/node_modules/deep-equal
+250 info preinstall deep-equal@1.0.1
+251 info linkStuff deep-equal@1.0.1
+252 silly linkStuff deep-equal@1.0.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+253 verbose linkBins deep-equal@1.0.1
+254 verbose linkMans deep-equal@1.0.1
+255 verbose rebuildBundles deep-equal@1.0.1
+256 info install deep-equal@1.0.1
+257 info postinstall deep-equal@1.0.1
+258 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/encoding
+259 info build /Users/haas/Desktop/MIK/node_modules/encoding
+260 info preinstall encoding@0.1.12
+261 info linkStuff encoding@0.1.12
+262 silly linkStuff encoding@0.1.12 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+263 verbose linkBins encoding@0.1.12
+264 verbose linkMans encoding@0.1.12
+265 verbose rebuildBundles encoding@0.1.12
+266 info install encoding@0.1.12
+267 info postinstall encoding@0.1.12
+268 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/envify
+269 info build /Users/haas/Desktop/MIK/node_modules/envify
+270 info preinstall envify@3.4.0
+271 info linkStuff envify@3.4.0
+272 silly linkStuff envify@3.4.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+273 verbose linkBins envify@3.4.0
+274 verbose link bins [ { envify: 'bin/envify' },
+274 verbose link bins   '/Users/haas/Desktop/MIK/node_modules/.bin',
+274 verbose link bins   false ]
+275 verbose linkMans envify@3.4.0
+276 verbose rebuildBundles envify@3.4.0
+277 silly gentlyRm /Users/haas/Desktop/MIK/node_modules/.bin/envify is being purged
+278 verbose gentlyRm don't care about contents; nuking /Users/haas/Desktop/MIK/node_modules/.bin/envify
+279 silly vacuum-fs purging /Users/haas/Desktop/MIK/node_modules/.bin/envify
+280 silly vacuum-fs quitting because other entries in /Users/haas/Desktop/MIK/node_modules/.bin
+281 info install envify@3.4.0
+282 info postinstall envify@3.4.0
+283 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/esprima-fb
+284 info build /Users/haas/Desktop/MIK/node_modules/esprima-fb
+285 info preinstall esprima-fb@13001.1001.0-dev-harmony-fb
+286 info linkStuff esprima-fb@13001.1001.0-dev-harmony-fb
+287 silly linkStuff esprima-fb@13001.1001.0-dev-harmony-fb has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+288 verbose linkBins esprima-fb@13001.1001.0-dev-harmony-fb
+289 verbose link bins [ { esparse: './bin/esparse.js',
+289 verbose link bins     esvalidate: './bin/esvalidate.js' },
+289 verbose link bins   '/Users/haas/Desktop/MIK/node_modules/.bin',
+289 verbose link bins   false ]
+290 verbose linkMans esprima-fb@13001.1001.0-dev-harmony-fb
+291 verbose rebuildBundles esprima-fb@13001.1001.0-dev-harmony-fb
+292 silly gentlyRm /Users/haas/Desktop/MIK/node_modules/.bin/esparse is being purged
+293 verbose gentlyRm don't care about contents; nuking /Users/haas/Desktop/MIK/node_modules/.bin/esparse
+294 silly gentlyRm /Users/haas/Desktop/MIK/node_modules/.bin/esvalidate is being purged
+295 verbose gentlyRm don't care about contents; nuking /Users/haas/Desktop/MIK/node_modules/.bin/esvalidate
+296 silly vacuum-fs purging /Users/haas/Desktop/MIK/node_modules/.bin/esparse
+297 silly vacuum-fs purging /Users/haas/Desktop/MIK/node_modules/.bin/esvalidate
+298 silly vacuum-fs quitting because other entries in /Users/haas/Desktop/MIK/node_modules/.bin
+299 silly vacuum-fs quitting because other entries in /Users/haas/Desktop/MIK/node_modules/.bin
+300 info install esprima-fb@13001.1001.0-dev-harmony-fb
+301 info postinstall esprima-fb@13001.1001.0-dev-harmony-fb
+302 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/fbjs
+303 info build /Users/haas/Desktop/MIK/node_modules/fbjs
+304 info preinstall fbjs@0.8.2
+305 info linkStuff fbjs@0.8.2
+306 silly linkStuff fbjs@0.8.2 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+307 verbose linkBins fbjs@0.8.2
+308 verbose linkMans fbjs@0.8.2
+309 verbose rebuildBundles fbjs@0.8.2
+310 info install fbjs@0.8.2
+311 info postinstall fbjs@0.8.2
+312 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/hoist-non-react-statics
+313 info build /Users/haas/Desktop/MIK/node_modules/hoist-non-react-statics
+314 info preinstall hoist-non-react-statics@1.0.6
+315 info linkStuff hoist-non-react-statics@1.0.6
+316 silly linkStuff hoist-non-react-statics@1.0.6 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+317 verbose linkBins hoist-non-react-statics@1.0.6
+318 verbose linkMans hoist-non-react-statics@1.0.6
+319 verbose rebuildBundles hoist-non-react-statics@1.0.6
+320 info install hoist-non-react-statics@1.0.6
+321 info postinstall hoist-non-react-statics@1.0.6
+322 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/iconv-lite
+323 info build /Users/haas/Desktop/MIK/node_modules/iconv-lite
+324 info preinstall iconv-lite@0.4.13
+325 info linkStuff iconv-lite@0.4.13
+326 silly linkStuff iconv-lite@0.4.13 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+327 verbose linkBins iconv-lite@0.4.13
+328 verbose linkMans iconv-lite@0.4.13
+329 verbose rebuildBundles iconv-lite@0.4.13
+330 info install iconv-lite@0.4.13
+331 info postinstall iconv-lite@0.4.13
+332 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/invariant
+333 info build /Users/haas/Desktop/MIK/node_modules/invariant
+334 info preinstall invariant@2.2.1
+335 info linkStuff invariant@2.2.1
+336 silly linkStuff invariant@2.2.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+337 verbose linkBins invariant@2.2.1
+338 verbose linkMans invariant@2.2.1
+339 verbose rebuildBundles invariant@2.2.1
+340 info install invariant@2.2.1
+341 info postinstall invariant@2.2.1
+342 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/is-stream
+343 info build /Users/haas/Desktop/MIK/node_modules/is-stream
+344 info preinstall is-stream@1.1.0
+345 info linkStuff is-stream@1.1.0
+346 silly linkStuff is-stream@1.1.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+347 verbose linkBins is-stream@1.1.0
+348 verbose linkMans is-stream@1.1.0
+349 verbose rebuildBundles is-stream@1.1.0
+350 info install is-stream@1.1.0
+351 info postinstall is-stream@1.1.0
+352 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/isomorphic-fetch
+353 info build /Users/haas/Desktop/MIK/node_modules/isomorphic-fetch
+354 info preinstall isomorphic-fetch@2.2.1
+355 info linkStuff isomorphic-fetch@2.2.1
+356 silly linkStuff isomorphic-fetch@2.2.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+357 verbose linkBins isomorphic-fetch@2.2.1
+358 verbose linkMans isomorphic-fetch@2.2.1
+359 verbose rebuildBundles isomorphic-fetch@2.2.1
+360 info install isomorphic-fetch@2.2.1
+361 info postinstall isomorphic-fetch@2.2.1
+362 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/js-tokens
+363 info build /Users/haas/Desktop/MIK/node_modules/js-tokens
+364 info preinstall js-tokens@1.0.3
+365 info linkStuff js-tokens@1.0.3
+366 silly linkStuff js-tokens@1.0.3 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+367 verbose linkBins js-tokens@1.0.3
+368 verbose linkMans js-tokens@1.0.3
+369 verbose rebuildBundles js-tokens@1.0.3
+370 info install js-tokens@1.0.3
+371 info postinstall js-tokens@1.0.3
+372 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/jstransform
+373 info build /Users/haas/Desktop/MIK/node_modules/jstransform
+374 info preinstall jstransform@10.1.0
+375 info linkStuff jstransform@10.1.0
+376 silly linkStuff jstransform@10.1.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+377 verbose linkBins jstransform@10.1.0
+378 verbose linkMans jstransform@10.1.0
+379 verbose rebuildBundles jstransform@10.1.0
+380 info install jstransform@10.1.0
+381 info postinstall jstransform@10.1.0
+382 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/loose-envify
+383 info build /Users/haas/Desktop/MIK/node_modules/loose-envify
+384 info preinstall loose-envify@1.2.0
+385 info linkStuff loose-envify@1.2.0
+386 silly linkStuff loose-envify@1.2.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+387 verbose linkBins loose-envify@1.2.0
+388 verbose link bins [ { 'loose-envify': 'cli.js' },
+388 verbose link bins   '/Users/haas/Desktop/MIK/node_modules/.bin',
+388 verbose link bins   false ]
+389 verbose linkMans loose-envify@1.2.0
+390 verbose rebuildBundles loose-envify@1.2.0
+391 silly gentlyRm /Users/haas/Desktop/MIK/node_modules/.bin/loose-envify is being purged
+392 verbose gentlyRm don't care about contents; nuking /Users/haas/Desktop/MIK/node_modules/.bin/loose-envify
+393 silly vacuum-fs purging /Users/haas/Desktop/MIK/node_modules/.bin/loose-envify
+394 silly vacuum-fs quitting because other entries in /Users/haas/Desktop/MIK/node_modules/.bin
+395 info install loose-envify@1.2.0
+396 info postinstall loose-envify@1.2.0
+397 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/node-fetch
+398 info build /Users/haas/Desktop/MIK/node_modules/node-fetch
+399 info preinstall node-fetch@1.5.2
+400 info linkStuff node-fetch@1.5.2
+401 silly linkStuff node-fetch@1.5.2 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+402 verbose linkBins node-fetch@1.5.2
+403 verbose linkMans node-fetch@1.5.2
+404 verbose rebuildBundles node-fetch@1.5.2
+405 info install node-fetch@1.5.2
+406 info postinstall node-fetch@1.5.2
+407 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/object-assign
+408 info build /Users/haas/Desktop/MIK/node_modules/object-assign
+409 info preinstall object-assign@4.1.0
+410 info linkStuff object-assign@4.1.0
+411 silly linkStuff object-assign@4.1.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+412 verbose linkBins object-assign@4.1.0
+413 verbose linkMans object-assign@4.1.0
+414 verbose rebuildBundles object-assign@4.1.0
+415 info install object-assign@4.1.0
+416 info postinstall object-assign@4.1.0
+417 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/promise
+418 info build /Users/haas/Desktop/MIK/node_modules/promise
+419 info preinstall promise@7.1.1
+420 info linkStuff promise@7.1.1
+421 silly linkStuff promise@7.1.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+422 verbose linkBins promise@7.1.1
+423 verbose linkMans promise@7.1.1
+424 verbose rebuildBundles promise@7.1.1
+425 info install promise@7.1.1
+426 info postinstall promise@7.1.1
+427 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/query-string
+428 info build /Users/haas/Desktop/MIK/node_modules/query-string
+429 info preinstall query-string@3.0.3
+430 info linkStuff query-string@3.0.3
+431 silly linkStuff query-string@3.0.3 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+432 verbose linkBins query-string@3.0.3
+433 verbose linkMans query-string@3.0.3
+434 verbose rebuildBundles query-string@3.0.3
+435 info install query-string@3.0.3
+436 info postinstall query-string@3.0.3
+437 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/react-input-range
+438 info build /Users/haas/Desktop/MIK/node_modules/react-input-range
+439 info preinstall react-input-range@0.7.0
+440 info linkStuff react-input-range@0.7.0
+441 silly linkStuff react-input-range@0.7.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+442 verbose linkBins react-input-range@0.7.0
+443 verbose linkMans react-input-range@0.7.0
+444 verbose rebuildBundles react-input-range@0.7.0
+445 info install react-input-range@0.7.0
+446 info postinstall react-input-range@0.7.0
+447 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/source-map
+448 info build /Users/haas/Desktop/MIK/node_modules/source-map
+449 info preinstall source-map@0.1.31
+450 info linkStuff source-map@0.1.31
+451 silly linkStuff source-map@0.1.31 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+452 verbose linkBins source-map@0.1.31
+453 verbose linkMans source-map@0.1.31
+454 verbose rebuildBundles source-map@0.1.31
+455 info install source-map@0.1.31
+456 info postinstall source-map@0.1.31
+457 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/strict-uri-encode
+458 info build /Users/haas/Desktop/MIK/node_modules/strict-uri-encode
+459 info preinstall strict-uri-encode@1.1.0
+460 info linkStuff strict-uri-encode@1.1.0
+461 silly linkStuff strict-uri-encode@1.1.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+462 verbose linkBins strict-uri-encode@1.1.0
+463 verbose linkMans strict-uri-encode@1.1.0
+464 verbose rebuildBundles strict-uri-encode@1.1.0
+465 info install strict-uri-encode@1.1.0
+466 info postinstall strict-uri-encode@1.1.0
+467 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/through
+468 info build /Users/haas/Desktop/MIK/node_modules/through
+469 info preinstall through@2.3.8
+470 info linkStuff through@2.3.8
+471 silly linkStuff through@2.3.8 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+472 verbose linkBins through@2.3.8
+473 verbose linkMans through@2.3.8
+474 verbose rebuildBundles through@2.3.8
+475 info install through@2.3.8
+476 info postinstall through@2.3.8
+477 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/ua-parser-js
+478 info build /Users/haas/Desktop/MIK/node_modules/ua-parser-js
+479 info preinstall ua-parser-js@0.7.10
+480 info linkStuff ua-parser-js@0.7.10
+481 silly linkStuff ua-parser-js@0.7.10 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+482 verbose linkBins ua-parser-js@0.7.10
+483 verbose linkMans ua-parser-js@0.7.10
+484 verbose rebuildBundles ua-parser-js@0.7.10
+485 info install ua-parser-js@0.7.10
+486 info postinstall ua-parser-js@0.7.10
+487 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/warning
+488 info build /Users/haas/Desktop/MIK/node_modules/warning
+489 info preinstall warning@2.1.0
+490 info linkStuff warning@2.1.0
+491 silly linkStuff warning@2.1.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+492 verbose linkBins warning@2.1.0
+493 verbose linkMans warning@2.1.0
+494 verbose rebuildBundles warning@2.1.0
+495 info install warning@2.1.0
+496 info postinstall warning@2.1.0
+497 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/whatwg-fetch
+498 info build /Users/haas/Desktop/MIK/node_modules/whatwg-fetch
+499 info preinstall whatwg-fetch@1.0.0
+500 info linkStuff whatwg-fetch@1.0.0
+501 silly linkStuff whatwg-fetch@1.0.0 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+502 verbose linkBins whatwg-fetch@1.0.0
+503 verbose linkMans whatwg-fetch@1.0.0
+504 verbose rebuildBundles whatwg-fetch@1.0.0
+505 info install whatwg-fetch@1.0.0
+506 info postinstall whatwg-fetch@1.0.0
+507 verbose rebuild bundle /Users/haas/Desktop/MIK/node_modules/xml-parser
+508 info build /Users/haas/Desktop/MIK/node_modules/xml-parser
+509 info preinstall xml-parser@1.2.1
+510 info linkStuff xml-parser@1.2.1
+511 silly linkStuff xml-parser@1.2.1 has /Users/haas/Desktop/MIK/node_modules as its parent node_modules
+512 verbose linkBins xml-parser@1.2.1
+513 verbose linkMans xml-parser@1.2.1
+514 verbose rebuildBundles xml-parser@1.2.1
+515 verbose rebuildBundles [ 'debug' ]
+516 info install xml-parser@1.2.1
+517 info postinstall xml-parser@1.2.1
+518 info install michaels-prototype@0.0.1
+519 info postinstall michaels-prototype@0.0.1
+520 info prepublish michaels-prototype@0.0.1
+521 verbose validateInstall loading /Users/haas/Desktop/MIK/package.json for validation
+522 verbose stack Error: The package react@15.0.2 does not satisfy its siblings' peerDependencies requirements!
+522 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+522 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+522 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+522 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+522 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+522 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+522 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+522 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+522 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+522 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+523 verbose cwd /Users/haas/Desktop/MIK
+524 error Darwin 15.3.0
+525 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+526 error node v4.4.2
+527 error npm  v2.15.0
+528 error code EPEERINVALID
+529 error peerinvalid The package react@15.0.2 does not satisfy its siblings' peerDependencies requirements!
+529 error peerinvalid Peer react-bootstrap@0.28.5 wants react@>=0.14.0
+529 error peerinvalid Peer react-dom@15.0.2 wants react@^15.0.2
+529 error peerinvalid Peer react-router@2.4.0 wants react@^0.14.0 || ^15.0.0
+529 error peerinvalid Peer react-input-range@0.7.0 wants react@^0.14.0
+530 verbose exit [ 1, true ]

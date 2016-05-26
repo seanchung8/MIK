@@ -1,6 +1,6 @@
 import React from "react";
 import * as LocatorActions from "../actions/LocatorActions";
-import BookingStore from "../stores/BookingStore"
+import BookingStore from "../stores/BookingStore";
 
 
 export default class LocationButton extends React.Component {
@@ -23,7 +23,7 @@ export default class LocationButton extends React.Component {
   }
 
   selectLocation(loc) {
-    LocatorActions.SelectedLocation(loc);
+    LocatorActions.selectedLocation(loc);
     this.setState({active:!this.state.active});
   }
 

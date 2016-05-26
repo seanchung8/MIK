@@ -1,10 +1,10 @@
 /**
- * Created by haas on 2016-04-25.
+ * Created by Damion on 2016-04-25.
  */
 import dispatcher from "../dispatcher";
 
 
-export function SelectService(loc,date,time,id,firstName,lastName,phone,email,servName) {
+export function selectService(loc,date,time,id,firstName,lastName,phone,email,servName) {
     dispatcher.dispatch({
         type: "SELECT_SERVICE",
         location:loc,
@@ -19,21 +19,21 @@ export function SelectService(loc,date,time,id,firstName,lastName,phone,email,se
     })
 }
 
-export function RemoveService(id) {
+export function removeService(id) {
     dispatcher.dispatch({
     	type: "REMOVE_SERVICE",
         id:id
     })
 }
 
-export function SelectDate(date) {
+export function selectDate(date) {
     dispatcher.dispatch({
         type: "SELECTED_DATE",
         date:date
     })
 }
 
-export function SelectTime(time) {
+export function selectTime(time) {
     dispatcher.dispatch({
         type: "SELECTED_TIME",
         time:time

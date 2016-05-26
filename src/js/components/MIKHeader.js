@@ -25,7 +25,7 @@ export default class MIKHeader extends React.Component {
 
     render() {
 
-      var DropdownStyle = {
+      var dropdownStyle = {
         left: 0,
         display : 'inline-block',
         width:600,  
@@ -49,7 +49,7 @@ export default class MIKHeader extends React.Component {
                   </div>
                   <div>
                     {showDropdown ?
-                        <div style={DropdownStyle}>
+                        <div style={dropdownStyle}>
                           <select ref="selectedLanguage" onChange={this._onSelect} placeholder={'English'}>
                             <option value="English">English</option>
                             <option value="French">French</option>

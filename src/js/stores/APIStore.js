@@ -32,7 +32,6 @@ class ServiceTypeStore extends EventEmitter{
     }
 
     getLocations(){
-        console.log("Returning locations:" + this.locations);
         return this.locations;
     }
 
@@ -48,9 +47,7 @@ class ServiceTypeStore extends EventEmitter{
 
     }
 
-    CreateLocationCall(zip,country,radius){
-
-console.log("Requesting a new search");
+    createLocationCall(zip,country,radius){
 
             var call = "http://api.slippymap.com/rest?&xml_request=" + encodeURIComponent("<request> " +
                 "<appkey>7D3183D8-683E-11E3-A044-AF8B407E493E</appkey> " +
@@ -72,22 +69,16 @@ console.log("Requesting a new search");
                 radius:radius
 
             };
-
-            console.log(call);
-            this.MakeLocationCall({call});
+            this.makeLocationCall({call});
 
 
     }
 
-    MakeLocationCall(query){
-
-
-        console.log("Making API call to get store locations");
+    makeLocationCall(query){
         var request = require('superagent');
         var xml2jsParser = require('superagent-xml2jsparser');
         var parser = new xml2js.Parser();
         var dataFromJson = null;
-        console.log(query);
         query = query != "" ? query.call : "https://localhost";
         if(query != "") {
             request
@@ -121,6 +112,7 @@ console.log("Requesting a new search");
 
                         dataFromJson = eval(dataFromJson);
                     });
+                    this.locations =[];
 
                     this.locations = dataFromJson;
 
@@ -132,17 +124,16 @@ console.log("Requesting a new search");
         this.emit("change");
     }
 
-    MakeServiceCall(serviceName,location=null){
+    makeServiceCall(serviceName,location=null){
 
     }
 
-    MakeEventCall(event,location){
+    makeEventCall(event,location){
 
     }
 
 
     handleActions(action){
-        console.log("*** In APIStore::handleActions received an action",action);
 
         switch(action.type){
 
@@ -153,8 +144,8 @@ console.log("Requesting a new search");
             case 'GET_EVENTS':
             break;
             case 'SEARCH_STORES':
-                console.log("Requesting a new search");
-                this.CreateLocationCall(action.zip,action.countries,action.radius);
+            console.log(action)
+                this.createLocationCall(action.zip,action.countries,action.radius);
             break;
 
         }

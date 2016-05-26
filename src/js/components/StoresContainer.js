@@ -2,7 +2,7 @@ import React from "react";
 import * as LocatorActions from "../actions/LocatorActions";
 import LocatorStore from "../stores/LocatorStore";
 import LocationButton from "../components/LocationButton";
-import BookingStore from "../stores/BookingStore"
+import BookingStore from "../stores/BookingStore";
 
 export default class StoresContainer extends React.Component {
 
@@ -10,29 +10,16 @@ export default class StoresContainer extends React.Component {
     super(props)
   }
 
-  // getInitialState(){
-  //   console.log("in StoresContainer.getInitialState()");
-  //   return {
-  //     this.state = {stores: LocatorStore.getAll()}
-  //   }
-  // }
-
-    // componentDidMount(){
-    //   console.log("in StoreContainer.componentDidMount()");
-    //   todoStore.addChangeListener(this._onChange);
-    // }
 
     componentWillUnmount(){
       console.log("in StoreContainer.componentWillUnmount()");
       LocatorStore.removeChangeListener= this._onChange;
-
-      //todoStore.removeChangeListener(this._onChange);
     }
 
 
   selectLocation(loc){
     console.log('sending location')
-    LocatorActions.SelectedLocation(loc);
+    LocatorActions.selectedLocation(loc);
   }
 
 
@@ -47,7 +34,7 @@ export default class StoresContainer extends React.Component {
     var appointCss = {
       fontSize:18
     }    
-    var locked = LocatorStore.IsLocationLocked();
+    var locked = LocatorStore.isLocationLocked;
     
     var locKey = 0;
 
@@ -56,7 +43,6 @@ export default class StoresContainer extends React.Component {
     var listItems = myStores.map(function(location, index){
         var locName = location.location['name'];
         
-        //console.log("index:" + index +"locName=>" + locName + ":" +location.location['name']);
         if(!locked){
           return (
               <div key={index}  >

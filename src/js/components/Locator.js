@@ -1,14 +1,14 @@
-import React from 'react';
-import _ from 'lodash';
-import xml2js from 'xml2js';
-import LocationItem from './LocationItem';
-import PagesStore from '../stores/PagesStore';
-import * as PagesActions from '../actions/PagesActions';
-import BookingStore from '../stores/BookingStore';
-import * as BookingActions from '../actions/BookingActions';
-import APIStore from '../stores/APIStore';
-import * as APIActions from '../actions/APIActions';
-import LocatorStore from '../stores/LocatorStore';
+import React from "react";
+import _ from "lodash";
+import xml2js from "xml2js";
+import LocationItem from "./LocationItem";
+import PagesStore from "../stores/PagesStore";
+import * as PagesActions from "../actions/PagesActions";
+import BookingStore from "../stores/BookingStore";
+import * as BookingActions from "../actions/BookingActions";
+import APIStore from "../stores/APIStore";
+import * as APIActions from "../actions/APIActions";
+import LocatorStore from "../stores/LocatorStore";
 
 
 export default class Locator extends React.Component {
@@ -35,24 +35,25 @@ export default class Locator extends React.Component {
             country: this.props.country,
             travelRadius: 10,
             maxCost:25,
-            isLocationLocked: LocatorStore.IsLocationLocked(),
+            isLocationLocked: LocatorStore.isLocationLocked,
 
         };
     }
 
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-                
+            APIStore.on("change", ()=>{this.setState({
+                locations:APIStore.getLocations(),
+
+            })
+    }   );        
     }
 
     componentDidMount(){
         // Called after the component has been rendered into the page
-          console.log(this.state.country);
-        APIStore.on("change", ()=>{this.setState({
-            locations:APIStore.getLocations(),
+          
+          //this.updateSearch();
 
-
-        })});
 
     }
 
@@ -79,7 +80,7 @@ export default class Locator extends React.Component {
         if(!this.state.isLocationLocked){
             this.setState({travelRadius: this.refs.travelDistanceInput.value})
 
-            APIActions.fetchStores(this.refs.query.value,this.refs.travelDistanceInput.value,this.state.country)
+            APIActions.fetchStores(this.refs.query.value,this.state.travelRadius,this.state.country)
         }
 
     }
@@ -141,8 +142,6 @@ export default class Locator extends React.Component {
     pageChange(){
 
         var nav = this.navigation();
-        console.log("changing page from: "+this.props.viewing + " to: "+nav)
-
         PagesActions.UpdateDisplayed(nav);
     }
 
@@ -157,10 +156,10 @@ export default class Locator extends React.Component {
             condition = false;
         }
 
-        var locked = LocatorStore.IsLocationLocked();
+        var locked = LocatorStore.isLocationLocked;
 
 
-        
+        var locs = APIStore.getLocations();
 
         console.log(locked);
 
@@ -170,7 +169,7 @@ export default class Locator extends React.Component {
 
         var locKey = 0;
 
-        var locations= _.map(this.state.locations, (location) => {
+        var locations= _.map(locs, (location) => {
                 locKey++;
             var tempHolder =
                         <div key={locKey} >

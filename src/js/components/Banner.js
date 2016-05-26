@@ -1,7 +1,7 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
 import  * as PagesActions from "../actions/PagesActions";
-import _ from 'lodash'
+import _ from "lodash"
 
 export default class Banner extends React.Component {
 
@@ -21,11 +21,11 @@ export default class Banner extends React.Component {
     super(props)
       this.state = {
         viewing: PagesStore.getAll(),
-            Headline: this.props.Headline,
-            Description: this.props.Description,
-            Title: this.props.Title,
-            Pic: this.props.Pic,
-            NavElenment: this.props.NavElenment
+            headline: this.props.headline,
+            description: this.props.description,
+            title: this.props.title,
+            pic: this.props.pic,
+            navElenment: this.props.navElenment
 
     }
   }
@@ -33,68 +33,36 @@ export default class Banner extends React.Component {
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.bannerInit();
-
-        // PagesStore.on("change", ()=>{
-
-            // this.state = {
-            // viewing: PagesStore.getAll(),
-            // Headline: this.props.Headline,
-            // Description: this.props.Description,
-            // Title: this.props.Title,
-            // Pic: this.props.Pic,
-            // NavElenment: this.props.NavElenment
-            // }
-            // console.log("Banner.ChangingPage to: " + this.state.viewing)
-
-            // this will cause a warning about setting the state
-            //this.bannerInit();
-        // })
-
     }
 
     bannerInit(){
-
-        //if(this.props.Description != null || this.props.Description != " ") {
-            this.setState({Description: this.props.Description});
-        //}
-
-        //if(this.props.Title != null || this.props.Title != " ") {
-            this.setState({Title: this.props.Title});
-        //}
-
-        //if(this.props.Pic != null || this.props.Pic != " "){
-            this.setState({Pic: this.props.Pic});
-        //}
-
-        //if(this.props.Headline != null || this.props.Headline != " "){
-            this.setState({Headline: this.props.Headline});
-        //}
-
-        //if(this.props.NavElenment != null || this.props.NavElenment != " "){
-            this.setState({NavElenment: this.props.NavElenment});
-        //}
+        this.setState({description: this.props.description});
+        this.setState({title: this.props.title});
+        this.setState({pic: this.props.pic});
+        this.setState({headline: this.props.headline});
+        this.setState({navElenment: this.props.navElenment});
 
     }
 
 
     setPage(){
-      PagesActions.UpdateDisplayed(this.props.NavElenment);
+      PagesActions.updateDisplayed(this.props.navElenment);
     }
 
 
     render() {
               
-        var BackImg = {
-            backgroundImage: this.props.Pic,
+        var backImg = {
+            backgroundImage: this.props.pic,
         }
 
         return (
                 <div class="m-title m-tile" >
-                    <div class="m-title-image-event" style={BackImg}></div>
+                    <div class="m-title-image-event" style={backImg}></div>
                     <div class="m-title-description">
-                        <div class="m-title-header">{this.props.Title}</div>
-                        <div class="m-title-text"><p><b>{this.props.Headline}</b></p><p>{this.props.Description}</p></div>
-                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.props.NavElenment}</div>
+                        <div class="m-title-header">{this.props.title}</div>
+                        <div class="m-title-text"><p><b>{this.props.Headline}</b></p><p>{this.props.description}</p></div>
+                        <div class="m-button shadow-1 shadow-hover-2 shadow-active-3" onClick={ ()=> this.setPage()}>See {this.props.navElenment}</div>
                     </div>
                 </div> 
             );
