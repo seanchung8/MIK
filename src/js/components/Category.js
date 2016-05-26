@@ -45,7 +45,6 @@ export default class Category extends React.Component {
     componentWillUnmount() {   
     }
 
-    //ServiceTypeInit(){
     categoryInit(){
         if(this.props.description != null || this.props.description != " ") {
             this.setState({description: this.props.description});

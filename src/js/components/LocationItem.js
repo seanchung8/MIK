@@ -7,15 +7,15 @@ export default class LocationItem extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      locName: "Test Name",
-      locAddress: "4848 dfjkl ",
-      locCity: "spo",
-      locState: "kldjf",
-      locPostCode: "94949",
-      locPhone:"40493984",
+      locName: "Spokane Store",
+      locAddress: "555 N Division St.",
+      locCity: "Spokane",
+      locState: "WA",
+      locPostCode: "99999",
+      locPhone:"5555555555",
       selectedLoc: false,
       location: null,
-      key: 2384
+      key: 1000
     };
   }
 

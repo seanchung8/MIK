@@ -1,12 +1,11 @@
 /**
  * Created by damion on 2016-04-09.
  */
-import _ from 'lodash';
 import xml2js from 'xml2js';
 import {EventEmitter} from "events";
 import dispatcher from "../dispatcher";
 
-class ServiceTypeStore extends EventEmitter{
+class APIStore extends EventEmitter{
 
     constructor(){
 
