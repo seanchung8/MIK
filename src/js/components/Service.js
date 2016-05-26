@@ -1,14 +1,10 @@
 import React from "react";
-import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
-
-import * as PagesActions from "../actions/PagesActions"
-import StoresContainer from "./StoresContainer"
-import * as BookingActions from "../actions/BookingActions"
-import BookingStore from "../stores/BookingStore"
-import Calendar from "../components/Calendar"
-
-import ServiceStore from "../stores/ServiceStore";
-import * as ServiceActions from "../actions/ServiceActions";
+import * as PagesActions from "../actions/PagesActions";
+import StoresContainer from "./StoresContainer";
+import * as BookingActions from "../actions/BookingActions";
+import BookingStore from "../stores/BookingStore";
+import Calendar from "../components/Calendar";
+import * as LocatorActions from "../actions/LocatorActions";
 
 export default class Service extends React.Component {
 
@@ -34,11 +30,12 @@ export default class Service extends React.Component {
             locationAddr: "",
             locationCity: "",
             locationState: "",
-            postalcode: ""
+            postalcode: "",
+            isLocationLocked:false
         };
     }
 
-    componentWillMount(){
+    componentDidMount(){
         // Called the first time the component is loaded right before the component is added to the page
         this.serviceInit();
         console.log("Component mounted location is set to: " +this.state.location);
@@ -53,26 +50,31 @@ export default class Service extends React.Component {
       });
     }
 
+    componentWillUnmount(){
+        BookingStore.removeChangeListener= this._onChange;
+
+    }
+
     serviceInit(){
 
-            if(this.props.Description != null || this.props.Description != " ") {
-                this.setState({Description: this.props.Description});
+            if(this.props.description != null || this.drops.Description != " ") {
+                this.setState({description: this.props.description});
             }
 
-            if(this.props.Title != null || this.props.Title != " ") {
-                this.setState({Title: this.props.Title});
+            if(this.props.title != null || this.props.title != " ") {
+                this.setState({title: this.props.title});
             }
     }
 
     setPage(){
-        PagesActions.UpdateDisplayed("Booking");
+        PagesActions.updateDisplayed("Booking");
     }
 
     setMargin(){
 
         var margins;
 
-        switch(this.props.Headline){
+        switch(this.props.headline){
 
             case "Class 1":
             case "Class 4":
@@ -123,8 +125,6 @@ export default class Service extends React.Component {
         this.setState({
             date:date
         })
-
-        console.log("Selected Date "+ date)
     }
 
     setName(name){
@@ -136,16 +136,14 @@ export default class Service extends React.Component {
     }
 
     setLocation(){
-                this.setState({
+        this.setState({
             location:loc
         })
     }
 
     setTime(time){
-
-        console.log("Selected time "+ time);
         this.setState({time:time });
-        BookingActions.SelectTime(time);
+        BookingActions.selectTime(time);
     }
 
     updateFirstName(){
@@ -178,6 +176,8 @@ export default class Service extends React.Component {
                 postalcode : myLocation['postalcode']
             });
         }
+        this.setState({isLocationLocked:true});
+        LocatorActions.setLocationLock(true);
 
         this.setState({ showBooking: !this.state.showBooking});
     }
@@ -185,16 +185,16 @@ export default class Service extends React.Component {
     bookService(){
         console.log("Set booked date and time " + this.state.date +" at "+this.state.time + " Name" + this.state.firstName + 
             " " + this.state.lastName + " email: " + this.state.email + " phone: "+ this.state.phone)
-
-
-        BookingActions.SelectService(this.state.location.location,this.state.date,this.state.time,null,this.state.firstName,this.state.lastName,this.state.phone,this.state.email,this.props.Title) 
+        this.setState({isLocationLocked:true});
+        LocatorActions.setLocationLock(true);
+        BookingActions.selectService(this.state.location.location,this.state.date,this.state.time,null,this.state.firstName,this.state.lastName,this.state.phone,this.state.email,this.props.title) 
 
         this.setPage();
     }
 
     render() {
-        var BackImg = {
-            backgroundImage: this.props.Pic,
+        var backImg = {
+            backgroundImage: this.props.pic,
         }
 
         var normalcss = {};
@@ -247,11 +247,11 @@ export default class Service extends React.Component {
 
         var timesLeft = {
             overflowX : 'hidden',
-            overflowY : 'scroll',
+            //overflowY : 'scroll',
             marginLeft:535,
             bottom:237
         }
-        var LeftSet = {
+        var leftSet = {
             marginLeft: this.setMargin(),
         }
 
@@ -269,15 +269,15 @@ export default class Service extends React.Component {
       if (this.state.showDescription){
                 return (
 
-        <div class={showDescription} style={ this.state.showTimes? LeftSet : normalcss} >
-            <div class="m-title-image-event" style={BackImg}></div>
+        <div class={showDescription} style={ this.state.showTimes? leftSet : normalcss} >
+            <div class="m-title-image-event" style={backImg}></div>
                 <div class="m-service-description">
 
-                <div class="m-service-description-header" >{this.props.Title}</div>
+                <div class="m-service-description-header" >{this.props.title}</div>
 
                 <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDescription? "X":"More Info"}</div>
                 
-                <div class="m-service-description-text" >{this.props.Description}</div>
+                <div class="m-service-description-text" >{this.props.description}</div>
 
                 <div class="m-service-time">
                 
@@ -331,7 +331,7 @@ export default class Service extends React.Component {
                         </div>
                     </div>
                     <div class="m-appointment-description">
-                        <div class="title">{this.props.Title != null ? this.props.Title : " "}</div>
+                        <div class="title">{this.props.title != null ? this.props.title : " "}</div>
                         <div class="address">{this.state.locationAddr},</div>
                         <div class="address">{this.state.locationCity}, {this.state.locationState} {this.state.postalcode} </div>
                         <div class="dateTime">May {this.state.date} at {this.state.time}</div>
@@ -352,9 +352,9 @@ export default class Service extends React.Component {
 
         <div class={showDescription} >
             <div class="m-service-row">
-                <div class="m-title-image-event" style={BackImg}></div>
+                <div class="m-title-image-event" style={backImg}></div>
                     <div class="m-service-description">
-                    <div class="m-service-description-header" >{this.props.Title}</div>
+                    <div class="m-service-description-header" >{this.props.title}</div>
                     <div class="m-button shadow-hover-2 shadow-active-3 m-button-more-info" onClick={ ()=> this.closeWindow()}>{this.state.showDescription? "X":"More Info"}</div>
                     <div class="m-service-description-text" >{this.props.Description}</div>
                 </div>

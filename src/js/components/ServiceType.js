@@ -1,7 +1,4 @@
 import React from "react";
-import ServiceTypeStore from "../stores/ServiceTypeStore";
-
-import  * as ServiceTypeActions from "../actions/ServiceTypeActions";
 import  * as PagesActions from "../actions/PagesActions";
 
 
@@ -20,69 +17,51 @@ export default class ServiceType extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            serviceTypeStore: ServiceTypeStore.getAll()
         };
     }
 
-
-
-
     componentWillMount(){
         // Called the first time the component is loaded right before the component is added to the page
-        this.ServiceTypeInit();
-
-        ServiceTypeStore.on("change",() =>{
-            this.setState({
-                serviceTypeStore: ServiceTypeStore.getAll()
-            })
-        })
-        //todoStore.addChangeListener(this._onChange);
-
-
+        this.serviceTypeInit();
 
     }
 
-
-    ChangeDisplayScreen(){
-        console.log("in ServiceType Changing Display to " + this.state.View);
-        //ServiceTypeActions.ChangeDisplayed(this.state.View);
-        PagesActions.UpdateDisplayed(this.state.View);
+    changeDisplayScreen(){
+        PagesActions.updateDisplayed(this.state.view);
     }
 
-    ServiceTypeInit(){
+    serviceTypeInit(){
 
 
-            if(this.props.Description != null || this.props.Description != " ") {
-                this.setState({Description: this.props.Description});
-            }
-
-            if(this.props.Title != null || this.props.Title != " ") {
-                this.setState({Title: this.props.Title});
-            }
-
-            if(this.props.Pic != null || this.props.Pic != " "){
-                this.setState({Pic: this.props.Pic});
-            }
-
-
-            if(this.props.Headline != null || this.props.Headline != " "){
-                this.setState({Headline: this.props.Headline});
-            }
-
-        if(this.props.View != null || this.props.Vview != " "){
-            this.setState({View: this.props.View});
+        if(this.props.description != null || this.props.description != " ") {
+            this.setState({description: this.props.description});
         }
-        console.log("*** in ServiceType.ServiceTypeInit() ***");
-        console.log(this.props);
+
+        if(this.props.title != null || this.props.title != " ") {
+            this.setState({title: this.props.title});
+        }
+
+        if(this.props.pic != null || this.props.pic != " "){
+            this.setState({pic: this.props.pic});
+        }
+
+
+        if(this.props.headline != null || this.props.headline != " "){
+            this.setState({headline: this.props.headline});
+        }
+
+        if(this.props.view != null || this.props.view != " "){
+            this.setState({view: this.props.view});
+        }
     }
 
 
 
   render() {
 
-      var pic = this.state.Pic
+      var pic = this.state.pic
 
-      var BackImg = {
+      var backImg = {
 
           backgroundImage: pic
       }
@@ -97,14 +76,14 @@ export default class ServiceType extends React.Component {
 
     return (
 
-        <div className={btnClass} style={BackImg} >
+        <div className={btnClass} style={backImg} >
             <div className="m-header-description">
-                <div className="m-header-description-header" >{this.state.Title}</div>
+                <div className="m-header-description-header" >{this.state.title}</div>
                 <div className="m-button m-button-more-info"
                      onClick={ ()=> this.setState({ showDiscription: !this.state.showDiscription })}>{this.state.showDiscription? "X":"More Info"}</div>
-                <div className="m-header-description-text" ><p><b>{this.state.Headline}</b></p><p>{this.state.Description}</p></div>
+                <div className="m-header-description-text" ><p><b>{this.state.headline}</b></p><p>{this.state.description}</p></div>
                 <div className="m-button shadow-active-3 m-button-classes"
-                     onClick={()=> this.ChangeDisplayScreen()}>View {this.state.Title}</div>
+                     onClick={()=> this.changeDisplayScreen()}>View {this.state.title}</div>
             </div>
         </div>
     );

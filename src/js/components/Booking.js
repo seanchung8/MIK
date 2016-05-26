@@ -4,10 +4,10 @@ import MIKFooter from "../components/MIKFooter";
 import Appointment from "../components/Appointment";
 import Checkout from "../components/Checkout";
 import  * as PagesActions from "../actions/PagesActions";
-import PagesStore from "../stores/PagesStore"
-import * as BookingActions from "../actions/BookingActions"
-import BookingStore from "../stores/BookingStore"
-import appointmentDisplay from "../components/appointmentDisplay";
+import PagesStore from "../stores/PagesStore";
+import * as BookingActions from "../actions/BookingActions";
+import BookingStore from "../stores/BookingStore";
+
 
 export default class Booking extends React.Component {
 
@@ -16,7 +16,7 @@ export default class Booking extends React.Component {
     super(props);
     this.state = {
       showCheckout:true,
-      View:'Booking',
+      view:'Booking',
       appointments: BookingStore.getAll()
 
     };
@@ -26,11 +26,10 @@ export default class Booking extends React.Component {
     this.setState({
       showCheckout: !this.state.showCheckout
     });
-    console.log(this.state);
   }
 
   goBackToLanding(){
-    PagesActions.UpdateDisplayed("Landing");
+    PagesActions.updateDisplayed("Landing");
   }
 
   componentDidMount() {
@@ -40,7 +39,6 @@ export default class Booking extends React.Component {
     }
 
   render() {
-    console.log("in booking.render(). this.state.showCheckout:" + this.state.showCheckout);
 
     var classNames = require('classnames');
 
@@ -78,7 +76,6 @@ export default class Booking extends React.Component {
 
                             />
                         </div>
-                        console.log('apointments '+ appointment)
                 return tempHolder;
             })
 

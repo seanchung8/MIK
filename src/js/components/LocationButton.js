@@ -1,6 +1,6 @@
 import React from "react";
 import * as LocatorActions from "../actions/LocatorActions";
-import BookingStore from "../stores/BookingStore"
+import BookingStore from "../stores/BookingStore";
 
 
 export default class LocationButton extends React.Component {
@@ -14,7 +14,6 @@ export default class LocationButton extends React.Component {
   }
 
   componentDidMount() {
-    //console.log("in LocationButton.componentDidMount() name:" + this.state.name);
 
     BookingStore.on("change", ()=>{
       var myStatus = BookingStore.isSelectedLocation(this.state.name);
@@ -23,21 +22,21 @@ export default class LocationButton extends React.Component {
   }
 
   selectLocation(loc) {
-    LocatorActions.SelectedLocation(loc);
+    LocatorActions.selectedLocation(loc);
     this.setState({active:!this.state.active});
   }
 
 
   render() {
     var classNames = require('classnames');
-    var showDiscription = classNames(
+    var showDescription = classNames(
     "m-button shadow-1 shadow-hover-2 shadow-active-3",
     {
         "mod-active": this.state.active
     });
              
     return (
-      <div class={showDiscription} onClick={()=>this.selectLocation(this.props.location)}>
+      <div class={showDescription} onClick={()=>this.selectLocation(this.props.location)}>
         {this.props.name}
       </div>
     ); 

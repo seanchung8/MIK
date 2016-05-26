@@ -4,8 +4,7 @@
 import dispatcher from "../dispatcher";
 
 
-export function SelectLocation(location,selected,id) {
-	console.log(">> in LocationActions.SelectLocation:" + location);
+export function selectLocation(location,selected,id) {
     dispatcher.dispatch({
         type: "SELECT_LOCATION",
         text: location,
@@ -14,12 +13,18 @@ export function SelectLocation(location,selected,id) {
     })
 }
 
-export function SelectedLocation(location) {
-	console.log(">> in LocationActions.SelectedLocation:" + location);
+export function selectedLocation(location) {
     dispatcher.dispatch({
         type: "SELECTED_LOCATION",
         location: location,
 
         
+    })
+}
+
+export function setLocationLock(lock){
+    dispatcher.dispatch({
+        type: "LOCATION_LOCKED",
+        locked:lock
     })
 }

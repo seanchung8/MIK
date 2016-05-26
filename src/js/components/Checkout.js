@@ -1,6 +1,6 @@
 import React from "react";
-import * as PagesActions from "../actions/PagesActions"
-import BookingStore from "../stores/BookingStore"
+import * as PagesActions from "../actions/PagesActions";
+import BookingStore from "../stores/BookingStore";
 
 
 export default class Checkout extends React.Component {
@@ -19,7 +19,7 @@ export default class Checkout extends React.Component {
   }
 
   goToLanding(){
-    PagesActions.UpdateDisplayed("Landing");
+    PagesActions.updateDisplayed("Landing");
   }
 
   showConfirmation() {

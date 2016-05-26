@@ -1,6 +1,6 @@
 import React from "react";
-import BookingStore from "../stores/BookingStore"
-import * as BookingActions from "../actions/BookingActions"
+import BookingStore from "../stores/BookingStore";
+import * as BookingActions from "../actions/BookingActions";
 
 export default class CalendarDate extends React.Component {
 
@@ -24,10 +24,14 @@ export default class CalendarDate extends React.Component {
       this.setState({selected: myStatus});
       });
   }
-
+    componentWillUnmount(){
+        // Called when the component is removed
+        //BookingStore.removeListener("change");
+        BookingStore.removeChangeListener= this._onChange;
+    }
   setDate(){
 
-      BookingActions.SelectDate(this.state.day)
+      BookingActions.selectDate(this.state.day)
       console.log("Setting Date button for day "+this.state.day)  
   }
 

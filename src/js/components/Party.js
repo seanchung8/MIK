@@ -1,8 +1,5 @@
 import React from "react";
-import { Panel,Grid,Col,Row,ResponsiveEmbed,Button,Jumbotron,Image,Well} from 'react-bootstrap';
-
-import * as PagesActions from "../actions/PagesActions"
-import StoresContainer from "./StoresContainer"
+import * as PagesActions from "../actions/PagesActions";
 
 export default class Party extends React.Component {
 
@@ -28,8 +25,8 @@ export default class Party extends React.Component {
 
 
   render() {
-    var BackImg = {
-        backgroundImage: this.props.Pic,
+    var backImg = {
+        backgroundImage: this.props.pic,
     }
 
     var classNames = require('classnames');
@@ -37,10 +34,10 @@ export default class Party extends React.Component {
     return (
 
         <div class='m-party m-tile anim-tile-in' >
-        <div class="m-party-image-event" style={BackImg}></div>
+        <div class="m-party-image-event" style={backImg}></div>
             <div class="m-party-description">
-                <div class="m-party-description-header" >{this.props.Title}</div>
-                <div class="m-party-description-text" >{this.props.Description}</div>
+                <div class="m-party-description-header" >{this.props.title}</div>
+                <div class="m-party-description-text" >{this.props.description}</div>
             </div>
         </div>
 

@@ -8,8 +8,16 @@ export default class Appointment extends React.Component {
     super(props);
     this.state = {
       showCheckout:true,
-      appointInfo: this.props.appointInfo
+      appointInfo: this.props.appointInfo,
+      isCanceling: false
     };
+  }
+
+
+  cancelAppointment(){
+
+
+
   }
 
   render() {
@@ -23,7 +31,6 @@ export default class Appointment extends React.Component {
         {
           'mod-no-checkout': this.state.showCheckout
         });
-    console.log(this.state.appointInfo)
 
     return (
 
