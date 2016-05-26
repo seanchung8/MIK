@@ -1,11 +1,7 @@
 import React from "react";
 import _ from "lodash";
-import xml2js from "xml2js";
 import LocationItem from "./LocationItem";
-import PagesStore from "../stores/PagesStore";
 import * as PagesActions from "../actions/PagesActions";
-import BookingStore from "../stores/BookingStore";
-import * as BookingActions from "../actions/BookingActions";
 import APIStore from "../stores/APIStore";
 import * as APIActions from "../actions/APIActions";
 import LocatorStore from "../stores/LocatorStore";
@@ -45,31 +41,12 @@ export default class Locator extends React.Component {
             APIStore.on("change", ()=>{this.setState({
                 locations:APIStore.getLocations(),
 
-            })
-    }   );        
+            })});
     }
 
-    componentDidMount(){
-        // Called after the component has been rendered into the page
-          
-          //this.updateSearch();
-
-
-    }
-
-    componentWillReceiveProps(nextProps){
-        // Called when the props provided to the component are changed
-    }
-
-    componentWillUpdate(nextProps, nextState){
-        // Called when the props and/or state chang
-
-
-    }
 
     componentWillUnmount(){
         // Called when the component is removed
-        //APIStore.removeListener("change");
         APIStore.removeChangeListener= this._onChange;
 
     }
@@ -142,7 +119,7 @@ export default class Locator extends React.Component {
     pageChange(){
 
         var nav = this.navigation();
-        PagesActions.UpdateDisplayed(nav);
+        PagesActions.updateDisplayed(nav);
     }
 
     render(){
@@ -266,10 +243,5 @@ export default class Locator extends React.Component {
     );
     }
 
-
-
-    search(query = "") {
-
-    }
 
 }

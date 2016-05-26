@@ -1,7 +1,7 @@
 import React from "react";
 import PagesStore from "../stores/PagesStore";
 import  * as PagesActions from "../actions/PagesActions";
-import _ from "lodash"
+
 
 export default class Banner extends React.Component {
 

@@ -153,7 +153,7 @@ class APIStore extends EventEmitter{
 
 }
 
-const serviceTypeStore = new ServiceTypeStore;
-dispatcher.register(serviceTypeStore.handleActions.bind(serviceTypeStore));
+const apiStore = new APIStore();
+dispatcher.register(apiStore.handleActions.bind(apiStore));
 
-export default serviceTypeStore;
+export default apiStore;

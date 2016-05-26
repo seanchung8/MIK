@@ -10,9 +10,9 @@ export default class Confirmation extends React.Component {
 
     return (
       <div>
-        <MIKHeader/ >
+        <MIKHeader/>
         <AppointmentEdit/>
-        <MIKFooter/ >
+        <MIKFooter/>
       </div>
     );
   }

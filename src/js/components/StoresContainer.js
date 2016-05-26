@@ -2,7 +2,6 @@ import React from "react";
 import * as LocatorActions from "../actions/LocatorActions";
 import LocatorStore from "../stores/LocatorStore";
 import LocationButton from "../components/LocationButton";
-import BookingStore from "../stores/BookingStore";
 
 export default class StoresContainer extends React.Component {
 

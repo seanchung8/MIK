@@ -1,6 +1,5 @@
 import React from "react";
 import * as PagesActions from "../actions/PagesActions";
-import StoresContainer from "./StoresContainer";
 
 export default class Party extends React.Component {
 

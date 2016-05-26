@@ -4,10 +4,7 @@ const options = ["English", "French"];
 import Category from "../components/Category";
 import Service from "../components/Service";
 import Booking from "../components/Booking";
-import Appointment from "../components/Appointment";
-import Checkout from "../components/Checkout";
 import PagesStore from "../stores/PagesStore";
-import _ from "lodash";
 import MIKHeader from "../components/MIKHeader";
 import MIKFooter from "../components/MIKFooter";
 import  * as PagesActions from "../actions/PagesActions";
@@ -143,7 +140,7 @@ export default class ClassesAndEvents extends React.Component {
         );
     }
 
-    dhangeDisplayScreen(){
+    changeDisplayScreen(){
         PagesActions.updateDisplayed(this.state.view);
     }
 
@@ -197,7 +194,7 @@ export default class ClassesAndEvents extends React.Component {
         );
     }
 
-    drawCatagories(){
+    drawCategories(){
 
         var varStyle = {
             marginLeft: 350,
@@ -498,13 +495,13 @@ export default class ClassesAndEvents extends React.Component {
           condition = false;
       }
 
-      var selctedLanguage;
+      var selectedLanguage;
 
       if (placeHolderValue == 'English') {
-          selctedLanguage = true;
+          selectedLanguage = true;
       }
       else {
-          selctedLanguage = false;
+          selectedLanguage = false;
       }
 
       var shownPage = this.state.isBooking;
