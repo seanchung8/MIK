@@ -3,6 +3,8 @@ MIK Prototype is a development prototype for Michaels customer facing web applic
 
 ## Installation and Setup
 
+Prerequisites: npm & node js. If they are not already installed yet, please visit https://docs.npmjs.com/getting-started/installing-node
+
 From the command line:
 
 If you do not already have Webpack and React installed:  
